@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Getting There</title>
+		<meta name="description" content="Swapping out Kogan.com js with React">
+		<meta name="author" content="Simon Knox">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/sky.css" id="theme">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Getting There</h1>
+					<hr />
+					<div class="right">
+						<span>Simon Knox</span><br />
+						<span>@psimyn</span><br />
+						<span>Frontend Foreman, kogan.com</span>
+					</div>
+				</section>
+
+				<section data-background="img/being-there.jpg" data-background-size="contain" data-background-repeat="no-repeat">
+					<p style="float: left;">Not this</p>
+					<p style="float: right;">yet</p>
+				</section>
+
+				<section data-background="img/page-old.png" data-background-size="contain" data-background-repeat="no-repeat">
+				</section>
+
+				<section data-background="img/page.png" data-background-size="contain" data-background-repeat="no-repeat">
+				</section>
+
+				<section data-transition="fade" data-background="img/why-not.png" data-background-size="contain" >
+				</section>
+
+				<section>
+					<img src="img/page-countdown.png" />
+				</section>
+
+				<section>
+					<img src="img/page-main.png" />
+				</section>
+
+				<section data-transition="fade">
+					<h2>1. Add to head</h2>
+					<pre><code data-trim>
+<&#8203;script src="react.js"></script>
+<&#8203;script src="react-dom.js"></script>
+<&#8203;script src="babel-core.js"></script>
+					</code></pre>
+				</section>
+
+				<section data-transition="fade">
+					<h2>2. Add to body</h2>
+					<pre><code data-noescape data-trim class="js">
+<&#8203;script type="text/babel">
+
+  ReactDOM.render(
+
+    <mark><&#8203;h1>Yay React!<&#8203;/h1>,</mark>
+
+    document.querySelector('div')
+	);
+<&#8203;/script>
+					</code></pre>
+				</section>
+
+				<section data-transition="fade">
+					<h2>3. <span style="font-weight: normal">Your site is now </span><strong>Powered by React&trade;</strong></h2>
+				</section>
+
+				<section data-transition="fade">
+					<h2>Your first component</h2>
+					<ul>
+						<li>small</li>
+						<li>lazy-loaded</li>
+						<li>self-contained</li>
+						<img src="img/page-countdown.png" />
+					</ul>
+				</section>
+
+				<section data-transition="fade" data-background="img/fifth.png" data-background-size="contain">
+				</section>
+
+				<section data-transition="fade">
+					<code>if (!goingWell)</code>
+					<img src="img/burn.jpg" />
+					<p><small>killing off components is ok</small></p>
+				</section>
+
+				<section data-transition="fade">
+						<h3>DOM-y React is OK</h3>
+						<pre><code data-trim class="html">
+const RelatedItem = item => (
+	<li>
+		<div>
+			<&#8203;img src={item.image_mini} />
+			<h3>
+				<a href={item.url}>{item.title}</a>
+			</h3>
+		</div>
+	</li>
+);
+						</code></pre>
+				</section>
+
+				<section data-transition="fade">
+						<h3>React-y React is better</h3>
+						<pre><code data-trim class="jsx">
+	const RelatedItem = item => (
+	<&#8203;ProductTile item={item} />
+);
+						</code></pre>
+				</section>
+
+				<section data-transition="fade" >
+						<h2 style="text-align: left;">Be careful around:</h2>
+						<ul>
+							<li>
+								<h3>3rd Party Components</h3>
+								<p>Can be hard to style, among other things</p>
+							</li>
+							<li>
+								<h3>Crossover Libraries</h3>
+								<p>reactgularboneout.js causes more trouble than it solves.</p>
+							</li>
+							<li>
+								<h3>Fires</h3>
+								<small>http://www.wikihow.com/Be-Careful-Around-a-Campfire</small>
+						<ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h2>Now</h2>
+					<small>Where we are, using a scale of Peter Sellers' filmography</small>
+					<table>
+						<tr><td>Dr Strangelove</td><td>1964</td></tr>
+						<tr><td>Optimists of 9 Elms</td><td>1973</td></tr>
+						<tr><td><strong>Return of the Pink Panther</strong></td><td>1975</td></tr>
+						<tr><td>Pink Panther Strikes Again</td><td>1976</td></tr>
+						<tr><td>Being There</td><td>1979</td></tr>
+					</table>
+				</section>
+
+				<section data-markdown style="text-align: left;">
+### Next
+- Fix your State. it is a mess
+- [Server render](https://github.com/mic159/react-render) your components!
+- Multiple components (non-hierarchical)
+				</section>
+
+				<section data-markdown style="text-align: left;">
+### Unrelated but cool things
+- [Structor](https://github.com/ipselon/structor)
+- [CSSX](https://github.com/krasimir/babel-plugin-transform-cssx)
+- [YAML](https://www.yaml.org/spec/1.2/spec.html)
+- [Kogan.com Dev Jobs](http://careers.kogan.com/software-devs-engineering/)
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: '  '}); hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
