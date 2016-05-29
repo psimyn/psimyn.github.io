@@ -108,7 +108,7 @@
     height: $bubbleWidth;
     top: 0;
     left: 0;
-    animation: bubble 30s forwards;
+    animation: bubble 25s forwards;
   }
 }
 
@@ -122,13 +122,18 @@ $footer: 70vh;
   }
   7% {
     transform: translate(13vw, $line1);
+    content: ' ';
   }
   10% {
     transform: translate(75vw, 0);
   }
+  99% {
+    content: ' ';
+  }
   100% {
-    transform: translate(100vw, 100vh);
+    transform: translate(90vw, 80vh);
     opacity: 0;
+    content: none;
   }
 }
 
