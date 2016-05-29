@@ -91,7 +91,9 @@
 }
 
 .bubbleWrap {
-  overflow: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .home {
@@ -136,7 +138,7 @@ $footer: 70vh;
  */
 .page-content {
     padding: $spacing-unit 0;
-    min-height: calc(100vh - 240px);
+    flex: 1;
 }
 
 .page-heading {
