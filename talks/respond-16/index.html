@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Incrementally Responsive</title>
+
+		<meta name="description" content="Transitioning to Responsive a little at a time">
+		<meta name="author" content="Simon Knox">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/sky.css" id="theme">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<header style="position: absolute;top: 50px; right: 100px; z-index:500; font-size:100px;"></header>
+			<div class="slides">
+				<section>
+					<h1>
+						<small>
+							<span class="phone-wide">inc</span>
+							<span style="vertical-align: middle;">rem</span>
+							<span class="tablet">ental</span>
+							<span class="phone">ly</span>
+						</small>
+						<span>Responsive</span>
+					</h1>
+					<hr />
+					<div class="right">
+						<span>Simon Knox</span>
+						<br />
+						<span>Frontend Enthusiast, Kogan.com</span>
+						<br />
+						<span>@psimyn</span>
+					</div>
+				</section>
+
+				<section data-background="img/fixed-width.png">
+					<h1 class="top">k3</h1>
+					<aside class="notes">
+						- maybe you are not responsive
+						- maybe you have a responsive framework, but hate it
+					</aside>
+				</section>
+
+				<section data-background="img/fixed-width-phone.png">
+				</section>
+
+				<section data-background="img/fixed-width-phone-only.png">
+				</section>
+
+				<section data-background="img/m.png" data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+## Take 1
+m.kogan
+				</section>
+
+				<section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+# Responsive Goals
+1. Feature parity
+1. Responsive design
+1. Speed
+				</section>
+
+				<section data-background="img/f5.png" data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+## Take 2 - F5
+				</section>
+
+				<section data-background="img/f5-2.png">
+				</section>
+
+				<section data-background="img/f5-3.png">
+				</section>
+
+				<section>
+					<section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+# Responsive Goals Redux
+1. Responsive ~~design~~
+2. Consistent style
+3. Don't break stuff
+					</section>
+					<section data-background-transition="slide" data-background="img/cssstats.png">
+					</section>
+				</section>
+
+				<section data-background-video="img/jenga.mov">
+					<p class="movlabel">homepage.css</p>
+					<p class="movlabel">checkout.css</p>
+					<small class="src">src: github.com:chandlerprall/Physijs.git</small>
+					<aside class="notes">
+						jenga gif
+					</aside>
+				</section>
+
+				<section>
+					<h2><small style="vertical-align: middle;">take 3</small> - incremental</h2>
+					<ol>
+						<li>Small - now</li>
+						<li>Hacks - soon</li>
+						<li>Components - later</li>
+					</ol>
+				</section>
+
+				<section class="chapter" data-background="#222" data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+### chapter 1
+# small
+				</section>
+
+
+				<section data-background="img/fixed-width.png">
+				</section>
+
+				<section data-background-transition="none" data-background="img/fixed-width-devtools.png">
+				</section>
+
+				<section  data-background-transition="none" data-background="img/fixed-width-devtools-blur.png">
+				</section>
+
+				<section  data-background-transition="none" data-background="img/fixed-width-devtools-blur-highlight.png">
+				</section>
+
+				<section data-transition="fade">
+					<pre><code>
+						.page-content {
+							width: 1000px;
+						}
+					</code></pre>
+					<img src="img/page-content.png" />
+
+				</section>
+
+				<section data-transition="fade">
+					<pre><code>
+						.page-content {
+							width: 100%;
+							max-width: 1000px;
+						}
+					</code></pre>
+					<img style="margin: 0;" src="img/page-content.png" />
+					<img class="certified fragment" src="img/certified.png"/>
+					<div class="fragment" style="margin-top: -1em;">
+						<small>*not actually</small>
+						<small>**also not a real thing</small>
+					</div>
+					<aside class="notes">
+						- classic CSS container overflow issues
+						but you are now responsive in one line!!!
+					</aside>
+				</section>
+
+				<section data-transition="fade">
+					<pre><code data-noescape class="js">
+						.page-content {
+							min-width: 1000px; // todo: delete when responsive
+							width: 100%;
+							max-width: 1000px;
+						}
+					</code></pre>
+					<img src="img/page-content.png" />
+					<aside class="notes">
+						but you want to keep your secret
+						and people browsing want to keep their bad time
+					</aside>
+				</section>
+
+				<section data-transition="fade">
+					<img src="img/page-content-fixed-widths.png" />
+					<aside class="notes">
+						what next?
+					</aside>
+				</section>
+
+				<section data-transition="fade" data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+## Good breakpoints?
+- 320px
+- 375px
+- 768px
+
+Note:
+- doesn't matter what they are really. try changing them in early days, test stuff is still ok
+				</section>
+
+				<section data-transition="fade" data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+## Not really
+- ~~320px~~
+- ~~375px~~
+- ~~768px~~
+
+Note:
+- don't let device widths determine breakpoints. you may as well be making mobile apps because you hate your users
+	 			</section>
+
+				<section data-transition="fade">
+					<h2>just pick something</h2>
+					<small>it will probably change anyway</small><br>
+					<ul>
+						<li>400px</li>
+						<li>620px</li>
+						<li>800px</li>
+					</ul>
+
+					<span class="fragment">(don't use px though)</span>
+				</section>
+
+				<section>
+					<h2>Media query longhand</h2>
+				<pre><code data-noescape class="scss">
+					$small-max: 399px;
+					$medium-min: 400px;
+
+					@media (max-width: $small-max) {
+						display: none;
+					}
+
+					@media (min-width: $medium-min) {
+						display: block;
+					}
+
+				</code></pre>
+					<aside class="notes">
+						- this is quite a common thing to see. Also very bad
+						- this isn't a job for humans
+						- whatever they are, make them variables!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Media query shorthand</h2>
+<pre><code data-noescape>
+					$small: 400px;
+
+					@include media('<&#8203;small') {
+						display: none;
+					}
+
+					@include media('>=small') {
+						display: block;
+					}
+
+</code></pre>
+					<aside class="notes">
+						- whatever they are, make them variables!
+						- and access with a mixin
+						- mind your <'s and >='s
+						So now, how do we want to test this??
+					</aside>
+				</section>
+
+				<section data-background-video-loop data-background-video="img/ish.mov">
+<pre><code style="font-size: 1.5em" data-noescape>
+	     kogan.com?somewhat-responsive=go
+
+</code></pre>
+				</section>
+
+				<section data-background="img/meeting-underground.jpg">
+					<h2>A small meeting</h2>
+					<p style="text-shadow: 0 0 4px white">dank basement optional</p>
+					<small style="color: #888; margin-bottom: -300px;" class="src">src:&nbsp;https://unsplash.com/photos/BuMVDXZTGn0</small>
+				</section>
+
+
+<!-- ########################################################################### -->
+
+
+				<section class="chapter" data-background="#222">
+					<h3>chapter 2</h3>
+					<h2 style="color: white">hacks and bad advice</h2>
+
+					<aside class="notes">
+					- hacks are awesome. they work
+					- i will give some bad advice
+					- and stop some bad advice you may have got
+					</aside>
+				</section>
+
+				<section data-background="#222">
+					<h3 style="color: white">Float Layouts</h3>
+					<blockquote style="text-align: left; color: white;">
+
+						Using float for layouts is a hack
+
+					</blockquote>
+					<p style="text-align: right; max-width: 80%;">
+						<a href=""><small>internet</small></a>
+					</p>
+
+					<aside class="notes">
+					- flexbox is awesome
+					- so are floats though
+					- and display: table. don't be a hater
+					</aside>
+				</section>
+
+				<section data-background="#222">
+					<h3 style="color: white">Flex Layouts</h3>
+					<blockquote style="text-align: left; color: white;">
+						Column flex items set to <br>
+						<code>align-items: center;</code><br>
+						<span style="position: absolute;">overflow their container</span>
+					</blockquote>
+					<p style="text-align: right; max-width: 80%;">
+						<a href="https://github.com/philipwalton/flexbugs"><small>flexbugs</small></a>
+					</p>
+					<aside class="notes">
+					- so the old way is a hack
+					- the new way depends on hacks
+					- all i can conclude from this is:
+					</aside>
+				</section>
+
+				<section data-background="#222">
+					<h3 style="color: white">Layouts</h3>
+					<blockquote style="text-align: left; color: white;">
+						CSS is a hack
+					</blockquote>
+					<p style="text-align: right; max-width: 80%;">
+						<a href="???"><small>probably somebody</small></a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Nesting</h2>
+					<pre class="lefty"><code data-noescape class="fragment">
+	.k4 p {
+		line-height: 1.5;
+	}
+					</code></pre>
+					<pre class="righty"><code data-noescape class="fragment">
+	.legacy p {
+		line-height: 1.2;
+	}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>seriously, don't nest</h2>
+					<pre><code class="js">
+<&#8203;body class="k4">
+	...
+			<p class="product-description">The gratest of all time</p>
+
+<&#8203;/body>
+					</code></pre>
+					<pre><code class="js">
+	.product-description {
+		color: $red;
+	}
+
+	.k4 p {
+		color: $black;
+	}
+					</code></pre>
+
+				</section>
+				<section>
+					<h3>Chaining beats nesting. sometimes</h3>
+					<pre><code>
+	.product-description.product-description.product-description {
+		color: $red;
+	}
+					</code></pre>
+					<small>NB: please don't use this as a pattern</small>
+					<aside class="notes">
+						- this is shitty, but very self-contained
+						- might affect theming, we will come back to that
+					</aside>
+				</section>
+
+
+				<section>
+					<h2>Variablise</h2>
+					<p>Start near to usages</p>
+					<pre><code data-noescape>// page-content.css
+
+	.page-content {
+		min-width: 1000px; // todo: delete
+		width: 100%;
+		max-width: 1000px;
+	}
+					</code></pre>
+					<pre><code data-noescape class="js fragment">// not far away
+	$content-width: 1000px;
+
+	.page-content {
+		min-width: $content-width;
+		width: 100%;
+		max-width: $content-width;
+	}
+					</code></pre>
+					<aside class="notes">
+						- start close and specific
+						- move away and generalise
+					</aside>
+				</section>
+
+				<section data-state="atomic-all">
+					<h2>Incrementally Atomic</h2>
+					<ol class="atomic">
+						<li>
+							<img src="img/icon-atom.svg" />
+							<label>Atom</label>
+						</li>
+						<li>
+							<img src="img/icon-molecule.svg" />
+							<label>molecule</label>
+						</li>
+						<li>
+							<img src="img/icon-organism.svg" />
+							<label>organism</label>
+						</li>
+						<li>
+							<img src="img/icon-template.svg" />
+							<label>template</label>
+						</li>
+						<li>
+							<img src="img/icon-page.svg" />
+							<label>page</label>
+						</li>
+					</ol>
+					<small style="margin-bottom: -300px;" class="src">src:&nbsp;http://patternlab.io/</small>
+				</section>
+
+				<section data-state="atomic-organism">
+					<h2>Incrementally Atomic</h2>
+					<ol class="atomic">
+						<li>
+							<img src="img/icon-atom.svg" />
+							<label>Atom</label>
+						</li>
+						<li>
+							<img src="img/icon-molecule.svg" />
+							<label>molecule</label>
+						</li>
+						<li class="active">
+							<img src="img/icon-organism.svg" />
+							<label>organism</label>
+						</li>
+						<li class="shift">
+							<img src="img/icon-template.svg" />
+							<label>template</label>
+						</li>
+						<li class="shift">
+							<img src="img/icon-page.svg" />
+							<label>page</label>
+						</li>
+					</ol>
+					<small style="margin-bottom: -300px;" class="src">src:&nbsp;http://patternlab.io/</small>
+				</section>
+
+				<section data-state="atomic-organism">
+					<h2>Incrementally Atomic</h2>
+					<ol class="atomic">
+						<li>
+							<img src="img/icon-atom.svg" />
+							<label>Atom</label>
+						</li>
+						<li class="active">
+							<img src="img/icon-molecule.svg" />
+							<label>molecule</label>
+						</li>
+						<li class="active">
+							<img src="img/icon-organism.svg" />
+							<label>organism</label>
+						</li>
+						<li class="shift">
+							<img src="img/icon-template.svg" />
+							<label>template</label>
+						</li>
+						<li class="shift">
+							<img src="img/icon-page.svg" />
+							<label>page</label>
+						</li>
+					</ol>
+					<small style="margin-bottom: -300px;" class="src">src:&nbsp;http://patternlab.io/</small>
+				</section>
+
+				<section>
+						<h2>Mixinify</h2>
+						<pre><code data-noescape class="js">
+		@mixin constrain($width) {
+			min-width: $width;
+			width: 100%;
+			max-width: $width;
+		}
+
+		.page-content {
+			@include constrain(1000px);
+		}
+						</code></pre>
+						<pre><code data-noescape class="fragment js">
+		.nav-content {
+			@include constrain(1000px);
+		}
+						</code></pre>
+						<aside class="notes">
+							eventually you move variables so far away you are in the realm of actual reuse!
+							make some mixins!
+							again, don't overengineer to start, keep them basic and changeable
+							if you get 100 people involved here, they will be too generic
+							if you only involve a few, they will be exactly as specific as they need to be
+						</aside>
+				</section>
+
+				<section>
+					<h2>But know when to steal</h2>
+					<pre><code class="js">
+			@mixin invisible() {
+			  border: 0;
+			  clip: rect(0 0 0 0);
+			  height: 1px;
+			  margin: -1px;
+			  overflow: hidden;
+			  padding: 0;
+			  position: fixed;
+			  width: 1px;
+			}
+					</code></pre>
+					<small>src: <a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility">snook.ca</a></small>
+				</section>
+
+				<section data-background="white" data-background-video="img/checkboxes.mov" data-background-video-loop>
+					<h3 class="sideways">bonus hack: checkbox</h3>
+
+					<small class="src">src: http://codepen.io/THISISAGOODNAME/pen/pgRVvR</small>
+
+					<aside class="notes">
+						- this is a good chance/demo to see the wild and wonderful thigns you can do with checkboxes
+						- some things you can do with checkboxes
+					</aside>
+				</section>
+
+				<section data-background="white" data-background-video="img/menu.mov" data-background-video-loop>
+					<aside class="notes">
+						- this was a tonne of wacky conditional js
+						- but is actually simple. am i open or closed
+					</aside>
+				</section>
+
+				<section>
+				<pre><code class="html">
+	<input type="checkbox" id="toggle" />
+	<div class="menu"></div>
+				</code></pre>
+					<pre><code class="js">
+	.menu {
+		transform: translate(-100%);
+	}
+					</code></pre>
+					<pre><code class="js">
+	#toggle:checked + .menu {
+		transform: translate(0);
+	}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code class="js">
+	#toggle:checked + .menu-wrap > * .menu__link:nth-child(2n) {
+		opacity: 1;
+	}
+					</code></pre>
+
+						<pre><code class="js fragment">
+		<input id="toggle" type="checkbox"/>
+		<label for="toggle" class="menu-wrap">
+			<div class="menu">
+				<a class="menu__link"></a>
+				<a class="menu__link">please don't show this</a>
+				<a class="menu__link"></a>
+			</div>
+		</label>
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Selector perf</h2>
+					<pre><code class="js">
+	.make_it_work:before + .you > .worry-about-speed {
+
+		animation: spin;
+
+	}
+					</code></pre>
+				</section>
+
+				<section>
+						<h2>Viewports - The Responsive Switch</h2>
+					<pre><code class="html">
+	<meta name="viewport" content="width=1000"></meta>
+					</code></pre>
+					<pre><code class="fragment html">
+	<meta content="width=device-width, initial-scale=1"></meta>
+					</code></pre>
+				</section>
+
+<!-- ########################################################################### -->
+<!--  COMPONENTS -->
+<!--  -->
+
+				<section class="chapter" data-background="#222">
+					<h2>chapter 3</h2>
+					<h2>compartmentalise</h2>
+				</section>
+
+				<section>
+					<h3>1. Lock up old CSS, hide the key</h3>
+					<pre><code class="html">
+						unresponsive.css
+
+						do-notAdd_to-this.css
+
+					  ͝ .css
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>2. Inverted Nesting</h2>
+
+					<pre><code>
+	<div class="sale">
+		<div class="product">
+		</div>
+	</div>
+					</code></pre>
+					<pre><code class="fragment js">
+	.product {
+		color: $black;
+
+		.sale & {
+			color: $red;
+		}
+	}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>2a. Component Media Queries</h2>
+					<p class="fragment"><small>and simple defaults</small><p>
+
+					<pre><code>
+	.product {
+		font-size: 1em;
+
+		@include media('>=large') {
+			font-size: 3em;
+		}
+	}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>3. Namespace without Nesting</h2>
+					<pre><code class="js">
+	.product-tile__price { }
+
+	.product-tile-price__currency { }
+					</code></pre>
+
+					<pre><code class="js">
+	.product-tile__price {
+		&--big {
+			// you can't search for this now :(
+			// you can put name in a comment
+		}
+	}
+					</code></pre>
+				</section>
+
+				<section class="chapter" data-background="#222">
+					<h2>epilogue</h2>
+
+					<div class="fragment" style="text-align: left; color: #f0f0f0">
+						<h3 style="color: #f0f0f0">Thank you!</h3>
+						<hr />
+						<div style="text-align: right">
+							<p>Simon Knox</p>
+							<p><strong>@psimyn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> </p>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: '  '}); hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

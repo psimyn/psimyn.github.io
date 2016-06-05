@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "A log"
+date:   2016-05-28 17:24:35 +1000
+categories: updates
+---
+this is a placeholder to see if posts work. Maybe it will stay here for posterity,
+otherwise it will be replaced with some actual content eventually.
