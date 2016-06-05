@@ -98,18 +98,6 @@
 
 .home {
   $bubbleWidth: 4em;
-  &:before {
-    position: absolute;
-    content: ' ';
-    border-radius: 50%;
-    border: dashed 1px rgba(44, 44, 44, 0.6);
-    box-shadow: 1px 0 22px 1px rgba(44, 44, 44, 0.1) inset;
-    width: $bubbleWidth;
-    height: $bubbleWidth;
-    top: 0;
-    left: 0;
-    animation: bubble 25s forwards;
-  }
 }
 
 $line1: 80px;
