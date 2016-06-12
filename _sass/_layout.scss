@@ -2,9 +2,11 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
+    border-top: 1px solid $grey-color-light;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+
+    transform: rotate(5deg);
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -36,6 +38,8 @@
 .site-nav {
     float: right;
     line-height: 56px;
+
+    transform: rotate(-2deg);
 
     .page-link {
         color: $text-color;
@@ -94,6 +98,7 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .home {
