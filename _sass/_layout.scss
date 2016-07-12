@@ -94,42 +94,9 @@
     }
 }
 
-.bubbleWrap {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.home {
-  $bubbleWidth: 4em;
-}
-
 $line1: 80px;
 $footerLow: 86vh;
 $footer: 70vh;
-@keyframes bubble {
-  0% {
-    transform: translate(-50vw, $line1);
-    opacity: 1;
-  }
-  7% {
-    transform: translate(13vw, $line1);
-    content: ' ';
-  }
-  10% {
-    transform: translate(75vw, 0);
-  }
-  99% {
-    content: ' ';
-  }
-  100% {
-    transform: translate(90vw, 80vh);
-    opacity: 0;
-    content: none;
-  }
-}
-
 
 /**
  * Page content
