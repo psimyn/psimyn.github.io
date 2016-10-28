@@ -6,17 +6,6 @@ layout: default
 
 window.addEventListener("load", windowLoadHandler, false);
 
-//for debug messages
-var Debugger = function() { };
-Debugger.log = function(message) {
-  try {
-    console.log(message);
-  }
-  catch (exception) {
-    return;
-  }
-}
-
 function windowLoadHandler() {
   canvasApp();
 }
@@ -37,6 +26,8 @@ function canvasApp() {
   displayCanvas.height = 100;
   displayCanvas.style.width = '100vw';
   displayCanvas.style.height = '100vh';
+  displayCanvas.style.opacity = '0.2';
+  displayCanvas.style.zIndex = '-1';
   displayCanvas.style.position = 'absolute';
   displayCanvas.style.top = 0;
 
@@ -103,7 +94,9 @@ function canvasApp() {
     for (i = 0; i < gridWidth; i++) {
       cellArray.push([]);
       for (j = 0; j < gridHeight; j++) {
-        r = Math.random()*255;
+        var initialBrightness = 0.9;
+        var remainder = 1 / (1 - initialBrightness);
+        r = 255 * 0.9 + (Math.random() * 255 / remainder);
         var newCell = {
           x: i*displayWidth/gridWidth,
           y: j*displayHeight/gridHeight,
@@ -216,3 +209,69 @@ function canvasApp() {
   }
 }
 </script>
+
+<style>
+  body {
+    font-family: monospace;
+  }
+  ul {
+    font-size: calc(1em + 1vw);
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+
+  .node:before,
+  .node:after {
+    color: #aaa;
+  }
+
+  .node:before {
+    content: '<';
+  }
+
+  .node:after {
+    content: ' />';
+  }
+
+  .comment {
+    color: #888;
+    font-size: 0.6em;
+    display: block;
+    margin-left: 1em;
+  }
+
+  .comment:before {
+    content: '<!--';
+  }
+
+  .comment:after {
+    content: '-->';
+  }
+</style>
+
+<div>
+<h2>Index</h2>
+<ul>
+  <li>
+    <a class="node" href="/vue-chess">Chess</a>
+    <small class="node comment">
+      Web chess with offline support &amp; push notifications
+    </small>
+  </li>
+  <li>
+    <a class="node" href="/vue-chess">Transport</a>
+    <small class="node comment">
+      Melbourne Public Transport timetable
+    </small>
+  </li>
+  <li>
+    <a class="node" href="/talks">Talks</a>
+    <small class="node comment">
+      Actually slides. But they typically accompany talks
+    </small>
+  </li>
+</ul>
+</div>
