@@ -59,11 +59,11 @@
   }
 
   .node:before {
-    content: '<';
+    content: "<" attr(data-tag) ">";
   }
 
   .node:after {
-    content: ' />';
+    content: "</" attr(data-tag-close) ">";
   }
 
   .comment {
@@ -116,6 +116,10 @@
    background-position-y: 1em;
  }
 
+ #contact a span {
+   margin-left: -1em;
+ }
+
  #contact a:hover span,
  #contact a:focus span {
    opacity: 1;
@@ -130,7 +134,7 @@
  #contact a:hover svg,
  #contact a:focus svg {
    fill: $brand-color;
-   transform: translate(-1em, calc(1px - 1em));
+   transform: translate(-1em);
    transition: transform 0.2s ease 0.05s, opacity 0.3s;
  }
 
