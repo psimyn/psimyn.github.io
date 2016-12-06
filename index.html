@@ -25,19 +25,19 @@ layout: default
   <h2>Index</h2>
   <ul>
     <li>
-      <a class="node" data-tag="h2" data-tag-close="h2" href="/vue-chess">Chess</a>
+      <div class="node" data-tag="h2" data-tag-close="h2"><a href="/vue-chess">Chess</a></div>
       <small class="node comment">
         Web chess with push notifications
       </small>
     </li>
    <li>
-      <a class="node" data-tag="h2" data-tag-close="h2" href="/talks">Talks</a>
+     <div class="node" data-tag="h2" data-tag-close="h2"><a href="/talks">Talks</a></div>
       <small class="node comment">
         Actually slides. Some with notes
       </small>
     </li>
     <li>
-      <a class="node" data-tag="h2 disabled" data-tag-close="h2" disabled>Blog</a>
+      <div class="node" data-tag="h2" data-tag-close="h2"><a disabled>Blog</a></div>
       <small class="node comment">
         0 new posts. Currently disabled
       </small>
@@ -45,32 +45,4 @@ layout: default
   </ul>
 </div>
 
-<div id="contact">
-  <h3>Contact</h3>
-  <ul>
-    <li>
-      <a href="#" title="domain name at gmail">
-        <svg class="icon" viewBox="0 0 18 18">
-           <use xlink:href="/img/email.svg#email"></use>
-        </svg>
-        <span>Email</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/psimyn">
-        <svg class="icon" viewBox="0 0 18 18">
-          <use xlink:href="/img/twitter.svg#twitter"></use>
-        </svg>
-        <span>Twitter</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/psimyn">
-        <svg class="icon" viewBox="0 0 18 18">
-           <use xlink:href="/img/github.svg#github"></use>
-        </svg>
-        <span>Fork me on GitHub</span>
-      </a>
-    </li>
-  </ul>
-</div>
+{% include footer.html %}

@@ -1,23 +1,32 @@
 <footer class="site-footer">
-
-  <div class="wrapper">
-
-    <p>Hello, I'm Simon. I usually do web things</p>
-
-    <ul class="footer-col-wrapper">
-      <li class="footer-col">
-        {% include icon-github.html username=site.github_username %}
-      </li>
-
-      <li class="footer-col">
-        {% include icon-twitter.html username=site.twitter_username %}
-      </li>
-
-      <li class="footer-col">
-        <a href="mailto:{{ site.email }}">Email</a>
-      </li>
-    </ul>
-
-  </div>
+    <div id="contact">
+      <h3>Contact</h3>
+      <ul class="footer-col-wrapper">
+        <li>
+          <a href="#" title="domain name at gmail">
+            <svg class="icon" viewBox="0 0 18 18">
+               <use xlink:href="/img/email.svg#email"></use>
+            </svg>
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/psimyn">
+            <svg class="icon" viewBox="0 0 18 18">
+              <use xlink:href="/img/twitter.svg#twitter"></use>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/psimyn">
+            <svg class="icon" viewBox="0 0 18 18">
+               <use xlink:href="/img/github.svg#github"></use>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
 </footer>
