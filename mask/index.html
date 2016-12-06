@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-framework="es6">
+	<head>
+		<meta charset="utf-8">
+		<title>mask</title>
+    <style>
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+      } 
+
+      .container {
+        overflow: hidden;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      canvas {
+        max-width: 100vmin;
+        max-height: 100vmin;
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -50%;
+        max-width: 100vmin;
+        max-height: 100vmin;
+      }
+
+      .face {
+        animation-name: jumpin;
+        animation-duration: 7s;
+        animation-delay: 2s;
+        animation-direction: normal, reverse;
+        animation-iteration-count: infinite;
+        z-index: 2;
+      }
+
+      @keyframes jumpin {
+        0%, 20% {
+          transform: translate3d(0,0,0);
+        }
+        10%, 15% {
+          transform: translate3d(6%, -8%, 0);
+        }
+      }
+
+      .mask {
+        z-index: 4;
+      }
+
+      .static {
+        animation-name: static;
+        animation-duration: .5s;
+        animation-iteration-count: infinite;
+        transition: none;
+      }
+
+      .static0 {
+        animation-delay: 0.64s;
+      }
+
+      .static1 {
+        opacity: 0;
+        animation-delay: 0.16s;
+      }
+
+      .static2 {
+        opacity: 0;
+        animation-delay: 0.32s;
+      }
+
+      .static3 {
+        opacity: 0;
+        animation-delay: 0.48s;
+      }
+      @keyframes static {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+      }
+    </style>
+	</head>
+	<body>
+    <div class="container">
+      <!--<canvas width="1000" height="1000"></canvas>-->
+      <img class="face" src="img/face.png" />
+      <img class="static static0" src="img/static0.png" />
+      <img class="static static1" src="img/static1.png" />
+      <img class="static static2" src="img/static2.png" />
+      <img class="static static3" src="img/static3.png" />
+      <img class="mask" src="img/mask.png" />
+      <img class="mask" src="img/splat.png" />
+    </div>
+		<script>
+
+      var images = []
+
+      function Layer(src) {
+        var img = new Image();
+        img.src = src;
+        img.onload = function() {
+          images.push(img);
+        }
+        return img;
+      }
+
+      function drawFrame() {
+        for (var i=0; i < images.length; i++) {
+          var image = images[i];
+          var canvas = document.querySelector('canvas');
+          var ctx = canvas.getContext('2d')
+          if ((/static(\d)\.png/).test(image.src)) {
+            if (Math.random() < 0.28) {
+              ctx.drawImage(image, 0, 0)
+            }
+          } else {
+            ctx.drawImage(image, 0, 0)
+          }
+        }
+        requestAnimationFrame(drawFrame)
+
+      }
+      var canvas = document.querySelector('canvas');
+      var mask = new Layer('img/mask.png');
+      var face = new Layer('img/face.png');
+      var splat = new Layer('img/splat.png');
+      var static = [0, 1, 2, 3];
+      for (var i=0; i < static.length; i++) {
+        static[i] = new Layer('img/static' + i + '.png')
+      }
+
+//      requestAnimationFrame(drawFrame)
+    </script>
+	</body>
+</html>
