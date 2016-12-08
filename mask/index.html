@@ -10,7 +10,6 @@
 
       body {
         margin: 0;
-        overflow: hidden;
       } 
 
       .container {
@@ -93,6 +92,41 @@
           opacity: 1;
         }
       }
+
+
+      .cone {
+        position: relative;
+        max-width: 900px;
+      }
+
+      .pinecone {
+        max-width: 810px;
+      }
+
+      .eye {
+        left: 43.8%;
+        margin-top: 41.3%;
+        transition: transform 0.2s ease;
+        animation: blink 6s infinite;
+      }
+
+      .eye2 {
+        left: 47.2%;
+        margin-top: 32.2%;
+        left: 46.4%;
+        margin-top: 31.9%;
+        animation: blink 5s infinite;
+        animation-delay: 2s;
+      }
+
+      @keyframes blink {
+        0%, 40%, 47% {
+          transform: scale(1);
+        }
+        44% {
+          transform: scaleY(0.1);
+        }
+      }
     </style>
 	</head>
 	<body>
@@ -105,6 +139,11 @@
       <img class="static static3" src="img/static3.png" />
       <img class="mask" src="img/mask.png" />
       <img class="mask" src="img/splat.png" />
+    </div>
+    <div class="cone">
+      <img class="pinecone" src="img/pinecone.png" />
+      <img class="eye" src="img/eye.png" />
+      <img class="eye2" src="img/eye2.png" />
     </div>
 		<script>
 
