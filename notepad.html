@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-framework="es6">
+	<head>
+		<meta charset="utf-8">
+		<title>notepad</title>
+    <style>
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      } 
+
+      .container {
+        overflow: hidden;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      textarea {
+        border: none;
+        width: 100vw;
+        max-width: 40em;
+        font-size: calc(1em + 1vw);
+        height: 100vh;
+        padding: 1em;
+      }
+    </style>
+	</head>
+	<body>
+
+    <div class="container">
+      <textarea></textarea>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB3QZorHYR21KF_NGZ8RG7FESMPNgvOZQI",
+        authDomain: "notepad-37442.firebaseapp.com",
+        databaseURL: "https://notepad-37442.firebaseio.com",
+        storageBucket: "notepad-37442.appspot.com",
+        messagingSenderId: "632201498128"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+
+      var key = document.location.hash.slice(1) || database.ref('notes').push().key;
+      document.location.hash = key;
+
+      database.ref('notes/' + key).on('value', function(snapshot) {
+        var textarea = document.querySelector('textarea');
+        textarea.value = snapshot.val();
+      });
+
+
+      document.addEventListener('keyup', function(evt) {
+        var textarea = document.querySelector('textarea');
+        database.ref('notes/' + key).set(textarea.value);
+      })
+    </script>
+	</body>
+</html>
