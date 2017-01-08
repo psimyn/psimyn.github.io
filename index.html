@@ -1,48 +1,26 @@
----
-layout: default
----
-
 <style>
   body {
-    font-family: monospace;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100vw;
+    overflow: hidden;
+    transition: background-color 11s ease;
   }
-  ul {
-    font-size: calc(1em + 1vw);
-  }
-
-  li {
-    list-style: none;
-    margin-bottom: 18px;
-  }
-
 </style>
 
-<div id="content">
-  <h2>Index</h2>
-  <ul>
-    <li>
-      <div class="node" data-tag="h2" data-tag-close="h2"><a href="/vue-chess">Chess</a></div>
-      <small class="node comment">
-        Web chess with push notifications
-      </small>
-    </li>
-   <li>
-     <div class="node" data-tag="h2" data-tag-close="h2"><a href="/talks">Talks</a></div>
-      <small class="node comment">
-        Actually slides. Some with notes
-      </small>
-    </li>
-    <li>
-      <div class="node" data-tag="h2" data-tag-close="h2"><a disabled>Blog</a></div>
-      <small class="node comment">
-        0 new posts. Currently disabled
-      </small>
-    </li>
-  </ul>
-</div>
+<body></body>
 
-{% include footer.html %}
+<script>
+  const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+
+  function updateColor() {
+    let color = '#'
+    for (let i=0; i < 6; i++) {
+      let index = Math.floor(Math.random() * chars.length)
+      color += chars[index]
+    }
+    document.body.style.backgroundColor = color
+  }
+  updateColor() 
+  window.setInterval(updateColor, 8000)
+</script>
+
