@@ -1,26 +1,69 @@
 <style>
+
   body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    transition: background-color 11s ease;
+    position: relative;
+    margin: 0;
+  }
+
+  div {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color 6s ease;
   }
 </style>
 
-<body></body>
+<body>
+  <div></div>
+</body>
 
 <script>
   const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+  let currentEl = document.querySelector('div');
 
-  function updateColor() {
+
+  function getRandomColor() {
     let color = '#'
     for (let i=0; i < 6; i++) {
       let index = Math.floor(Math.random() * chars.length)
       color += chars[index]
     }
-    document.body.style.backgroundColor = color
+    return color
   }
-  updateColor() 
-  window.setInterval(updateColor, 8000)
-</script>
 
+  function updateColor() {
+    const color = getRandomColor()
+    currentEl.style.backgroundColor = color
+  }
+
+  updateColor()
+  window.setInterval(updateColor, 4000)
+
+  document.addEventListener('click', function(evt) {
+    const currentStyle = window.getComputedStyle(currentEl)
+    const currentColor = currentStyle.getPropertyValue('background-color')
+
+    currentEl.style.backgroundColor = currentColor
+
+    const newEl = document.createElement('div')
+    newEl.style.backgroundColor = getRandomColor()
+
+    const length = document.querySelectorAll('div').length
+    newEl.style.left = `${length}vmin`
+    newEl.style.right = `${length}vmin`
+
+    newEl.style.top = `${length}vmin`
+    newEl.style.bottom = `${length}vmin`
+
+    newEl.style.transform = `rotate(${length / 180}deg)`
+
+    currentEl.appendChild(newEl)
+    currentEl = newEl
+  })
+</script>
