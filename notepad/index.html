@@ -10,7 +10,7 @@
 
       body {
         margin: 0;
-      } 
+      }
 
       .container {
         overflow: hidden;
@@ -27,7 +27,7 @@
         max-width: 40em;
         font-size: calc(1em + 1vw);
         height: 100vh;
-        padding: 1em;
+        padding: 2em;
       }
     </style>
 	</head>
@@ -50,19 +50,44 @@
       firebase.initializeApp(config);
       var database = firebase.database();
 
-      var key = document.location.hash.slice(1) || database.ref('notes').push().key;
-      document.location.hash = key;
+      var noteId = document.location.hash.slice(1) || database.ref('notes').push().key;
+      document.location.hash = noteId;
 
-      database.ref('notes/' + key).on('value', function(snapshot) {
-        var textarea = document.querySelector('textarea');
+      var textarea = document.querySelector('textarea');
+      var noteRef = database.ref('notes/' + noteId);
+
+      noteRef.on('value', function(snapshot) {
         textarea.value = snapshot.val();
       });
 
-
-      document.addEventListener('keyup', function(evt) {
-        var textarea = document.querySelector('textarea');
-        database.ref('notes/' + key).set(textarea.value);
+      document.addEventListener('keydown', function(evt) {
+        noteRef.set(textarea.value);
       })
+
+			let firstTap = false
+			document.addEventListener('click', function(evt) {
+				if (!firstTap) {
+					firstTap = true
+					return setTimeout(() => {
+						firstTap = false
+					}, 400)
+				}
+				textarea.select()
+			})
+
+      function updateText(evt) {
+        var deletingText = ['Backspace', 'Delete'].includes(evt.key);
+        var addingText = !deletingText;
+
+        if (addingText) {
+
+        }
+      }
+
+      function addText(text) {
+        noteRef.set(text);
+      }
+
     </script>
 	</body>
 </html>
