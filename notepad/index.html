@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>notepad</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <style>
       *, *:before, *:after {
         box-sizing: border-box;
@@ -21,6 +22,13 @@
         justify-content: center;
       }
 
+			button {
+				font-size: 18px;
+				padding: 12px 18px;
+				border: solid 1px #eee;
+				background: rgba(200, 200, 200, 0.1);
+			}
+
       textarea {
         border: none;
         width: 100vw;
@@ -29,11 +37,18 @@
         height: 100vh;
         padding: 2em;
       }
+
+			.pos-tr {
+				position: fixed;
+				top: 0;
+				right: 0;
+			}
     </style>
 	</head>
 	<body>
 
     <div class="container">
+			<button class="js-copy btn pos-tr">Copy</button>
       <textarea></textarea>
     </div>
 
@@ -64,15 +79,12 @@
         noteRef.set(textarea.value);
       })
 
-			let firstTap = false
-			document.addEventListener('click', function(evt) {
-				if (!firstTap) {
-					firstTap = true
-					return setTimeout(() => {
-						firstTap = false
-					}, 400)
-				}
+			var selectAllButton = document.querySelector('.js-copy')
+			selectAllButton.addEventListener('click', function(evt) {
+				var cursorPosition = textarea.selectionStart
 				textarea.select()
+				document.execCommand('copy')
+				textarea.clearSelection()
 			})
 
       function updateText(evt) {
