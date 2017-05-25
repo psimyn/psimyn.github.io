@@ -1,0 +1,15 @@
+{
+  "name": "notepad",
+  "short_name": "notepad",
+  "start_url": "./",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "background_color": "#42b983",
+  "theme_color": "#42b983",
+  "description": "offline web notepad",
+  "version": "0.0.2",
+  "icons": [{
+    "src": "static/img/logo.svg",
+    "sizes": "128x128 192x192 256x256 512x512"
+  }]
+}
