@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Pull Quotes on the internet"
+title: "Online Pull Quotes"
 date: 2017-10-12 21:01:07 +1100
 categories: writing
 ---
 
 I hate pull quotes. I especially hate them for online articles. And _especially_ when they are on phones. But given the single-column-default of most online content currently, they are bad on any screen size.
+
+[Jeremy Keith](https://adactio.com/journal/11102) already wrote about this, and his post includes examples showing why they are bad. You can probably read it instead of the following few paragraphs since the sentiment is the same and his writing style is better. It still didn't tell me why they exist though..
 
 In magazines or print media I can understand why they might make sense - someone flipping through pages and skimming the content sees an interesting quote in big colorful text. That draws you in to read the article, and you have an easier time skipping past that bit of text. Even so, I usually get at least halfway through a sentence before I realise it's the same damn one as 3cm away, and someone thought it was a good idea to write it twice..
 
