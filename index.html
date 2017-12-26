@@ -56,20 +56,12 @@
       padding-bottom: var(--size);
       display: flex;
       position: relative;
-      background: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.6);
-      transition: box-shadow 0.2s;
     }
 
     @media (min-width: 600px) {
       .square {
         --size: 33%;
       }
-    }
-
-    .square:hover {
-      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.8);
-      z-index: 1;
     }
 
     a {
@@ -81,7 +73,17 @@
       top: 0;
       right: 0;
       bottom: 0;
-      transform: rotate(11deg);
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.16);
+      transition: box-shadow 0.2s;
+    }
+
+    .square a:focus,
+    .square a:hover {
+      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.08);
+      z-index: 1;
+      filter: invert(14%);
+      color: #000;
     }
   </style>
 </head>
@@ -94,7 +96,6 @@
     <div class="square"><a href="#koala">koala.lol</a></div>
     <div class="square"><a href="#blog"></a></div>
     <div class="square"><a href="#about"></a></div>
-    <div class="square"><a href="#"></a></div>
   </main>
 
   <script>
