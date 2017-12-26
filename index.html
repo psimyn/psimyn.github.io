@@ -1,69 +1,122 @@
-<style>
+<head>
+  <meta charset="utf-8">
+  <title>psimyn.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  body {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-    margin: 0;
-  }
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-  div {
-    overflow: hidden;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transition: background-color 6s ease;
-  }
-</style>
+    .background {
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: background-color 7s ease;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 40%, transparent 40%);
+    }
+
+    .background::before {
+      content: '';
+      position: fixed;
+      left: -50%;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      background-image: radial-gradient(rgba(0, 0, 0, 0.05) 40%, transparent 40%);
+      transform: rotate(9deg);
+    }
+
+    .background, 
+    .background::before {
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
+    }
+
+    main {
+      margin: 10%;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      max-width: 960px;
+      transform: rotate(-11deg);
+    }
+
+    .square {
+      --size: 50%;
+      width: var(--size);
+      height: 0;
+      padding-bottom: var(--size);
+      display: flex;
+      position: relative;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.6);
+      transition: box-shadow 0.2s;
+    }
+
+    @media (min-width: 600px) {
+      .square {
+        --size: 33%;
+      }
+    }
+
+    .square:hover {
+      box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.8);
+      z-index: 1;
+    }
+
+    a {
+      font-size: calc(16px + (32 - 16) * (100vw - 400px) / (960 - 400));
+      padding: 1em;
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
 
 <body>
-  <div></div>
+  <div class="background"></div>
+  <main>
+    <div class="square"><a href="#chess"></a></div>
+    <div class="square"><a href="#notepad"></a></div>
+    <div class="square"><a href="#blog"></a></div>
+    <div class="square"><a href="#about"></a></div>
+    <div class="square"><a href="#"></a></div>
+  </main>
+
+  <script>
+    const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+    let currentEl = document.querySelector('.background');
+
+
+    function getRandomColor() {
+      let color = '#'
+      for (let i=0; i < 6; i++) {
+        let index = Math.floor(Math.random() * chars.length)
+        color += chars[index]
+      }
+      return color
+    }
+
+    function updateColor() {
+      const color = getRandomColor()
+      currentEl.style.backgroundColor = color
+    }
+
+    updateColor()
+    window.setInterval(updateColor, 6000)
+  </script>
 </body>
 
-<script>
-  const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-  let currentEl = document.querySelector('div');
-
-
-  function getRandomColor() {
-    let color = '#'
-    for (let i=0; i < 6; i++) {
-      let index = Math.floor(Math.random() * chars.length)
-      color += chars[index]
-    }
-    return color
-  }
-
-  function updateColor() {
-    const color = getRandomColor()
-    currentEl.style.backgroundColor = color
-  }
-
-  updateColor()
-  window.setInterval(updateColor, 4000)
-
-  document.addEventListener('click', function(evt) {
-    const currentStyle = window.getComputedStyle(currentEl)
-    const currentColor = currentStyle.getPropertyValue('background-color')
-
-    currentEl.style.backgroundColor = currentColor
-
-    const newEl = document.createElement('div')
-    newEl.style.backgroundColor = getRandomColor()
-
-    const length = document.querySelectorAll('div').length
-    newEl.style.left = `${length}vmin`
-    newEl.style.right = `${length}vmin`
-
-    newEl.style.top = `${length}vmin`
-    newEl.style.bottom = `${length}vmin`
-
-    newEl.style.transform = `rotate(${length / 180}deg)`
-
-    currentEl.appendChild(newEl)
-    currentEl = newEl
-  })
-</script>
