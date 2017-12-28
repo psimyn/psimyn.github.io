@@ -37,6 +37,12 @@
     .background::before {
       background-size: 60px 60px;
       background-position: 0 0, 30px 30px;
+      transition: opacity 6s;
+    }
+
+    .transparent {
+      transition: none;
+      opacity: 0;
     }
 
     main {
@@ -90,6 +96,7 @@
 
 <body>
   <div class="background"></div>
+  <div class="background transparent"></div>
   <main>
     <div class="square"><a href="#chess">chess</a></div>
     <div class="square"><a href="#notepad">notepad</a></div>
@@ -100,8 +107,6 @@
 
   <script>
     const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-    let currentEl = document.querySelector('.background');
-
 
     function getRandomColor() {
       let color = '#'
@@ -113,8 +118,17 @@
     }
 
     function updateColor() {
-      const color = getRandomColor()
-      currentEl.style.backgroundColor = color
+      const bg1 = document.querySelectorAll('.background')[0]
+      const bg2 = document.querySelectorAll('.background')[1]
+      const color1 = bg2.style.backgroundColor || 'red' || getRandomColor()
+      const color2 = getRandomColor()
+      bg2.classList.add('transparent')
+      bg2.offsetHeight;
+
+      bg1.style.backgroundColor = color1
+      bg1.offsetHeight;
+      bg2.style.backgroundColor = color2
+      bg2.classList.remove('transparent')
     }
 
     updateColor()
