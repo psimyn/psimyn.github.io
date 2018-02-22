@@ -1,0 +1,9 @@
+cat package.json | cut -f 2 -d \" | tail -23 | xargs yarn remove
+
+uninstall all dependencies in a package json, but not just delete the file and start again
+
+list each line in package.json
+split by `"`, used to get package names (first thing on the line inside double quotes)
+ignore the first few lines. Did `wc -l` to get the number of lines and wanted to skip the first 2. This is a terrible way to do this, but it's late.
+feed each line to `yarn remove`. When it gets to the end of the deps list there is a line with `}`, which will make it crash and stop. Again, terrible, again it is late.
+
