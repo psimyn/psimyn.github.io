@@ -7,21 +7,10 @@
    box-shadow: 0 -2px 2px -1px rgba(150, 150, 150, 0.1);
  }
 
- #contact:target {
-   opacity: 1;
-   transition: opacity 0.2s;
- }
-
  #contact ul {
    display: flex;
    justify-content: space-around;
    font-size: 1em;
- }
-
- #contact li span {
-   opacity: 0;
-   letter-spacing: -1em;
-   transition: letter-spacing 0.2s ease, opacity 0.1s linear;
  }
 
  #contact li a {
@@ -32,27 +21,14 @@
    background-position-y: 1em;
  }
 
- #contact a span {
-   margin-left: -2em;
-
- }
-
- #contact a:hover span,
- #contact a:focus span {
-   opacity: 1;
-   letter-spacing: 0;
-   transition: letter-spacing 0.1s ease, opacity 0.2s linear;
- }
-
  #contact a svg {
-   transition: opacity 0.3s;
+   transition: transform 0.2s ease 0.05s, opacity 0.3s;
  }
 
  #contact a:hover svg,
  #contact a:focus svg {
    fill: $brand-color;
    transform: translate(-2em);
-   transition: transform 0.2s ease 0.05s, opacity 0.3s;
  }
 
  #contact a:active svg {
