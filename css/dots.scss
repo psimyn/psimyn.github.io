@@ -70,6 +70,29 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.fab {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  font-size: 2em;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.25em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border-radius: 100%;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.1);
+    background-image: none;
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
 @media (min-width: 600px) {
   .square {
     width: 32%;
