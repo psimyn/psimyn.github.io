@@ -13,8 +13,7 @@
 
   <script>
     const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-    let currentEl = document.querySelector('.background');
-
+    let currentEl = document.querySelector('.background')
 
     function getRandomColor() {
       let color = '#'
@@ -31,6 +30,45 @@
     }
 
     updateColor()
+    fabButton()
+
+    function fabButton() {
+      let  colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+      let button = document.createElement('button')
+      let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+      let strokeWidth = 10
+      let end = 220
+      let skew = 0
+
+      colors.forEach((color, index) => {
+        let pos = 20 +  strokeWidth * index
+        let rad = end - strokeWidth * index - skew
+
+        let path = `<path d="M${pos},${end} A ${rad} ${rad} 0 0 1 ${end} ${pos}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" />`
+        svg.innerHTML += path
+      })
+
+      svg.setAttribute('xmlns:svg', 'http://www.w3.org/2000/svg')
+      svg.setAttribute('viewBox', '-20 -20 300 300')
+      svg.setAttribute('version', '1.1')
+      svg.setAttribute('width', '44')
+      svg.setAttribute('height', '44')
+
+      button.classList.add('fab')
+      button.appendChild(svg)
+      document.body.appendChild(button)
+
+      let buttonTimeout
+      button.addEventListener('click', (evt) => {
+        clearTimeout(buttonTimeout)
+        button.classList.add('active')
+        updateColor();
+        buttonTimeout = setTimeout(() => {
+          button.classList.remove('active')
+        }, 400)
+      })
+    }
   </script>
 
 </html>

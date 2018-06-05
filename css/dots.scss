@@ -16,7 +16,7 @@ body {
   top: -50%;
   right: -50%;
   bottom: -50%;
-  transition: background-color 7s ease;
+  transition: background-color 2s ease;
   background-image: radial-gradient(rgba(255, 255, 255, 0.05) 40%, transparent 40%);
 }
 
@@ -31,7 +31,7 @@ body {
   transform: rotate(9deg);
 }
 
-.background, 
+.background,
 .background::before {
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
@@ -96,6 +96,55 @@ body {
   &:focus {
     outline: none;
     box-shadow: 0 0 1px 4px #2a7ae2;
+  }
+
+  &.active path {
+    transform: translate(-100%, -100%) scale(1.4);
+    transition: transform 0.2s ease-out;
+
+    &:nth-child(2) {
+      transition-delay: 0.01s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.02s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.03s;
+    }
+
+    &:nth-child(5) {
+      transition-delay: 0.05s;
+    }
+
+    &:nth-child(6) {
+      transition-delay: 0.08s;
+    }
+  }
+
+  path {
+    transition: transform 0.2s ease-in;
+
+    &:nth-child(5) {
+      transition-delay: 0.01s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.02s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.03s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+
+    &:nth-child(1) {
+      transition-delay: 0.08s;
+    }
   }
 }
 
