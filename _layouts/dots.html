@@ -13,8 +13,6 @@
 
   <script>
     const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-    let background = document.querySelector('.background')
-    let yiqLinks = document.querySelectorAll('.yiq')
 
     function color() {
       return {
@@ -40,8 +38,11 @@
     }
 
     function updateColor() {
+      let background = document.querySelector('.background')
       var bgColor = color()
       background.style.backgroundColor = bgColor.toString()
+
+      let yiqLinks = document.querySelectorAll('.yiq')
       yiqLinks.forEach(link => {
         link.style.color = textColor(bgColor)
       })
@@ -74,6 +75,7 @@
       svg.setAttribute('height', '44')
 
       button.classList.add('fab')
+      button.classList.add('yiq')
       button.appendChild(svg)
       document.body.appendChild(button)
 
