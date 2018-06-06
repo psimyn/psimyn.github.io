@@ -57,6 +57,17 @@ body {
   border-radius: 0.5em;
 }
 
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.yiq {
+  color: currentColor;
+  font-size: 4em;
+  font-weight: bold;
+}
+
 .square {
   width: 48%;
   height: 0;

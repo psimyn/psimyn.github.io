@@ -13,20 +13,38 @@
 
   <script>
     const chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-    let currentEl = document.querySelector('.background')
+    let background = document.querySelector('.background')
+    let yiqLinks = document.querySelectorAll('.yiq')
 
-    function getRandomColor() {
-      let color = '#'
-      for (let i=0; i < 6; i++) {
-        let index = Math.floor(Math.random() * chars.length)
-        color += chars[index]
+    function color() {
+      return {
+        r: randomVal(),
+        g: randomVal(),
+        b: randomVal(),
+        toString() {
+          return `rgb(${this.r}, ${this.g}, ${this.b})`
+        }
       }
-      return color
+    }
+
+    function randomVal() {
+      return Math.floor(Math.random() * 255)
+    }
+
+    function textColor(bgColor) {
+      let r = bgColor.r
+      let g = bgColor.g
+      let b = bgColor.b
+      let yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return (yiq >= 128) ? 'black' : 'white';
     }
 
     function updateColor() {
-      const color = getRandomColor()
-      currentEl.style.backgroundColor = color
+      var bgColor = color()
+      background.style.backgroundColor = bgColor.toString()
+      yiqLinks.forEach(link => {
+        link.style.color = textColor(bgColor)
+      })
     }
 
     updateColor()
