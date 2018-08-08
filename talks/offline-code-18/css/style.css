@@ -1,0 +1,138 @@
+.reveal section img {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal footer {
+  position: fixed;
+  bottom: 0;
+  border-top: solid 1px;
+  width: 100%;
+  font-size: 0.5em;
+  padding-top: 0.5em;
+  color: #777;
+  text-align: left;
+}
+
+.scale-down {
+  transform: scale(0.75);
+}
+
+.scale-2 {
+  transform: scale(2);
+}
+
+.reveal code {
+  font-size: 3em;
+  line-height: 1.2;
+}
+
+.reveal pre {
+  width: 100%;
+  box-shadow: none;
+}
+
+.reveal pre code {
+  overflow: visible;
+}
+
+.reveal .browser-shell {
+  font-size: 50%;
+  border-top: 2em solid rgba(230, 230, 230, 0.7);
+  box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  border-radius: 3px 3px 0 0
+}
+
+.reveal .browser-shell video {
+  max-width: 99%;
+  max-height: 99%;
+}
+
+.marvel-device .screen {
+  background: unset;
+}
+
+.reveal .browser-shell img,
+.reveal .marvel-device .screen img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+.reveal .marvel-device .screen img,
+.reveal .marvel-device .screen iframe,
+.reveal .marvel-device .screen video {
+  box-shadow: 0 0 0 1px #2c2b2c;
+  min-height: calc(100% + 1px);
+  min-width: calc(100% + 1px);
+}
+
+.reveal .browser-shell:before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: -1.25em;
+  left: 1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #aaa;
+  box-shadow: 0 0 0 2px #aaa, 1.5em 0 0 2px #aaa, 3em 0 0 2px #aaa;
+}
+
+.reveal .large {
+  font-size: 2.2em;
+  white-space: nowrap;
+}
+
+.reveal .btn {
+  color: black;
+  clear: both;
+  border: solid 2px black;
+  padding: 0.1em 0.25em;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+.reveal .btn.fb {
+  background-color: #4267b2;
+  border-color: #29487d;
+  color: white;
+}
+
+.btn.fb .btn-icon {
+  filter: grayscale(100%) brightness(200%);
+}
+
+.btn.star .btn-icon {
+  filter: grayscale(100%) brightness(40%);
+}
+
+.reveal .btn-icon {
+  margin: 8px 8px 0 0;
+}
+
+.reveal .monochrome {
+  filter: grayscale(100%);
+}
+
+.reveal .responsive-square {
+  position: relative;
+  overflow: hidden;
+  padding-top: 40%;
+}
+
+.reveal .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
