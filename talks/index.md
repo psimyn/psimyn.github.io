@@ -7,7 +7,7 @@ Here are slides from some talks I have given. They probably won't make much sens
 ## 2018
 
  - Offline UX (WIP) - [NDC Sydney](https://ndcsydney.com/)
- - Optimistic Offline Experiences (WIP) - [Web Directions Code](https://webdirections.org/code/)
+ - Optimistic Offline Experiences - Web Directions Code [Slides](offline-code-18)
  - Storybook Overview - React Meetup
 
 ## 2016
