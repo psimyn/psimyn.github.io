@@ -18,3 +18,5 @@ permalink: /blog/:year/:title/
 
 # Build settings
 markdown: kramdown
+
+exclude: [talks/offline-code-18/node_modules]

@@ -4,7 +4,6 @@
 
  #contact {
    padding: 1em calc(50% - 360px) 0;
-   box-shadow: 0 -2px 2px -1px rgba(150, 150, 150, 0.1);
  }
 
  #contact ul {
@@ -17,10 +16,6 @@
    white-space: nowrap;
  }
 
- #contact a:hover {
-   background-position-y: 1em;
- }
-
  #contact a svg {
    transition: transform 0.2s ease 0.05s, opacity 0.3s;
  }
@@ -28,7 +23,7 @@
  #contact a:hover svg,
  #contact a:focus svg {
    fill: $brand-color;
-   transform: translate(-2em);
+   transform: translate(-0.25em) rotate(-25deg);
  }
 
  #contact a:active svg {
