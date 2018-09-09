@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Talks 
+title: Talks
 ---
 Here are slides from some talks I have given. They probably won't make much sense without context, but people seem to enjoy having them
 
@@ -21,3 +21,4 @@ Here are slides from some talks I have given. They probably won't make much sens
  - [Styling React](react-july) (React Melbourne meetup)
  - Streams API (Web Directions - Code)
  - Getting into Webpack (React meetup)
+ - Scopes and Data Binding - Angular Melbourne Meetup
