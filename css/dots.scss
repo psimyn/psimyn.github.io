@@ -1,0 +1,214 @@
+---
+---
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.background {
+  overflow: hidden;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  transition: background-color 2s ease;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 40%, transparent 40%);
+}
+
+.background::before {
+  content: '';
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 40%, transparent 40%);
+  transform: rotate(9deg);
+}
+
+.background,
+.background::before {
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.tilt {
+  margin: 10%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  max-width: 960px;
+  transform: rotate(-11deg);
+}
+
+.content {
+  background-color: white;
+  padding: 1em;
+  margin: 2em;
+  position: relative;
+  max-width: 800px;
+  box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.6);
+  border-radius: 0.5em;
+}
+
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.yiq {
+  color: currentColor;
+  font-size: 4em;
+  font-weight: bold;
+  transition: color 4s;
+}
+
+.square {
+  width: 48%;
+  height: 0;
+  padding-bottom: 48%;
+  margin: 2px;
+  display: flex;
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.6);
+  transition: box-shadow 0.2s;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+.fab {
+  @media (max-width: 60em) {
+    display: none !important;
+  }
+
+  .home & {
+    display: block !important;
+  }
+
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  font-size: 2em;
+  background: rgba(255, 255, 255, 0.8);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  padding: 0.25em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border-radius: 100%;
+  transition: transform 0.1s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:hover {
+    transform: scale(1.1);
+    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px -1px currentColor, 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+  }
+
+  svg {
+    overflow: visible;
+  }
+
+  &.active path {
+    transform: translate(-1em, -1em) scale(1.3);
+    transition: transform 0.2s ease-out, opacity 0.2s;
+    opacity: 0.1;
+
+    &:nth-child(2) {
+      transition-delay: 0.01s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.02s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.03s;
+    }
+
+    &:nth-child(5) {
+      transition-delay: 0.05s;
+    }
+
+    &:nth-child(6) {
+      transition-delay: 0.08s;
+    }
+  }
+
+  path {
+    transition: transform 0.25s ease-in;
+
+    &:nth-child(5) {
+      transition-delay: 0.01s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.02s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.03s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+
+    &:nth-child(1) {
+      transition-delay: 0.08s;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .square {
+    width: 32%;
+    padding-bottom: 32%;
+  }
+}
+
+.square:hover {
+  box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.8);
+  color: white;
+  z-index: 1;
+}
+
+.square a {
+  color: inherit;
+  font-size: calc(16px + (32 - 16) * (100vw - 400px) / (960 - 400));
+  padding: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &:hover {
+    color: #2a7ae2;
+  }
+
+  &:focus {
+    outline: #2a7ae2 solid 10px;
+    outline-offset: -6px;
+    z-index: 1;
+  }
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}

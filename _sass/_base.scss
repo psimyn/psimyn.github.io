@@ -109,10 +109,7 @@ a {
     &:hover {
         color: $brand-color;
         text-decoration: none;
-        background-image: linear-gradient(transparent 0, $brand-color 1px, $brand-color 4px);
-        background-size: 4px 2px;
-        background-repeat: repeat-x;
-        background-position-y: 1.3125em;
+        background-image: linear-gradient(to top, currentColor 10%, transparent 10%);
     }
 }
 

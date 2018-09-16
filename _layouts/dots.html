@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ "/css/dots.css" | prepend: site.baseurl }}">
+
+  <body {% if page.active == "home" %}class="home"{% endif %}>
+    <div class="background"></div>
+
+    {{ content }}
+
+  </body>
+
+  <script>
+    function color() {
+      return {
+        r: randomVal(),
+        g: randomVal(),
+        b: randomVal(),
+        toString() {
+          return `rgb(${this.r}, ${this.g}, ${this.b})`
+        }
+      }
+    }
+
+    function randomVal() {
+      return Math.floor(Math.random() * 255)
+    }
+
+    function textColor(bgColor) {
+      let r = bgColor.r
+      let g = bgColor.g
+      let b = bgColor.b
+      let yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return (yiq >= 128) ? 'black' : 'white';
+    }
+
+    function updateColor() {
+      let background = document.querySelector('.background')
+      var bgColor = color()
+      background.style.backgroundColor = bgColor.toString()
+
+      let yiqLinks = document.querySelectorAll('.yiq')
+      yiqLinks.forEach(link => {
+        link.style.color = textColor(bgColor)
+      })
+    }
+
+    updateColor()
+    fabButton()
+
+    function fabButton() {
+      let  colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+      let button = document.createElement('button')
+      let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+      let strokeWidth = 10
+      let end = 220
+      let skew = 0
+
+      colors.forEach((color, index) => {
+        let pos = 20 +  strokeWidth * index
+        let rad = end - strokeWidth * index - skew
+
+        let path = `<path d="M${pos},${end} A ${rad} ${rad} 0 0 1 ${end} ${pos}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" />`
+        svg.innerHTML += path
+      })
+
+      svg.setAttribute('xmlns:svg', 'http://www.w3.org/2000/svg')
+      svg.setAttribute('viewBox', '-20 -20 300 300')
+      svg.setAttribute('version', '1.1')
+      svg.setAttribute('width', '44')
+      svg.setAttribute('height', '44')
+
+      button.classList.add('fab')
+      button.classList.add('yiq')
+      button.appendChild(svg)
+      document.body.appendChild(button)
+
+      let buttonTimeout
+      button.addEventListener('click', (evt) => {
+        clearTimeout(buttonTimeout)
+        button.classList.add('active')
+        updateColor();
+        buttonTimeout = setTimeout(() => {
+          button.classList.remove('active')
+        }, 400)
+      })
+    }
+  </script>
+
+</html>

@@ -177,7 +177,7 @@ Make it look more like a board. Using Vue `scoped` styles because names are diff
 ```
 
 
-Now some pieces (wikipedia ref TODO)
+Now found some SVG pieces
 
 Adding a background
 
