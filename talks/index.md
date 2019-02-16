@@ -4,6 +4,10 @@ title: Talks
 ---
 Here are slides from some talks I have given. They probably won't make much sense without context, but people seem to enjoy having them
 
+## 2019
+
+- Measurable Design - [Web Directions Design](https://www.webdirections.org/design/)
+
 ## 2018
 
  - Offline UX (WIP) - [NDC Sydney](https://ndcsydney.com/)
