@@ -7,7 +7,15 @@
   <body {% if page.active == "home" %}class="home"{% endif %}>
     <div class="background"></div>
 
+    <main class="sidebar yiq">
+      <a class="yiq main-link" href="/projects">projects</a>
+      <a class="yiq main-link" href="/css-haikus">haikus</a>
+      <a class="yiq main-link" href="/talks">talks</a>
+      <a class="yiq main-link" href="/about">about</a>
+    </main>
+
     {{ content }}
+
 
   </body>
 
@@ -32,7 +40,7 @@
       let g = bgColor.g
       let b = bgColor.b
       let yiq = (r * 299 + g * 587 + b * 114) / 1000;
-      return (yiq >= 128) ? 'black' : 'white';
+      return (yiq >= 128) ? 'light' : 'dark';
     }
 
     function updateColor() {
@@ -40,10 +48,8 @@
       var bgColor = color()
       background.style.backgroundColor = bgColor.toString()
 
-      let yiqLinks = document.querySelectorAll('.yiq')
-      yiqLinks.forEach(link => {
-        link.style.color = textColor(bgColor)
-      })
+      document.body.classList.remove('dark', 'light')
+      document.body.classList.add(textColor(bgColor))
     }
 
     updateColor()

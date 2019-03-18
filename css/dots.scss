@@ -17,11 +17,14 @@ body {
   right: -50%;
   bottom: -50%;
   transition: background-color 2s ease;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 40%, transparent 40%);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 40%,
+    transparent 40%
+  );
 }
 
 .background::before {
-  content: '';
+  content: "";
   position: fixed;
   left: -50%;
   top: -50%;
@@ -49,24 +52,75 @@ body {
 
 .content {
   background-color: white;
-  padding: 1em;
-  margin: 2em;
+  padding: 2em 1em;
+  margin: 1em 2em 0;
   position: relative;
   max-width: 800px;
   box-shadow: 0 0 60px -1px rgba(10, 10, 10, 0.6);
-  border-radius: 0.5em;
+  border-radius: 0.1em;
+
+  @media (min-width: 600px) {
+    padding: 2em;
+    margin-left: 4em; // sidebar
+  }
 }
 
-.transparent {
-  background-color: transparent;
-  box-shadow: none;
+.sidebar {
+  @media (min-width: 600px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 3rem;
+    overflow: hidden;
+    border-right: solid 2px currentColor;
+  }
+
+  top: 0;
+  margin: 0;
+  z-index: 1;
+  padding: 0;
+  background: rgba(22, 22, 22, 0.2);
+
+  &:hover {
+    max-width: 100em;
+    transition: max-width 0.2s ease-out background 0.1s;
+    background: rgba(255, 255, 255, 0.8);
+
+    .dark & {
+      background: rgba(22, 22, 22, 0.8);
+    }
+
+    .main-link {
+      visibility: visible;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.main-link {
+  @media (min-width: 600px) {
+    display: block;
+    visibility: hidden;
+    font-size: 4rem;
+    font-weight: bold;
+
+    &:first-letter {
+      visibility: visible;
+    }
+  }
+
+  &:focus {
+    outline: solid 5px currentColor;
+  }
 }
 
 .yiq {
-  color: currentColor;
-  font-size: 4em;
-  font-weight: bold;
+  color: #222;
   transition: color 4s;
+
+  .dark & {
+    color: #fff;
+  }
 }
 
 .square {
@@ -82,7 +136,6 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
-
 .fab {
   @media (max-width: 60em) {
     display: none !important;
@@ -97,7 +150,11 @@ body {
   right: 1em;
   font-size: 2em;
   background: rgba(255, 255, 255, 0.8);
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
   padding: 0.25em;
   width: 2em;
   height: 2em;
@@ -108,7 +165,11 @@ body {
 
   &:hover {
     transform: scale(1.1);
-    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+    background: radial-gradient(
+      closest-side,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8)
+    );
   }
 
   &:active {
