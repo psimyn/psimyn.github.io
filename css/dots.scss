@@ -81,6 +81,7 @@ body {
   padding: 0;
   background: rgba(22, 22, 22, 0.2);
 
+  &.expanded,
   &:hover {
     max-width: 100em;
     transition: max-width 0.2s ease-out background 0.1s;
