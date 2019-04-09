@@ -67,14 +67,19 @@ body {
 
 .sidebar {
   @media (min-width: 600px) {
-    position: fixed;
     bottom: 0;
     left: 0;
     max-width: 3rem;
     overflow: hidden;
+    position: fixed;
     border-right: solid 2px currentColor;
+
+    .main-link {
+      margin-right: 1rem;
+    }
   }
 
+  position: relative;
   top: 0;
   margin: 0;
   z-index: 1;
@@ -93,7 +98,6 @@ body {
 
     .main-link {
       visibility: visible;
-      margin-right: 1rem;
     }
   }
 }
@@ -115,7 +119,8 @@ body {
   }
 }
 
-.yiq {
+.yiq,
+.yiq:visited {
   color: #222;
   transition: color 4s;
 
