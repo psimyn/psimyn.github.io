@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Talks
 ---
 Here are slides from some talks I have given. They probably won't make much sense without context, but people seem to enjoy having them
@@ -10,8 +10,8 @@ Here are slides from some talks I have given. They probably won't make much sens
 
 ## 2018
 
- - Offline UX (WIP) - [NDC Sydney](https://ndcsydney.com/)
- - Optimistic Offline UX (WIP) - MelbJS
+ - Offline UX - [NDC Sydney](https://ndcsydney.com/)
+ - Optimistic Offline UX - MelbJS
  - Optimistic Offline Experiences - Web Directions Code [Slides](offline-code-18)
  - Storybook Overview - Melbourne React Meetup
 
