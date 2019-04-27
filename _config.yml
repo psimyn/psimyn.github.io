@@ -19,4 +19,4 @@ permalink: /blog/:year/:title/
 # Build settings
 markdown: kramdown
 
-exclude: ["*/node_modules", "talks/*"]
+exclude: ["*/node_modules"]
