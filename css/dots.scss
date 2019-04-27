@@ -50,20 +50,6 @@ body {
   transform: rotate(-11deg);
 }
 
-.content {
-  background-color: white;
-  padding: 2em 1em;
-  margin: 1em 2em 0;
-  position: relative;
-  max-width: 800px;
-  box-shadow: -10px -10px 60px -10px rgba(10, 10, 10, 0.3);
-  border-radius: 0 25px 25px 0;
-
-  @media (min-width: 600px) {
-    padding: 2em;
-    margin-left: 4em; // sidebar
-  }
-}
 
 .sidebar {
   @media (min-width: 600px) {
