@@ -16,16 +16,19 @@ dl, dd, ol, ul, figure {
 
 
 html {
-    background-color: #303030;
+    background-color: #f0a63d27;
+    border-bottom: 11px #f0a63dff dashed;
 }
 
 /**
  * Basic styling
  */
 body {
+    border-bottom: 8px #f0a63dff dashed;
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     background-color: $background-color;
+    background-image: linear-gradient(10deg, #f0a63d27, #ffffffff);
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;

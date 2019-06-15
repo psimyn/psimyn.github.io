@@ -10,6 +10,10 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    @media (min-width: 600px) {
+        border-color: transparent;
+    }
 }
 
 .site-title {
@@ -76,13 +80,12 @@
     margin: 1em 2em 0 1em;
     position: relative;
     max-width: 800px;
-    box-shadow: -2px 2px 6px -4px rgba(22, 22, 22, 0.2);
+    box-shadow: -1px -1px 6px -4px rgba(22, 22, 22, 0.9);
     transition: all 0.2s;
 
     @media (min-width: 600px) {
       padding: 2em;
       margin-left: 4em;
-      box-shadow: -6px 6px 12px -4px rgba(22, 22, 22, 0.5);
       border-radius: 0 25px 25px 0;
     }
 }
@@ -182,4 +185,38 @@
             font-size: 18px;
         }
     }
+}
+
+.pull-img-right {
+    @media (min-width: 600px) {
+        position: absolute;
+        right: 0;
+        transform: translateX(100%);
+        // TODO: $content-width and $left-margin
+        width: calc(100vw - 600px - 8em);
+        max-width: 800px;
+    }
+}
+
+.pull-contaienr {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: #303030;
+    z-index: 1;
+    border-radius: 100% 0 0 100%;
+    position: static;
+    min-height: 20px;
+    display: inline-block;
+    right: 0;
+    float: right;
+    text-shadow: -2px -2px #606060;
+    font-weight: bold;
+    padding: 0 0.25em;
+    text-align: left;
+    font-size: 3em;
+    transform: translateX(2rem);
+    color: white;
+    line-height: 1;
+    box-shadow: 0 0 16px #606060 inset;
 }
