@@ -2,41 +2,21 @@
  * Site header
  */
 .site-header {
-    border-top: 1px solid $grey-color-light;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    transform: rotate(5deg);
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
-
-    @media (min-width: 600px) {
-        border-color: transparent;
-    }
+    text-align: right;
+    padding: 1em;
 }
 
 .site-title {
-    background: rgb(240, 166, 61);
-    border-radius: 25% 0;
-
     font-weight: 300;
     line-height: 56px;
-    letter-spacing: -1px;
     margin-bottom: 0;
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     left: 2rem;
 
     transition: top 0.2s, left 0.4s;
 
-    @media (min-width: 600px) {
-        top: 4rem;
-        left: 4rem;
-    }
-
     z-index: 1;
-    box-shadow: -3px -2px 4px -2px #333333aa;
 
     img {
         height: 3rem;
@@ -54,13 +34,8 @@
 }
 
 .site-nav {
-    float: right;
     line-height: 56px;
     margin-right: 2rem;
-
-    max-width: 60%;
-
-    transform: rotate(-2deg);
 
     .page-link {
         color: $text-color;
@@ -76,18 +51,10 @@
 .content {
     background-color: white;
     min-height: 80vh;
-    padding: 2em 1em;
     margin: 1em 2em 0 1em;
     position: relative;
     max-width: 800px;
-    box-shadow: -1px -1px 6px -4px rgba(22, 22, 22, 0.9);
     transition: all 0.2s;
-
-    @media (min-width: 600px) {
-      padding: 2em;
-      margin-left: 4em;
-      border-radius: 0 25px 25px 0;
-    }
 }
 
 

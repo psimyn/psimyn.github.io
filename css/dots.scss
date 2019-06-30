@@ -59,10 +59,6 @@ body {
     overflow: hidden;
     position: fixed;
     border-right: solid 2px currentColor;
-
-    .main-link {
-      margin-right: 1rem;
-    }
   }
 
   position: relative;
@@ -89,6 +85,8 @@ body {
 }
 
 .main-link {
+  margin-right: 1rem;
+  
   @media (min-width: 600px) {
     display: block;
     visibility: hidden;
