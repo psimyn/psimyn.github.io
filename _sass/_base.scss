@@ -17,11 +17,14 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+html {
+    background-color: #0cbaba;
+}
+
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     background-color: $background-color;
-    box-shadow: 0 12px 2px -6px #0cbaba inset;
     // background-color: #0cbaba;
     // background-color: #380036;
     // background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
@@ -33,12 +36,6 @@ body {
     font-kerning: normal;
     overflow-y: auto;
 }
-
-:root {
-    --link-color: #0cbaba;
-    --link-hover-color: #380036;
-}
-
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -105,16 +102,18 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
     display: inline-block;
-    color: $brand-color;
+    color: $link-color;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        // color: darken($brand-color, 15%);
+        text-decoration: underline;
     }
 
     &:hover {
-        color: $brand-color;
-        text-decoration: none;
+        color: lighten($link-color, 10%);
+        text-decoration: underline;
+        text-underline-position: 2px;
     }
 }
 
@@ -124,23 +123,6 @@ a {
         text-decoration: none;
         background-image: linear-gradient(to top, currentColor 10%, transparent 10%);
     } 
-}
-
-a.site-title:hover:before {
-    background-image: none;
-    content: ' ';
-    width: 1em;
-    height: 6px;
-    background: #380036;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    border-radius: 4px;
-    z-index: -1;
-    transform: translateY(11px);
-    transition: transform 0.2s;
 }
 
 /**

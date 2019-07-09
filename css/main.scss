@@ -3,10 +3,15 @@
 ---
 @charset "utf-8";
 
+:root {
+    --link-color: #0cbaba;
+    --link-hover-color: #380036;
+}
 
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Libre Baskerville", serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -18,6 +23,7 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 // $brand-color:      #2a7ae2;
 $brand-color:      #0c9a9a;
+$link-color: #076262;
     // --link-hover-color: #380036;
 
 $grey-color:       #828282;

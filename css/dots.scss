@@ -2,7 +2,7 @@
 ---
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: relative;
   margin: 0;
@@ -258,8 +258,4 @@ body {
     outline-offset: -6px;
     z-index: 1;
   }
-}
-
-.mb-2 {
-  margin-bottom: 2rem;
 }

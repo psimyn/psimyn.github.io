@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 52 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>psimyn01-poseidon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#380036" offset="0%"></stop>
+            <stop stop-color="#0CBABA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="psimyn01-poseidon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M23,32 L33,32 C38.5228475,32 43,27.5228475 43,22 L43,19 C43,13.4771525 38.5228475,9 33,9 L31.0062956,9 L31.0062956,1 L33,1 C42.9411255,1 51,9.0588745 51,19 L51,22 C51,31.9411255 42.9411255,40 33,40 L23,40 L23,58 L15,58 L15,40.000003 C13.7474098,40.0000034 12.1695395,40.0000053 9.00002578,40.000009 C4.58174036,40.0000257 1.00000574,36.4183038 1,32.0000142 L1,26.0061169 L9,26.0061169 L9.00000548,32.000009 C12.1695326,32.0000053 13.7474059,32.0000034 15,32.0000022 L15,8 L23,8 L23,32 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+    </g>
+</svg>

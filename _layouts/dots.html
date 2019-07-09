@@ -5,13 +5,13 @@
   <link rel="stylesheet" href="{{ "/css/dots.css" | prepend: site.baseurl }}">
 
   <body {% if page.active == "home" %}class="home"{% endif %}>
-    <div class="background"></div>
+    <div class="background light"></div>
 
-    <div class="sidebar yiq {% if page.active == "home" %}expanded{% endif %}">
-      <a class="yiq main-link" href="/projects">projects</a>
-      <a class="yiq main-link" href="/talks">talks</a>
-      <a class="yiq main-link" href="/blog">blog</a>
-      <a class="yiq main-link" href="/about">about</a>
+    <div class="sidebar {% if page.active == "home" %}expanded{% endif %}">
+      <a class="main-link" href="/projects">projects</a>
+      <a class="main-link" href="/talks">talks</a>
+      <a class="main-link" href="/about">about</a>
+      <a class="main-link" href="/contact">contact</a>
     </div>
 
     {{ content }}
@@ -47,8 +47,8 @@
       var bgColor = color()
       background.style.backgroundColor = bgColor.toString()
 
-      document.body.classList.remove('dark', 'light')
-      document.body.classList.add(textColor(bgColor))
+      // document.body.classList.remove('dark', 'light')
+      // document.body.classList.add(textColor(bgColor))
     }
 
     updateColor()
