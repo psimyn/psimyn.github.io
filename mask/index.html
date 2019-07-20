@@ -1,189 +1,190 @@
-<!doctype html>
-<html lang="en" data-framework="es6">
-	<head>
-		<meta charset="utf-8">
-		<title>mask</title>
-    <style>
-      *, *:before, *:after {
-        box-sizing: border-box;
-      }
+---
+layout: default
+---
 
-      body {
-        margin: 0;
-      } 
+<style>
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
 
-      .container {
-        overflow: hidden;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-      }
+  body {
+    margin: 0;
+  } 
 
-      canvas {
-        max-width: 100vmin;
-        max-height: 100vmin;
-      }
+  .container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
 
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        max-width: 100vmin;
-        max-height: 100vmin;
-      }
+  canvas {
+    max-width: 100vmin;
+    max-height: 100vmin;
+  }
 
-      .face {
-        animation-name: jumpin;
-        animation-duration: 7s;
-        animation-delay: 2s;
-        animation-direction: normal, reverse;
-        animation-iteration-count: infinite;
-        z-index: 2;
-      }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vmin;
+    max-height: 100vmin;
+  }
 
-      @keyframes jumpin {
-        0%, 20% {
-          transform: translate3d(0,0,0);
-        }
-        10%, 15% {
-          transform: translate3d(6%, -8%, 0);
-        }
-      }
+  .face {
+    animation-name: jumpin;
+    animation-duration: 7s;
+    animation-delay: 2s;
+    animation-direction: normal, reverse;
+    animation-iteration-count: infinite;
+    z-index: 2;
+  }
 
-      .mask {
-        z-index: 4;
-      }
+  @keyframes jumpin {
+    0%, 20% {
+      transform: translate3d(0,0,0);
+    }
+    10%, 15% {
+      transform: translate3d(6%, -8%, 0);
+    }
+  }
 
-      .static {
-        animation-name: static;
-        animation-duration: .5s;
-        animation-iteration-count: infinite;
-        transition: none;
-      }
+  .mask {
+    z-index: 4;
+  }
 
-      .static0 {
-        animation-delay: 0.64s;
-      }
+  .static {
+    animation-name: static;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    transition: none;
+  }
 
-      .static1 {
-        opacity: 0;
-        animation-delay: 0.16s;
-      }
+  .static0 {
+    animation-delay: 0.64s;
+  }
 
-      .static2 {
-        opacity: 0;
-        animation-delay: 0.32s;
-      }
+  .static1 {
+    opacity: 0;
+    animation-delay: 0.16s;
+  }
 
-      .static3 {
-        opacity: 0;
-        animation-delay: 0.48s;
-      }
-      @keyframes static {
-        0% {
-          opacity: 1;
-        }
-        25% {
-          opacity: 0;
-        }
-        75% {
-          opacity: 1;
-        }
-      }
+  .static2 {
+    opacity: 0;
+    animation-delay: 0.32s;
+  }
+
+  .static3 {
+    opacity: 0;
+    animation-delay: 0.48s;
+  }
+  @keyframes static {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 1;
+    }
+  }
 
 
-      .cone {
-        position: relative;
-        max-width: 900px;
-      }
+  .cone {
+    position: relative;
+    max-width: 900px;
+    padding-top: 150%;
+  }
 
-      .pinecone {
-        max-width: 810px;
-      }
+  .pinecone {
+    max-width: 810px;
+  }
 
-      .eye {
-        left: 43.8%;
-        margin-top: 41.3%;
-        transition: transform 0.2s ease;
-        animation: blink 6s infinite;
-      }
+  .eye {
+    left: 43.8%;
+    margin-top: 41.3%;
+    left: 61.8%;
+    margin-top: 58.7%;
+    transition: transform 0.2s ease;
+    animation: blink 6s infinite;
+  }
 
-      .eye2 {
-        left: 47.2%;
-        margin-top: 32.2%;
-        left: 46.4%;
-        margin-top: 31.9%;
-        animation: blink 5s infinite;
-        animation-delay: 2s;
-      }
+  .eye2 {
+    left: 47.2%;
+    margin-top: 32.2%;
+    left: 46.4%;
+    margin-top: 31.9%;
+    left: 66.4%;
+    margin-top: 45.4%;
+    animation: blink 5s infinite;
+    animation-delay: 2s;
+  }
 
-      @keyframes blink {
-        0%, 40%, 47% {
-          transform: scale(1);
-        }
-        44% {
-          transform: scaleY(0.1);
-        }
-      }
-    </style>
-	</head>
-	<body>
-    <div class="container">
-      <!--<canvas width="1000" height="1000"></canvas>-->
-      <img class="face" src="img/face.png" />
-      <img class="static static0" src="img/static0.png" />
-      <img class="static static1" src="img/static1.png" />
-      <img class="static static2" src="img/static2.png" />
-      <img class="static static3" src="img/static3.png" />
-      <img class="mask" src="img/mask.png" />
-      <img class="mask" src="img/splat.png" />
-    </div>
-    <div class="cone">
-      <img class="pinecone" src="img/pinecone.png" />
-      <img class="eye" src="img/eye.png" />
-      <img class="eye2" src="img/eye2.png" />
-    </div>
-		<script>
+  @keyframes blink {
+    0%, 40%, 47% {
+      transform: scale(1);
+    }
+    44% {
+      transform: scaleY(0.1);
+    }
+  }
+</style>
+</head>
+<body>
+Added CSS animations to artwork. Originals by Vanessa Valbuena
+<div class="container">
+  <!--<canvas width="1000" height="1000"></canvas>-->
+  <img class="face" src="img/face.png" />
+  <img class="static static0" src="img/static0.png" />
+  <img class="static static1" src="img/static1.png" />
+  <img class="static static2" src="img/static2.png" />
+  <img class="static static3" src="img/static3.png" />
+  <img class="mask" src="img/mask.png" />
+  <img class="mask" src="img/splat.png" />
+</div>
+<div class="cone">
+  <img class="pinecone" src="img/pinecone.png" />
+  <img class="eye" src="img/eye.png" />
+  <img class="eye2" src="img/eye2.png" />
+</div>
+<script>
 
-      var images = []
+  var images = []
 
-      function Layer(src) {
-        var img = new Image();
-        img.src = src;
-        img.onload = function() {
-          images.push(img);
-        }
-        return img;
-      }
+  function Layer(src) {
+    var img = new Image();
+    img.src = src;
+    img.onload = function() {
+      images.push(img);
+    }
+    return img;
+  }
 
-      function drawFrame() {
-        for (var i=0; i < images.length; i++) {
-          var image = images[i];
-          var canvas = document.querySelector('canvas');
-          var ctx = canvas.getContext('2d')
-          if ((/static(\d)\.png/).test(image.src)) {
-            if (Math.random() < 0.28) {
-              ctx.drawImage(image, 0, 0)
-            }
-          } else {
-            ctx.drawImage(image, 0, 0)
-          }
-        }
-        requestAnimationFrame(drawFrame)
-
-      }
+  function drawFrame() {
+    for (var i=0; i < images.length; i++) {
+      var image = images[i];
       var canvas = document.querySelector('canvas');
-      var mask = new Layer('img/mask.png');
-      var face = new Layer('img/face.png');
-      var splat = new Layer('img/splat.png');
-      var static = [0, 1, 2, 3];
-      for (var i=0; i < static.length; i++) {
-        static[i] = new Layer('img/static' + i + '.png')
+      var ctx = canvas.getContext('2d')
+      if ((/static(\d)\.png/).test(image.src)) {
+        if (Math.random() < 0.28) {
+          ctx.drawImage(image, 0, 0)
+        }
+      } else {
+        ctx.drawImage(image, 0, 0)
       }
+    }
+    requestAnimationFrame(drawFrame)
+
+  }
+  var canvas = document.querySelector('canvas');
+  var mask = new Layer('img/mask.png');
+  var face = new Layer('img/face.png');
+  var splat = new Layer('img/splat.png');
+  var static = [0, 1, 2, 3];
+  for (var i=0; i < static.length; i++) {
+    static[i] = new Layer('img/static' + i + '.png')
+  }
 
 //      requestAnimationFrame(drawFrame)
-    </script>
-	</body>
-</html>
+</script>

@@ -5,7 +5,14 @@
   <link rel="stylesheet" href="{{ "/css/dots.css" | prepend: site.baseurl }}">
 
   <body {% if page.active == "home" %}class="home"{% endif %}>
-    <div class="background"></div>
+    <div class="background light"></div>
+
+    <div class="sidebar {% if page.active == "home" %}expanded{% endif %}">
+      <a class="main-link" href="/projects">projects</a>
+      <a class="main-link" href="/talks">talks</a>
+      <a class="main-link" href="/about">about</a>
+      <a class="main-link" href="/contact">contact</a>
+    </div>
 
     {{ content }}
 
@@ -32,7 +39,7 @@
       let g = bgColor.g
       let b = bgColor.b
       let yiq = (r * 299 + g * 587 + b * 114) / 1000;
-      return (yiq >= 128) ? 'black' : 'white';
+      return (yiq >= 128) ? 'light' : 'dark';
     }
 
     function updateColor() {
@@ -40,10 +47,8 @@
       var bgColor = color()
       background.style.backgroundColor = bgColor.toString()
 
-      let yiqLinks = document.querySelectorAll('.yiq')
-      yiqLinks.forEach(link => {
-        link.style.color = textColor(bgColor)
-      })
+      // document.body.classList.remove('dark', 'light')
+      // document.body.classList.add(textColor(bgColor))
     }
 
     updateColor()
