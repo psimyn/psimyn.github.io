@@ -2,10 +2,11 @@
 title: Talks
 layout: default
 ---
-Here are most of the talks I have given, with notes/slides whenn I remember. They probably won't make much sense without context, but people seem to enjoy having them.
+Here are most of the talks I have given, with notes/slides when I remember. They probably won't make much sense without context, but people seem to enjoy having them.
 
 ## 2019
 
+- Debugging JS Live - ComponentsConf Meetup
 - Measurable Design - [Web Directions Design](https://www.webdirections.org/design/)
 
 ## 2018
