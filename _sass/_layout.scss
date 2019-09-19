@@ -18,8 +18,8 @@
     width: 1rem;
 
     background: linear-gradient(to top, $brand-color 0%, #2aafe2 44%, #380036 90%);
-    border-radius: 6px;
-    box-shadow: 4px 0px 12px -1px #11111133, 0 0 1px 3px #380036;
+    border-radius: 0.5rem 0.5rem 1.5rem;
+    box-shadow: 4px 0px 12px -1px #11111133;
     padding: 2em;
     transform: translateY(2px);
     margin-right: 1rem;
@@ -34,7 +34,7 @@
         max-width: 3rem;
         left: 0.5rem;
         top: 1.25rem;
-        filter: drop-shadow(2px -4px 6px #333) brightness(0.3);
+        filter: drop-shadow(0.2px -2px 1px #234a);
     }
 
     span {
