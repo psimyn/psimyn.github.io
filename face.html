@@ -2,7 +2,6 @@
 .controls {
   padding: 1em 2em;
   margin: 1em;
-  outline: solid 1px #ddd;
 }
 
 .controls details {
@@ -146,47 +145,15 @@ svg {
     </label>
   </div>
 
-  <div>
-    <button class="js-random">Random Face</button>
-    <button class="js-reset">Full Face</button>
-  </div>
-  
-  <details class="toggles">
-    <summary>Custom Face</summary>
-  </details>
 </div>
   
 
 <script>
 let allParts = [].slice.call(document.querySelectorAll('svg *')).filter(n => n.id)
-let parts = ['glasses', 'beard', 'mouth', 'nose', 'eyes', 'hair', 'shadow', 'lines', 'face-base']
-let toggles =  document.querySelector('.toggles')
 let svg = document.querySelector('.js-face')
 let hueSlider = document.querySelector('.js-hue')
 
 let hue = new Date().getUTCHours() * 15 
-
-allParts.map(p => p.id).sort(lowerCaseFirst).forEach((part) => {
-  let html = `<div>
-    <input type="checkbox" id="toggle-${part}" data-for="${part}" checked>
-<label for="toggle-${part}">${part}</label>
-  </div>
-  `
-  
-  let el = document.createElement('div')
-  el.innerHTML = html
-  toggles.appendChild(el)
-})
-
-toggles.addEventListener('change', (evt) => {
-  let toggle = evt.target
-  let checked = toggle.checked
-  
-  let selector = toggle.getAttribute('data-for')
-  let el = document.getElementById(selector)
-  
-  el.style.visibility = checked ? 'visible' : 'hidden'
-})
 
 let partyInterval
 document.querySelector('#party').addEventListener('change', (evt) => {
@@ -209,19 +176,14 @@ function setColor(value) {
     }
   })
 }
+
 function rotateHue(evt) {
   hue = evt.target.value
   svg.style = `filter: hue-rotate(${hue}deg)`
 }
 hueSlider.addEventListener('input', rotateHue)
-setColor(hue)
 
 startParty()
-
-document.querySelector('.js-random').addEventListener('click', randomize)
-document.querySelector('.js-random').addEventListener('click', shutItDown)
-document.querySelector('.js-reset').addEventListener('click', reset)
-document.querySelector('.js-reset').addEventListener('click', shutItDown) 
 
 function startParty() {
   randomize()
@@ -246,19 +208,6 @@ function reset() {
 
 function maybeToggle(part, prob) {
   let checked = Math.random() > prob
-  document.getElementById(`toggle-${part.id}`).checked = checked
   part.style.visibility = checked ? 'visible' : 'hidden'
-}
-
-// https://stackoverflow.com/a/35289761/4423351
-function lowerCaseFirst(a, b) {
-  if (a[0] === a[0].toLocaleLowerCase() && b[0] === b[0].toLocaleLowerCase() ||
-      a[0] === a[0].toLocaleUpperCase() && b[0] === b[0].toLocaleUpperCase()) {
-    return a.localeCompare(b)
-  }
-  if (a[0] === a[0].toLocaleLowerCase()) {
-    return -1
-  }
-  return 1
 }
 </script>
