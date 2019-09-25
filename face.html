@@ -2,6 +2,9 @@
 .controls {
   padding: 1em 2em;
   margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .controls details {
@@ -17,9 +20,9 @@
   margin: 1em 0;
 }
 
-svg {
+.js-face {
   max-width: 100%;
-  width: 600px;
+  width: 400px;
 }
 
 .play-toggle input[type="checkbox"] {
@@ -35,17 +38,23 @@ svg {
 }
 
 .play-toggle label {
-  font-size: 4rem;
+  font-size: 2rem;
+  line-height: 1;
   filter: grayscale(50%);
 }
 
-.hue-slider {
-  line-height: 4rem;
+@media (min-width: 40rem) {
+  .play-toggle label {
+    font-size: 4rem;  
+  }
 }
 
+.hue-slider {
+  margin-left: 2rem;
+}
 </style>
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" version="1.1" class="js-face">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="50 0 400 480" version="1.1" class="js-face">
     <title>This is me</title>
     <defs>
         <path d="M70.8757531,84.5852396 C22.5152317,75.6274301 3.14867539,118.51874 3.14867539,152.616941 C3.14867539,187.086471 67.2472195,183.048481 70.8757531,221.720701 C78.223141,300.027762 -15.6653619,375.597862 25.1005185,386.575502 C71.1015108,398.962878 138.720275,280.217717 244.409499,268.450733 C307.855544,261.386924 314.753159,356.647829 363.371057,348.913915 C418.070059,340.212648 494.996066,275.300586 451.043299,235.580371 C348.748414,143.136248 246.462544,117.109145 70.8757531,84.5852396 Z" id="path-1"/>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  {% include header.html %}
+  <link rel="stylesheet" href="{{ "/css/dots.css" | prepend: site.baseurl }}">
+
+  <body {% if page.active == "home" %}class="home"{% endif %}>
+
+    <div class="page-content">
+      <main>
+        {{ content }}
+      </main>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
