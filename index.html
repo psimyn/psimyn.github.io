@@ -1,5 +1,42 @@
 ---
-layout: default
+layout: full_width
 active: home
 ---
-This page is blank
+
+<style>
+  .grid {
+    padding: 1rem;
+    max-width: 72rem;
+  }
+
+  .face {
+    max-width: 28rem;
+    min-width: 40%;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    max-width: 40rem;
+  }
+
+  @media (min-width: 36rem) {
+    .grid {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 2rem;
+    }
+
+    .about-text {
+      width: 60%;
+    }
+  }
+</style>
+
+<div class="grid">
+  <div class="face">
+    {% include_relative face.html %}
+  </div>
+  <div class="about-text">
+    {% include_relative about/_me.html %}
+  </div>
+</div>
