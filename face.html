@@ -182,6 +182,8 @@
   
 
 <script>
+let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+
 let allParts = [].slice.call(document.querySelectorAll('svg *')).filter(n => n.id)
 let svg = document.querySelector('.js-face')
 let hueSlider = document.querySelector('.js-hue')
@@ -218,6 +220,12 @@ hueSlider.addEventListener('input', rotateHue)
 
 startParty()
 
+prefersReducedMotion.addEventListener('change', () => {
+  if (prefersReducedMotion.matches) {
+    shutItDown()
+  }
+})
+
 function startParty() {
   randomize()
   hue = (hue + 1) % 360
@@ -240,6 +248,9 @@ function reset() {
 }
 
 function maybeToggle(part, prob) {
+  if (prefersReducedMotion.matches) {
+    return
+  }
   let checked = Math.random() > prob
   part.style.visibility = checked ? 'visible' : 'hidden'
 }
