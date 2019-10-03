@@ -2,17 +2,22 @@
  * Site footer
  */
 
+.site-footer h3 {
+  margin-left: 1em;
+}
+
  .site-footer a {
+  color: white;
   margin: 1em;
   font-weight: bold;
 
   &:visited {
-    color: $brand-color;
+    color: white;
   }
 
   &:hover,
   &:focus {
-    color: lighten($brand-color, 10%);
+    color: white;
   }
  }
 
