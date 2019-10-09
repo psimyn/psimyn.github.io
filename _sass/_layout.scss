@@ -94,7 +94,6 @@
 }
 
 .content {
-    background-color: white;
     min-height: 80vh;
     margin: 1em 2em 0 1em;
     position: relative;
@@ -189,6 +188,12 @@ $border-radius: 100px 16px 16px 160px;
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-meta {
+    color: #bbb;
+  }
 }
 
 .post-link {

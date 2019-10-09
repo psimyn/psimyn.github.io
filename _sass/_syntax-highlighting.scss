@@ -7,6 +7,10 @@
 
     .highlighter-rouge & {
       background: #eef;
+
+      @media (prefers-color-scheme: dark) {
+        background: #334;
+      }
     }
 
     .c     { color: #998; font-style: italic } // Comment

@@ -223,3 +223,29 @@ pre {
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background-color: #180026;
+  }
+
+  .site-nav .page-link {
+    color: #eee;
+  }
+
+  a {
+    color: #59e8e8;
+  }
+
+  a:hover {
+    color: #69e8e8;
+  }
+
+  code {
+    background-color: #334;
+    border-color: #334;
+  }
+}
+
+
