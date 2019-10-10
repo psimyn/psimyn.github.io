@@ -55,7 +55,6 @@
 }
 
 .content {
-    background-color: white;
     min-height: 80vh;
     margin: 1em 2em 0 1em;
     position: relative;
@@ -103,6 +102,7 @@ footer {
 }
 
 .post-list {
+  margin-top: 3em;
     margin-left: 0;
     list-style: none;
 
@@ -114,6 +114,12 @@ footer {
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-meta {
+    color: #bbb;
+  }
 }
 
 .post-link {
@@ -130,7 +136,6 @@ footer {
 .post-title {
     font-size: 42px;
     letter-spacing: -1px;
-    line-height: 1;
 
     @include media-query($on-laptop) {
         font-size: 36px;
