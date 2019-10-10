@@ -1,0 +1,26 @@
+{
+  "name": "psimyn.com",
+  "version": "1.0.0",
+  "description": "The source for psimyn.com",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psimyn/psimyn.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "psimyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psimyn/psimyn.github.io/issues"
+  },
+  "homepage": "https://github.com/psimyn/psimyn.github.io#readme"
+}
