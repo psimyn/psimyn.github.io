@@ -5,7 +5,7 @@ active: home
 
 ## Me
 
-{% include_relative me.html %}
+{% include ./_me.html %}
 
 ## This site
 
