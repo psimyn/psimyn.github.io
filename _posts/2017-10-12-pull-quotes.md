@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Online Pull Quotes"
-date: 2017-10-12 21:01:07 +1100
+date: 2017-10-12T21:01:07
 categories: writing
 ---
 

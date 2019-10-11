@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Web Chess with Vue and Firebase"
-date: 2016-09-22 01:24:35 +1000
+date: 2016-09-22
 categories: frontend, vue
 ---
 

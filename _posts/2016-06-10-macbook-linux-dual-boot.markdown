@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "Dual-booting Linux and OSX"
-date: 2016-06-12 12:24:35 +1000
+date: 2016-06-12T12:24:35 +1000
 categories: linux
 ---
 
-After far too long putting up with OSX's crap, I finally cracked a few days ago. The actual install/setup bit was pretty straightforward, there was some screwing around getting HFS+ partition shared between the two (I wanted to share most stuff in home directory). For easiest, jump to [the good way](#the-good-way)
+After far too long putting up
+
+ with OSX's crap, I finally cracked a few days ago. The actual install/setup bit was pretty straightforward, there was some screwing around getting HFS+ partition shared between the two (I wanted to share most stuff in home directory). For easiest, jump to [the good way](#the-good-way)
 
 ## The Long Way
 

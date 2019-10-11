@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clean git history doesn't really matter"
-date: 2017-10-13 20:30:10 +1100
+date: 2017-10-13T20:30:10
 categories: git
 ---
 

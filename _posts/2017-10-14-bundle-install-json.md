@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "bundle install fails updating json"
-date: 2017-10-14 17:54:00 +1100
+date: 2017-10-14T17:54:00
 categories: ruby, annoying
 ---
 
