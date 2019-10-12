@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
   eleventyConfig.addLayoutAlias('post', 'layouts/post.html');
 
+  eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
   return {
     dir: {
       input: './',
