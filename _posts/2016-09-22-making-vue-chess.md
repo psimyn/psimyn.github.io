@@ -2,7 +2,9 @@
 layout: post
 title: "Web Chess with Vue and Firebase"
 date: 2016-09-22
-categories: frontend, vue
+tags:
+  - frontend
+  - vue
 ---
 
 Some notes for learning Vue.js by building Chess. Because todo apps aren't very realistic.
@@ -15,7 +17,7 @@ Messing about with boilerplate and setup isn't something I feel like doing right
 
 From their docs:
 
-```bash
+```
 npm i --global vue-cli
 vue init webpack vue-chess
 cd vue-chess
