@@ -9,7 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html');
   eleventyConfig.addLayoutAlias('full_width', 'layouts/full_width.html');
   eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.html');
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
@@ -50,18 +50,18 @@ module.exports = function(eleventyConfig) {
   );
 
   return {
-    //  templateFormats: [
-    //   "md",
-    //   "njk",
-    //   "html",
-    //   "liquid"
-    // ],
+     templateFormats: [
+      "md",
+      "njk",
+      "html",
+      "liquid"
+    ],
 
     // If your site lives in a different subdirectory, change this.
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
     // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
     // This is only used for URLs (it does not affect your file structure)
-    // pathPrefix: "/",
+    pathPrefix: "/",
 
     // markdownTemplateEngine: "liquid",
     // htmlTemplateEngine: "njk",
