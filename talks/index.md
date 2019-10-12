@@ -1,6 +1,6 @@
 ---
 title: Talks
-layout: default
+layout: layouts/home.njk
 tags:
   - nav
 navtitle: Talks
