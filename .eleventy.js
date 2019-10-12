@@ -7,7 +7,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html');
-  eleventyConfig.addLayoutAlias('full_width', 'layouts/full_width.html');
   eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
@@ -30,6 +29,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("projects");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("mask/img");
   eleventyConfig.addPassthroughCopy("favicons");
   eleventyConfig.addPassthroughCopy("css");
 

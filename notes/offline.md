@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: layouts/home.njk
 title: Offline Notes
 ---
 
