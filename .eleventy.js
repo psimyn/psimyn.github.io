@@ -23,12 +23,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
   eleventyConfig.addCollection('posts', function(collection) {
-    return collection.getAll().filter(function(item) {
+    return collection.getAllSorted().filter(function(item) {
       return item.inputPath.includes('_posts')
     })
   })
 
+  eleventyConfig.addPassthroughCopy("projects");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("favicons");
   eleventyConfig.addPassthroughCopy("css");
 
   /* Markdown Plugins */

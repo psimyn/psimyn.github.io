@@ -7,9 +7,11 @@
   <body {% if page.active == "home" %}class="home"{% endif %}>
 
     <div class="page-content">
-      <main>
-        {{ content }}
-      </main>
+      <div class="wrapper">
+        <main class="content">
+          {{ content }}
+        </main>
+      </div>
     </div>
 
     {% include footer.html %}

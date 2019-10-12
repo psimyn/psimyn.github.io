@@ -1,7 +1,7 @@
 ---
 title: Long File Names > Excessive Subfolders
 date: 2019-08-13T07:48:09+1000
-author: simon
+layout: post
 ---
 
 I love [this tweet](https://twitter.com/dan_abramov/status/1145354949871767552): "Long names, flat folders"
