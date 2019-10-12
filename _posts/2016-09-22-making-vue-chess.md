@@ -17,7 +17,7 @@ Messing about with boilerplate and setup isn't something I feel like doing right
 
 From their docs:
 
-```
+```bash
 npm i --global vue-cli
 vue init webpack vue-chess
 cd vue-chess

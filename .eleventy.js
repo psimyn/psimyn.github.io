@@ -24,10 +24,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection('posts', function(collection) {
     return collection.getAll().filter(function(item) {
-      return item.inputPath.startsWith('./_posts')
+      return item.inputPath.includes('_posts')
     })
   })
-
 
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
