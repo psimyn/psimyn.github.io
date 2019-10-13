@@ -158,7 +158,7 @@ pre {
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: var(--darkgray);
+  opacity: 0.7;
 }
 .postlist-date {
   word-spacing: -0.5px;
@@ -297,21 +297,6 @@ a[href].direct-link:focus:visited,
     font-size: 20px;
 }
 
-.post-list {
-  margin-top: 3em;
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
 @media (prefers-color-scheme: dark) {
   .post-meta {
     color: #bbb;
@@ -422,13 +407,15 @@ a[href].direct-link:focus:visited,
  */
 
 .site-footer h3 {
-  margin-left: 1em;
+  margin-left: 0.75em;
+  color: #ddd;
 }
 
- .site-footer a {
+ .site-footer a[href] {
   margin: 0.5em 1em;
   font-weight: bold;
   display: inline-block;
+  color: #ddd;
  }
 
 .site-footer {
