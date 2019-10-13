@@ -6,8 +6,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
-  eleventyConfig.addLayoutAlias('default', 'layouts/default.html');
-  eleventyConfig.addLayoutAlias('page', 'layouts/page.html');
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
   eleventyConfig.addFilter("readableDate", dateObj => {
