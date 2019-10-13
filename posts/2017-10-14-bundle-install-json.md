@@ -2,7 +2,9 @@
 layout: post
 title: "bundle install fails updating json"
 date: 2017-10-14T17:54:00
-categories: ruby, annoying
+tags:
+  - ruby
+  - annoyances
 ---
 
 This has happened to be at least a few times. It is usually when I dig up an old repo on a random machine and want to run a dev server. Or something. But I run `bundle install`, and get this super unhelpful error. In the case of my github-pages repo:

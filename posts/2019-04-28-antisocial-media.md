@@ -2,6 +2,7 @@
 title: Antisocial Business
 date: 2019-04-28T19:45:51+1000
 author: simon
+layout: post
 ---
 
 We've really managed to fuck up contact pages over the past decade. The contact page was a pretty simple concept. You would list email address, maybe a phone number, maybe have a contact form if you were particularly fancy (or a business..).

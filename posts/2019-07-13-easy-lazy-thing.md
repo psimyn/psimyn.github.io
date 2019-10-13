@@ -3,6 +3,7 @@ title: The Easy Lazy Thing
 date: 2019-07-13T22:44:24+1000
 author: simon
 draft: true
+layout: post
 ---
 
 It's very easy to put things off, so that's what I usually do. The most common way is getting stuck on some tiny detail, then obsessing over that and choosing not to proceed. Tech things are great for this - you can get stuck on tech stack, hardware choices, platforms to use, needless future planning. Millions of tiny details. Most don't matter.

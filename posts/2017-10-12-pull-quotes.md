@@ -2,7 +2,8 @@
 layout: post
 title: "Online Pull Quotes"
 date: 2017-10-12T21:01:07
-categories: writing
+tags:
+  - writing
 ---
 
 I hate pull quotes. I especially hate them for online articles. And _especially_ when they are on phones. But given the single-column-default of most online content currently, they are bad on any screen size.

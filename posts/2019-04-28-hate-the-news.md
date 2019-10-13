@@ -2,6 +2,7 @@
 title: I hate the news
 date: 2019-04-28T19:45:53+1000
 author: simon
+layout: post
 ---
 
 I hate the news. That the perception of staying informed takes priority of reading something actually useful to me. Or interesting. Or relevant.

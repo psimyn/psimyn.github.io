@@ -2,6 +2,7 @@
 title: In-Between Time
 date: 2019-08-06T13:31:07+1000
 author: simon
+layout: post
 ---
 
 There's a lot written about deep work, and flow states, the maker manager schedule, and the general importance of long uninterrupted blocks of time. But I often struggle to find these. I go days or weeks where little distractions keep popping up, and have a lot of shorter blocks.

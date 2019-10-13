@@ -2,7 +2,8 @@
 layout: post
 title: "Clean git history doesn't really matter"
 date: 2017-10-13T20:30:10
-categories: git
+tags:
+  - git
 ---
 
 There is often a lot of talk around how important it is to squash your commits, or to rebase your work into logical commits. These are not terrible ideas. Reading through the commit history of a project with tastefully crafted atomic commits makes for a fun afternoon. But I don't think it is as important as it is made out to be. That was a lot of two-letter words in one sentence.
