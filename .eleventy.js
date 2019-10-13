@@ -28,8 +28,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("projects");
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("mask/img");
-  eleventyConfig.addPassthroughCopy("favicons");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("favicon*");
+  eleventyConfig.addPassthroughCopy("mstile*");
+  eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("android-chrome*");
+  eleventyConfig.addPassthroughCopy("site.webmanifest");
+  eleventyConfig.addPassthroughCopy("safari-pinned-tab.svg");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
