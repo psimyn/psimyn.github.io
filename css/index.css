@@ -426,18 +426,9 @@ a[href].direct-link:focus:visited,
 }
 
  .site-footer a {
-  color: white;
-  margin: 1em;
+  margin: 0.5em 1em;
   font-weight: bold;
-
-  &:visited {
-    color: white;
-  }
-
-  &:hover,
-  &:focus {
-    color: white;
-  }
+  display: inline-block;
  }
 
 .site-footer {
