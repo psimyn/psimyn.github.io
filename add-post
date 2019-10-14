@@ -1,2 +1,1 @@
-touch _posts/$(date +%Y-%m-%d)-$1.md
-echo -e "---\ntitle: $1\ndate: $(date +%Y-%m-%dT%H:%M:%S%z)\nauthor: $(whoami)\ndraft: true\n---\n" >> _posts/$(date +%Y-%m-%d)-$1.md
+echo -e "---\ntitle: $1\ndate: $(date -I)\n---\n" >> posts/$1.md
