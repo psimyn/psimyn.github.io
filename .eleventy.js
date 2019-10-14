@@ -23,9 +23,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
-  eleventyConfig.addCollection('posts', function(collection) {
-    return collection.getAllSorted().filter(function(item) {
-      return item.inputPath.startsWith('./posts/');
+  let collections = ['links', 'posts'];
+  collections.forEach(function(name) {
+    eleventyConfig.addCollection(name, function(collection) {
+      return collection.getAllSorted().filter(function(item) {
+        return item.inputPath.startsWith(`./${name}/`);
+      });
     });
   });
 
