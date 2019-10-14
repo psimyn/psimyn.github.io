@@ -30,6 +30,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("mask/img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("CNAME");
+
+  eleventyConfig.addPassthroughCopy("favicons");
   eleventyConfig.addPassthroughCopy("favicon*");
   eleventyConfig.addPassthroughCopy("mstile*");
   eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
