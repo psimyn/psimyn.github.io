@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
   collections.forEach(function(name) {
     eleventyConfig.addCollection(name, function(collection) {
       return collection.getAllSorted().filter(function(item) {
-        return item.inputPath.startsWith(`./${name}/`);
+        return item.inputPath.startsWith(`./${name}/`) && !item.data.draft;
       });
     });
   });
