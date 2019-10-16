@@ -8,8 +8,8 @@ It had enough endorsements from tech people I respect to be at least ok, and did
 
 I read through [the defacto guide for Jekyll to Eleventy Porting](https://24ways.org/2018/turn-jekyll-up-to-eleventy/). Most was still valid; the only out-of-date thing was that layout directory is now configurable!
 
-First attempt was to just clone the starter blog repo and move my pages into that. But that led to some kind of build error that I didn't feel like troubleshooting at the time. Instead I opted for incremental. `npm install --save-dev @11ty/eleventy` and gradually add as needed. I did this in a branch and just opted things in until everything appeared to be working.
+First attempt was to just clone the starter blog repo and move my pages into that. But that led to some kind of build error that I didn't feel like troubleshooting at the time. Instead I opted for incremental - `npm install --save-dev @11ty/eleventy` and gradually add as needed. I did this in a branch and just opted things in until everything appeared to be working.
 
 After getting basic pages and posts, I added in tags and played around with some other content types. Have also now added a Links page inspired by [Adactio](https://adactio.com/links).
 
-Overall very simple, I like not having too much framework-lock and like that I could easily switch if something terrible happens with this. Seems solid so far though. Everything has been ok to figure out, and being in JS has made it pretty easy to troubleshoot
+Overall very simple, I like not having too much framework-lock and like that I could easily switch if something terrible happens with this. Seems solid so far though. Everything has been ok to figure out, and being in JS has made it pretty easy to troubleshoot. Debugging framework code is easy to give up on. I didn't look too far into debugging Liquid.js errors in some failed template compilations, but a stacktrace of 3 files was nicer to look at than one of twenty.
