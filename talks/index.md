@@ -7,7 +7,9 @@ navtitle: Talks
 ---
 # Talks
 
-Here are most of the talks I have given, with notes/slides when I remember. They probably won't make much sense without context, but people seem to enjoy having them.
+
+
+Here are most of the talks I have given. Slides/notes are currently unavailable while I move some files around. They probably won't make much sense without context, anyway, but people seem to enjoy having them.
 
 ## 2019
 
