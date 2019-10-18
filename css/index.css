@@ -230,16 +230,8 @@ a[href].direct-link:focus:visited,
 .site-header {
     display: flex;
     align-items: center;
-    padding: 1em 2em;
+    padding: 1em;
 }
-
-@media (min-width: 40em) {
-  main,
-  .site-header  {
-    padding: 2rem;
-  }
-}
-
 .site-title {
     background: linear-gradient(to top, #0c9a9a 0%, #2aafe2 44%, #380036 90%);
     border-radius: 0.5rem 0.5rem 1.5rem;
@@ -439,12 +431,11 @@ a[href].direct-link:focus:visited,
  */
 
 .site-footer h3 {
-  margin-left: 0.75em;
   color: #ddd;
 }
 
  .site-footer a[href] {
-  margin: 0.5em 1em;
+  margin-right: 1em;
   font-weight: bold;
   display: inline-block;
   color: #ddd;
@@ -455,8 +446,16 @@ a[href].direct-link:focus:visited,
   width: 100%;
   background: #332233;
   border-top: 1px solid #eee;
-  padding: 1em;
+  padding: 1rem;
   position: relative;
+}
+
+@media (min-width: 40em) {
+  main,
+  .site-header,
+  .site-footer  {
+    padding: 2rem;
+  }
 }
 
 
