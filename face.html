@@ -209,7 +209,7 @@ function setColor(value) {
 }
 
 function rotateHue(evt) {
-  hue = evt.target.value
+  hue = parseInt(evt.target.value, 10)
   svg.style = `filter: hue-rotate(${hue}deg)`
 }
 hueSlider.addEventListener('input', rotateHue)
