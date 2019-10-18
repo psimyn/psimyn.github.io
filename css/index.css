@@ -396,6 +396,7 @@ a[href].direct-link:focus:visited,
 
     .project-image {
         max-width: 16em;
+        margin-right: 2rem;
     }
 }
 
