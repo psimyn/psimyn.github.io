@@ -1,10 +1,11 @@
 const { DateTime } = require("luxon")
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const build = require('./_data/build')
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
@@ -27,7 +28,8 @@ module.exports = function(eleventyConfig) {
   collections.forEach(function(name) {
     eleventyConfig.addCollection(name, function(collection) {
       return collection.getAllSorted().filter(function(item) {
-        return item.inputPath.startsWith(`./${name}/`) && !item.data.draft;
+        return item.inputPath.startsWith(`./${name}/`) &&
+          (!item.data.draft || build.environment == 'dev')
       });
     });
   });

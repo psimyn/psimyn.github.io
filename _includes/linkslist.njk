@@ -5,9 +5,36 @@
     <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">Added {{ post.date | readableDateTime }}</time>
     {% for tag in post.data.tags %}
       {%- if tag != "links" -%}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
+    {% if build.environment == "dev" %}
+      <span data-clipboard-text="{{ post.inputPath }}">Copy path</span>
+    {% endif %}
   </article>
 {% endfor %}
+
+{% if build.environment == "dev" %}
+<script>
+(function addClickHandlers() {
+  document.addEventListener('click', function(evt) {
+    let target = evt.target
+    let clipboardText = target.getAttribute('data-clipboard-text')
+
+    if (!clipboardText) return
+
+    copyToClipboard(clipboardText)
+  })
+})()
+
+function copyToClipboard(str) {
+  let el = document.createElement('textarea')
+  el.value = str
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+}
+</script>
+{% endif %}
