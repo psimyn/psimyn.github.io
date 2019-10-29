@@ -4,7 +4,7 @@
 	<subtitle></subtitle>
 	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
 	<link href="https://psimyn.com/"/>
-	<updated>2019-10-21T00:00:00-00:00</updated>
+	<updated>2019-10-21T11:00:00+11:00</updated>
 	<id>https://psimyn.com/</id>
 	<author>
 		<name>Simon Knox</name>
@@ -14,7 +14,7 @@
 	<entry>
 		<title>Web Chess with Vue and Firebase</title>
 		<link href="https://psimyn.com/posts/2016-09-22-making-vue-chess/"/>
-		<updated>2016-09-22T00:00:00-00:00</updated>
+		<updated>2016-09-22T10:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/2016-09-22-making-vue-chess/</id>
 		<content type="html">&lt;p&gt;Some notes for learning Vue.js by building Chess. Because todo apps aren&#39;t very realistic.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&quot;http://rc.vuejs.org/guide/&quot;&gt;Vue docs&lt;/a&gt; are pretty awesome. I&#39;m going with the RC docs for this - they are complete enough and anything missing is usually available in 1.0.&lt;/p&gt;
@@ -190,7 +190,7 @@ methods: {
 	<entry>
 		<title>Svelte First Impressions</title>
 		<link href="https://psimyn.com/posts/2016-12-14-svelte/"/>
-		<updated>2016-12-14T20:49:41-00:00</updated>
+		<updated>2016-12-15T07:49:41+11:00</updated>
 		<id>https://psimyn.com/posts/2016-12-14-svelte/</id>
 		<content type="html">&lt;p&gt;The Magical Disappearing UI Framework - a JS framework with no runtime. You can write code in familiar looking components/templates, which gets compiled to vanilla JS to serve to the browser. Created by Rich Harris, of rollup fame. He seems to solo a crazy number of projects, usually small and fast.&lt;/p&gt;
 &lt;ul&gt;
@@ -208,7 +208,7 @@ methods: {
 	<entry>
 		<title>Learning to swim again</title>
 		<link href="https://psimyn.com/posts/2017-10-10-swimming/"/>
-		<updated>2017-10-10T00:00:00-00:00</updated>
+		<updated>2017-10-10T11:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-10-swimming/</id>
 		<content type="html">&lt;p&gt;Following many years of computer use and not going outside, I decided to try some exercise again. There is a swimming pool a few minutes from my house, so that seemed like a good way to go. Hadn&#39;t really swam properly for 10+ years, and first few times I went I found myself completely exhausted after just a few laps. Was trying to do freestyle, and had forgotten how to breathe properly, how to kick and all sorts of basics. Eventually I remembered to google some advice after getting home (instead of getting distracted by code). Three super useful things took me from &amp;quot;can barely breathe after 3 laps&amp;quot; to swimming patiently and properly enough that I now usually swim until I get bored or run out of time.&lt;/p&gt;
 &lt;h3 id=&quot;1.-mouth-inhale%2C-nose-exhale&quot;&gt;1. Mouth inhale, nose exhale &lt;a class=&quot;direct-link&quot; href=&quot;#1.-mouth-inhale%2C-nose-exhale&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -229,7 +229,7 @@ methods: {
 	<entry>
 		<title>Online Pull Quotes</title>
 		<link href="https://psimyn.com/posts/2017-10-12-pull-quotes/"/>
-		<updated>2017-10-12T21:01:07-00:00</updated>
+		<updated>2017-10-13T08:01:07+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-12-pull-quotes/</id>
 		<content type="html">&lt;p&gt;I hate pull quotes. I especially hate them for online articles. And &lt;em&gt;especially&lt;/em&gt; when they are on phones. But given the single-column-default of most online content currently, they are bad on any screen size.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://adactio.com/journal/11102&quot;&gt;Jeremy Keith&lt;/a&gt; already wrote about this, and his post includes examples showing why they are bad. You can probably read it instead of the following few paragraphs since the sentiment is the same and his writing style is better. It still didn&#39;t tell me why they exist though..&lt;/p&gt;
@@ -244,7 +244,7 @@ methods: {
 	<entry>
 		<title>Clean git history doesn&#39;t really matter</title>
 		<link href="https://psimyn.com/posts/2017-10-13-clean-git-history/"/>
-		<updated>2017-10-13T20:30:10-00:00</updated>
+		<updated>2017-10-14T07:30:10+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-13-clean-git-history/</id>
 		<content type="html">&lt;p&gt;There is often a lot of talk around how important it is to squash your commits, or to rebase your work into logical commits. These are not terrible ideas. Reading through the commit history of a project with tastefully crafted atomic commits makes for a fun afternoon. But I don&#39;t think it is as important as it is made out to be. That was a lot of two-letter words in one sentence.&lt;/p&gt;
 &lt;p&gt;In real-life code often you might want to do things like &amp;quot;remove this wrapper function from modules&amp;quot;. Or &amp;quot;run &lt;code&gt;lint --fix&lt;/code&gt; and commit the result&amp;quot;. But at the risk of ruining the commit history we don&#39;t do it. And the inconsistencies keep going and growing. These types of commits always exist though. From the &amp;quot;burn down the codebase and start again&amp;quot; type initial commit, &amp;quot;convert all tabs/spaces to spaces/tabs&amp;quot;.&lt;/p&gt;
@@ -256,7 +256,7 @@ methods: {
 	<entry>
 		<title>bundle install fails updating json</title>
 		<link href="https://psimyn.com/posts/2017-10-14-bundle-install-json/"/>
-		<updated>2017-10-14T17:54:00-00:00</updated>
+		<updated>2017-10-15T04:54:00+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-14-bundle-install-json/</id>
 		<content type="html">&lt;p&gt;This has happened to be at least a few times. It is usually when I dig up an old repo on a random machine and want to run a dev server. Or something. But I run &lt;code&gt;bundle install&lt;/code&gt;, and get this super unhelpful error. In the case of my github-pages repo:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;An error occurred while installing json (1.8.3), and Bundler cannot continue.
@@ -311,7 +311,7 @@ make failed, exit code 2
 	<entry>
 		<title>tmux</title>
 		<link href="https://psimyn.com/posts/2018-08-16-tmux/"/>
-		<updated>2018-08-16T09:07:50-00:00</updated>
+		<updated>2018-08-16T19:07:50+10:00</updated>
 		<id>https://psimyn.com/posts/2018-08-16-tmux/</id>
 		<content type="html">&lt;p&gt;I often start a long running command and then realise I didn&#39;t start tmux.&lt;br&gt;
 probably npm install. Or a long awaited apt update.&lt;/p&gt;
@@ -355,7 +355,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 	<entry>
 		<title>Writing Habit</title>
 		<link href="https://psimyn.com/posts/2019-02-19-writing/"/>
-		<updated>2019-02-19T06:49:41-00:00</updated>
+		<updated>2019-02-19T17:49:41+11:00</updated>
 		<id>https://psimyn.com/posts/2019-02-19-writing/</id>
 		<content type="html">&lt;p&gt;I love this &lt;a href=&quot;http://eleganthack.com/temporal-landmarks/&quot;&gt;excellent Eleganthack post&lt;/a&gt; about writing daily. Aiming to form a  more regular writing habit by short daily attempts, rather than annual marathons.&lt;/p&gt;
 &lt;p&gt;Daily (or most-day) habits are a good way to stick to things. You quickly identify when you stop doing something if you miss a few days. Then you can either correct it and resume, or decide it&#39;s not worth it and move on. Dropping habits that you don&#39;t miss is as important as adding new ones - you cannot add activities ad-finitum to a finite day.&lt;/p&gt;
@@ -369,7 +369,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 	<entry>
 		<title>Self-Hosting File Sync</title>
 		<link href="https://psimyn.com/posts/2019-02-23-file-sync/"/>
-		<updated>2019-02-22T23:23:41-00:00</updated>
+		<updated>2019-02-23T10:23:41+11:00</updated>
 		<id>https://psimyn.com/posts/2019-02-23-file-sync/</id>
 		<content type="html">&lt;p&gt;I&#39;ve been investigating self-hosted Dropbox alternatives. Partly privacy, partly due to running low on space all the time. Based on time&lt;br&gt;
 investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/p&gt;
@@ -407,7 +407,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Antisocial Business</title>
 		<link href="https://psimyn.com/posts/2019-04-28-antisocial-media/"/>
-		<updated>2019-04-28T09:45:51-00:00</updated>
+		<updated>2019-04-28T19:45:51+10:00</updated>
 		<id>https://psimyn.com/posts/2019-04-28-antisocial-media/</id>
 		<content type="html">&lt;p&gt;We&#39;ve really managed to fuck up contact pages over the past decade. The contact page was a pretty simple concept. You would list email address, maybe a phone number, maybe have a contact form if you were particularly fancy (or a business..).&lt;/p&gt;
 &lt;p&gt;Now contact pages tend to have a link to the company facebook page, sometimes accompanied by either a form that doesn&#39;t work, or an email address that noone checks. So annoyingly, if I actually want a timely response it usually means messaging over Facebook. Real identity, walled-garden, I-don&#39;t-actually-agree-with-some-of-the-terms arguments aside, this annoys me for a technical reason.&lt;/p&gt;
@@ -418,7 +418,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>I hate the news</title>
 		<link href="https://psimyn.com/posts/2019-04-28-hate-the-news/"/>
-		<updated>2019-04-28T09:45:53-00:00</updated>
+		<updated>2019-04-28T19:45:53+10:00</updated>
 		<id>https://psimyn.com/posts/2019-04-28-hate-the-news/</id>
 		<content type="html">&lt;p&gt;I hate the news. That the perception of staying informed takes priority of reading something actually useful to me. Or interesting. Or relevant.&lt;/p&gt;
 &lt;p&gt;Incentive for news is to be first, and to get readers&lt;/p&gt;
@@ -439,7 +439,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Floss Trials</title>
 		<link href="https://psimyn.com/posts/2019-07-14-floss-trials/"/>
-		<updated>2019-07-14T12:01:32-00:00</updated>
+		<updated>2019-07-14T22:01:32+10:00</updated>
 		<id>https://psimyn.com/posts/2019-07-14-floss-trials/</id>
 		<content type="html">&lt;p&gt;Choosing a dental floss is harder than I thought. Trying a new floss is a low cost but long running experiment. Only costs a few dollars, but now I have 100m of it now and already hate it not even 10m in. The floss itself is ok, flatter profile than before. But it keeps coming off the damn spool and I have to crack open the container and fix it. I didn&#39;t sign up for this, Colgate.&lt;/p&gt;
 &lt;p&gt;Now conflicted about whether to:&lt;/p&gt;
@@ -460,7 +460,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Greyscale Screen</title>
 		<link href="https://psimyn.com/posts/2019-07-16-greyscale-screen/"/>
-		<updated>2019-07-16T06:26:04-00:00</updated>
+		<updated>2019-07-16T16:26:04+10:00</updated>
 		<id>https://psimyn.com/posts/2019-07-16-greyscale-screen/</id>
 		<content type="html">&lt;p&gt;I&#39;ve just switching work laptop to greyscale mode. Done partly to stop apps stealing attention with bright colors, partly to test for accessibility day-to-day. Most difficult thing so far has been viewing diffs; I have to pay more attention to the +/- at the start of the line. Most other stuff has been surprisingly ok. Apps generally look a bit simpler. Video calls feel like watching a movie from the 40s.&lt;/p&gt;
 &lt;p&gt;For macOS the setting is in &lt;em&gt;System Preferences &amp;gt; Accessibility &amp;gt; Display &amp;gt; Use greyscale&lt;/em&gt;&lt;br&gt;
@@ -472,7 +472,7 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 	<entry>
 		<title>In-Between Time</title>
 		<link href="https://psimyn.com/posts/2019-08-06-in-between-times/"/>
-		<updated>2019-08-06T03:31:07-00:00</updated>
+		<updated>2019-08-06T13:31:07+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-06-in-between-times/</id>
 		<content type="html">&lt;p&gt;There&#39;s a lot written about deep work, and flow states, the maker manager schedule, and the general importance of long uninterrupted blocks of time. But I often struggle to find these. I go days or weeks where little distractions keep popping up, and have a lot of shorter blocks.&lt;/p&gt;
 &lt;p&gt;Right now it&#39;s 10 minutes at a train station. That&#39;s long enough to be a slightly boring wait, but not a great environment for relaxing, meditating or thinking. Not quite long enough to leave the station and walk to coffee and get back. And I don&#39;t want to default to clearing a few articles/emails off my phone; that is a losing battle and basically a waste of time.&lt;/p&gt;
@@ -484,7 +484,7 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 	<entry>
 		<title>new URL()</title>
 		<link href="https://psimyn.com/posts/2019-08-08-new-url/"/>
-		<updated>2019-08-07T14:14:13-00:00</updated>
+		<updated>2019-08-08T00:14:13+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-08-new-url/</id>
 		<content type="html">&lt;p&gt;I was looking at this code that gives you query params of a page, defaulting to the current page.&lt;/p&gt;
 &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getQueryParams&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;search&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -517,7 +517,7 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 	<entry>
 		<title>Long File Names &gt; Excessive Subfolders</title>
 		<link href="https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/"/>
-		<updated>2019-08-12T21:48:09-00:00</updated>
+		<updated>2019-08-13T07:48:09+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/</id>
 		<content type="html">&lt;p&gt;I love &lt;a href=&quot;https://twitter.com/dan_abramov/status/1145354949871767552&quot;&gt;this tweet&lt;/a&gt;: &amp;quot;Long names, flat folders&amp;quot;&lt;/p&gt;
 &lt;p&gt;And &lt;a href=&quot;https://twitter.com/adamwathan/status/1145109572081860610a&quot;&gt;Adam Wathan&#39;s original&lt;/a&gt;&lt;/p&gt;
@@ -530,7 +530,7 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 	<entry>
 		<title>Jekyll to Eleventy</title>
 		<link href="https://psimyn.com/posts/jekyll-to-eleventy/"/>
-		<updated>2019-10-13T00:00:00-00:00</updated>
+		<updated>2019-10-13T11:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/jekyll-to-eleventy/</id>
 		<content type="html">&lt;p&gt;After literally years of deliberation and procrastination I decided to migrate my site from Jekyll to Eleventy.&lt;/p&gt;
 &lt;p&gt;It had enough endorsements from tech people I respect to be at least ok, and didn&#39;t seem overly complex to use. I&#39;d tried several of the more framework-oriented static site generators (Next, Nuxt, Gatsby) and they were a bit too much about build processes and graphql. I basically wanted something that would render markdown as HTML. Not having to learn Go was a selling point over Hugo.&lt;/p&gt;
@@ -544,7 +544,7 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 	<entry>
 		<title>How to Check your IP Address</title>
 		<link href="https://psimyn.com/posts/get-public-ip/"/>
-		<updated>2019-10-21T00:00:00-00:00</updated>
+		<updated>2019-10-21T11:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/get-public-ip/</id>
 		<content type="html">&lt;p&gt;Using dig:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dig +short myip.opendns.com @resolver1.opendns.com
