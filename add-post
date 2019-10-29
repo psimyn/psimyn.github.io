@@ -1,1 +1,1 @@
-echo -e "---\ntitle: $1\ndate: $(date -I)\n---\n" >> posts/$1.md
+echo -e "---\ntitle: $1\ndate: $(date -I)\ndraft: true]\n---\n" >> posts/$1.md

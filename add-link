@@ -1,4 +1,4 @@
 
 FILENAME="links/"$1".md"
-echo -e "---\ntitle: $1\nurl: $2\ndate: $(date -Iminutes)\ntags:\n  -\n---\n" >> $FILENAME
+echo -e "---\ntitle: $1\nurl: $2\ndate: $(date -Iminutes)\ndraft: true\ntags:\n  -\n---\n" >> $FILENAME
 vim $FILENAME
