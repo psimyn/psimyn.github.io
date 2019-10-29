@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linksync</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>linksync</h1>
+
+<p>I switch between browsers quite a lot, mostly between firefox and chromium-based ones depending on what I'm doing or my current mood. Because of this I haven't been able to rely on bookmarks from browser, and prefer somewhere centrol to keep links. <a href="https://getpocket.com/">Pocket</a> has extensions for most browers, and gives a quite decent overlay UI for saving links and adding tags. The only thing I couldn't add was notes. I like to add short descriptions or notes and sometimes cross-link things to help remember and find things later.</p>
+<p><a href="">linksync</a> is a simple script that grabs items from the Pocket API that I've tagged with 'blog', grabs some data from each, and adds a new item in my websites <code>links</code> folder (as a draft). It will then pop up on my computer later. I'll maybe add a description or some additional tags, then save and publish the site. Eventually would like to automate that as well, but haven't decided how I want it to work yet. Probably just publish master will be simplest.</p>
+<ol>
+<li><a href="https://getpocket.com/developer/apps/new">Create a Pocket Application</a> and give it the Retreive permission.</li>
+<li>Manually went through the steps in the <a href="https://getpocket.com/developer/docs/authentication">Pocket Authentication API Docs</a></li>
+<li>Add queries from the <a href="https://getpocket.com/developer/docs/v3/retrieve">Pocket Retreive API</a></li>
+</ol>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/linksync/ -->
+  </body>
+</html>

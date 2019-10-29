@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean git history doesn&#39;t really matter</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Clean git history doesn&#39;t really matter</h1>
+
+<p>There is often a lot of talk around how important it is to squash your commits, or to rebase your work into logical commits. These are not terrible ideas. Reading through the commit history of a project with tastefully crafted atomic commits makes for a fun afternoon. But I don't think it is as important as it is made out to be. That was a lot of two-letter words in one sentence.</p>
+<p>In real-life code often you might want to do things like &quot;remove this wrapper function from modules&quot;. Or &quot;run <code>lint --fix</code> and commit the result&quot;. But at the risk of ruining the commit history we don't do it. And the inconsistencies keep going and growing. These types of commits always exist though. From the &quot;burn down the codebase and start again&quot; type initial commit, &quot;convert all tabs/spaces to spaces/tabs&quot;.</p>
+<p>If there is benefit in doing this (there often is), I don't think keeping git history clean is a valid counter argument. Ideally, tools should be able to ignore these commits. Maybe a <code>[fix-lint]</code> commit message or something, to signal that it should be skipped from blame/log exploration. Or always ignore insignificant whitespace. I don't know of any tools that do this currently, but it seems more useful finding a way to do this than wallowing in the gross inconsistencies of your current codebase.</p>
+<p>And ultimately, HEAD is the only commit most people are going to see anyway. You read current code more than a complete history of your code.</p>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/2017-10-13-clean-git-history/ -->
+  </body>
+</html>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>psimyn&#39;s place</title>
+	<subtitle></subtitle>
+	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
+	<link href="https://psimyn.com/"/>
+	<updated>2019-10-21T00:00:00-00:00</updated>
+	<id>https://psimyn.com/</id>
+	<author>
+		<name>Simon Knox</name>
+		<email>psimyn@gmail.com</email>
+	</author>
+	
+	<entry>
+		<title>Web Chess with Vue and Firebase</title>
+		<link href="https://psimyn.com/posts/2016-09-22-making-vue-chess/"/>
+		<updated>2016-09-22T00:00:00-00:00</updated>
+		<id>https://psimyn.com/posts/2016-09-22-making-vue-chess/</id>
+		<content type="html">&lt;p&gt;Some notes for learning Vue.js by building Chess. Because todo apps aren&#39;t very realistic.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://rc.vuejs.org/guide/&quot;&gt;Vue docs&lt;/a&gt; are pretty awesome. I&#39;m going with the RC docs for this - they are complete enough and anything missing is usually available in 1.0.&lt;/p&gt;
+&lt;h1 id=&quot;setup&quot;&gt;setup &lt;a class=&quot;direct-link&quot; href=&quot;#setup&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Messing about with boilerplate and setup isn&#39;t something I feel like doing right now, so going to use the &lt;a href=&quot;https://github.com/vuejs/vue-cli&quot;&gt;CLI&lt;/a&gt; to setup.&lt;/p&gt;
+&lt;p&gt;From their docs:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i --global vue-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;vue init webpack vue-chess&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; vue-chess&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also initialise git repo, and add gh-pages branch for hosting&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit .gitignore -m &lt;span class=&quot;token string&quot;&gt;&quot;init&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b gh-pages&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; -m &lt;span class=&quot;token string&quot;&gt;&quot;vue-cli setup&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This creates a (mostly) bare gh-pages branch - it will later be where we static and compiled files. Then switch back to master, and commit the remaining stuff from Vue.&lt;/p&gt;
+&lt;h1 id=&quot;setup-chess&quot;&gt;setup chess &lt;a class=&quot;direct-link&quot; href=&quot;#setup-chess&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;At this stage just going to install &lt;a href=&quot;https://github.com/brozeph/node-chess&quot;&gt;chess&lt;/a&gt;. This might be swapped out later, but seems to do everything and I don&#39;t want to worry about things like board validation just yet.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm i --save chess
+npm run dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;board-component&quot;&gt;Board component &lt;a class=&quot;direct-link&quot; href=&quot;#board-component&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Firstly update App to point to new component&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// src/App.vue
+&amp;lt;template&amp;gt;
+  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;
+    &amp;lt;board&amp;gt;&amp;lt;/board&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+import Board from &#39;./components/Board&#39;
+
+export default {
+  components: {
+    Board
+  }
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;style&amp;gt;
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  color: #2c3e50;
+  width: 100%;
+}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now board component: initialise a new game, and make &lt;code&gt;chess&lt;/code&gt;&#39; array of board.squares into rows and columns. Loop over these and print the square notation.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// src/components/Board.vue
+&amp;lt;template&amp;gt;
+  &amp;lt;div class=&amp;quot;board&amp;quot;&amp;gt;
+    &amp;lt;span v-for=&amp;quot;row in rows&amp;quot;&amp;gt;
+      &amp;lt;span v-for=&amp;quot;square in row&amp;quot;&amp;gt;
+        
+      &amp;lt;/span&amp;gt;
+    &amp;lt;/span&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+import chess from &#39;chess&#39;
+
+const gameClient = chess.create({PGN: true})
+
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    rows () {
+      const squares = gameClient.getStatus().board.squares
+      return squares.reduce((board, square, index) =&amp;gt; {
+        const createNewRow = index % 8 === 0
+        if (createNewRow) {
+          board.push([])
+        }
+        const lastRow = board.length - 1
+        board[lastRow].push(square)
+        return board
+      }, [])
+    }
+  }
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Make it look more like a board. Using Vue &lt;code&gt;scoped&lt;/code&gt; styles because names are difficult&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style scoped&amp;gt;
+.board {
+  padding: 1em;
+  background: rgba(88, 88, 88, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(22, 22, 22, 0.2);
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 auto;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+  background: white;
+  position: relative;
+}
+
+.row:nth-child(2n) .square:nth-child(2n),
+.row:nth-child(2n+1) .square:nth-child(2n+1) {
+  background: #bbb;
+}
+
+/* responsive squares */
+.square:after {
+  content: &#39; &#39;;
+  padding-bottom: 100%;
+  display: block;
+  height: 0;
+}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now found some SVG pieces&lt;/p&gt;
+&lt;p&gt;Adding a background&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&amp;lt;span
+  class=&amp;quot;piece&amp;quot;
+  v-bind:style=&amp;quot;{&#39;background-image&#39;: backgroundImage(square)}&amp;quot;
+&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+...
+methods: {
+  backgroundImage (square) {
+    if (!square.piece) return &#39;&#39;
+    const color = square.piece.side.name
+    const img = require(`../assets/${color}-${square.piece.type.toLowerCase()}.svg`)
+    return `url(${img})`
+  }
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;style&amp;gt;
+.piece {
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Svelte First Impressions</title>
+		<link href="https://psimyn.com/posts/2016-12-14-svelte/"/>
+		<updated>2016-12-14T20:49:41-00:00</updated>
+		<id>https://psimyn.com/posts/2016-12-14-svelte/</id>
+		<content type="html">&lt;p&gt;The Magical Disappearing UI Framework - a JS framework with no runtime. You can write code in familiar looking components/templates, which gets compiled to vanilla JS to serve to the browser. Created by Rich Harris, of rollup fame. He seems to solo a crazy number of projects, usually small and fast.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://svelte.technology/guide&quot;&gt;Docs&lt;/a&gt; have straightforward first example, then covers API docs. Missing some middle ground for setup, but very easy to follow&lt;/li&gt;
+&lt;li&gt;Includes a CLI, for easy setup&lt;/li&gt;
+&lt;li&gt;Main thing missing is hot/live reloading. For this can start by adding browser plugin or a build script to do this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Started with some sanity checks. &lt;code&gt;bind:checked&lt;/code&gt; works! Seems like an overly simple thing to test for, but checkboxes are important to me.&lt;/p&gt;
+&lt;p&gt;Component structure and props looks pretty familiar. Looks quite similar to Vue, with some minor syntax differences. e.g. template interpolation uses single &lt;code&gt;{}&lt;/code&gt; instead of double. Some parts look more like Handlebars, such as &lt;code&gt;{#each}&lt;/code&gt; instead of &lt;code&gt;v-for&lt;/code&gt;. But this makes the code vs template parts pretty clear and easy to see, which is  good. Has getters and setters for mutating state, and event emitters.&lt;/p&gt;
+&lt;p&gt;Currently no SSR, but first render is pretty snappy. Generated code is so much nicer to debug that React/Vue.&lt;/p&gt;
+&lt;p&gt;TLDR: Looks good! Let&#39;s make something with it.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Learning to swim again</title>
+		<link href="https://psimyn.com/posts/2017-10-10-swimming/"/>
+		<updated>2017-10-10T00:00:00-00:00</updated>
+		<id>https://psimyn.com/posts/2017-10-10-swimming/</id>
+		<content type="html">&lt;p&gt;Following many years of computer use and not going outside, I decided to try some exercise again. There is a swimming pool a few minutes from my house, so that seemed like a good way to go. Hadn&#39;t really swam properly for 10+ years, and first few times I went I found myself completely exhausted after just a few laps. Was trying to do freestyle, and had forgotten how to breathe properly, how to kick and all sorts of basics. Eventually I remembered to google some advice after getting home (instead of getting distracted by code). Three super useful things took me from &amp;quot;can barely breathe after 3 laps&amp;quot; to swimming patiently and properly enough that I now usually swim until I get bored or run out of time.&lt;/p&gt;
+&lt;h3 id=&quot;1.-mouth-inhale%2C-nose-exhale&quot;&gt;1. Mouth inhale, nose exhale &lt;a class=&quot;direct-link&quot; href=&quot;#1.-mouth-inhale%2C-nose-exhale&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Initially I was breathing out through my mouth. This meant when I turned my head out of the water I had a brief exhale before breathing in. This eats into a lot of head-out-of-water time, and you need that! &lt;a href=&quot;https://www.active.com/swimming/articles/4-steps-to-easy-breathing-in-freestyle-880607&quot;&gt;This great read&lt;/a&gt; suggested some out-of-water breathing to get used to it, then some practice in water until it feels more natural. Didn&#39;t take very long to get used to this again, and now have much more time to breathe while head is out of water.&lt;/p&gt;
+&lt;p&gt;Another one from that same link is to keep your head up while breathing (stay &amp;quot;tall&amp;quot;). I took this as looking forward when you turn your head, rather than backward. This keeps airway open and makes breathing much easier. Another obvious one, but you don&#39;t think of this when you are exhausted and actually in the pool.&lt;/p&gt;
+&lt;h3 id=&quot;2.-swim-slowly&quot;&gt;2. Swim slowly &lt;a class=&quot;direct-link&quot; href=&quot;#2.-swim-slowly&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Probably an obvious one, got this one from a random person at the pool. Rather than going for speed, just focus on doing things correctly. Part of this is getting comfortable with swimming slowly and continuously. Goal here is to find a comfortable pace to just keep on swimming comfortably. This is helped a lot by:&lt;/p&gt;
+&lt;h3 id=&quot;3.-little-kicks!&quot;&gt;3. Little kicks! &lt;a class=&quot;direct-link&quot; href=&quot;#3.-little-kicks!&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This made the biggest difference. Probably obvious, but my early attempts were doing big strong kicks to move a lot of water. Googling something along the lines of &amp;quot;swimming big kicks or little kicks&amp;quot; gave me a great article that I can no longer find. But the theme from other pieces is: &lt;strong&gt;make your kicks low effort&lt;/strong&gt;. Small kicks reduce your drag, which makes you much less tired. And important to relax your legs - kick the way you walk. So move your leg from the hip, and just relax the rest of your leg. Too much effort from knees or trying to point toes will just make you needlessly tired. Kicking doesn&#39;t give you much propulsion anyway - apparently most of it comes from the arms.&lt;/p&gt;
+&lt;p&gt;There is still much improvement to be made, but this has been the first exercise I&#39;ve committed to in a long time :)&lt;/p&gt;
+&lt;h3 id=&quot;some-links&quot;&gt;Some links &lt;a class=&quot;direct-link&quot; href=&quot;#some-links&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.triathlonmag.com.au/training/swim/7597-3-golden-rules-of-a-good-swim-kick-&quot;&gt;https://www.triathlonmag.com.au/training/swim/7597-3-golden-rules-of-a-good-swim-kick-&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;http://www.enjoy-swimming.com/flutter-kick.html&quot;&gt;http://www.enjoy-swimming.com/flutter-kick.html&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;http://www.swimsmooth.com/kick_adv.html&quot;&gt;http://www.swimsmooth.com/kick_adv.html&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Online Pull Quotes</title>
+		<link href="https://psimyn.com/posts/2017-10-12-pull-quotes/"/>
+		<updated>2017-10-12T21:01:07-00:00</updated>
+		<id>https://psimyn.com/posts/2017-10-12-pull-quotes/</id>
+		<content type="html">&lt;p&gt;I hate pull quotes. I especially hate them for online articles. And &lt;em&gt;especially&lt;/em&gt; when they are on phones. But given the single-column-default of most online content currently, they are bad on any screen size.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://adactio.com/journal/11102&quot;&gt;Jeremy Keith&lt;/a&gt; already wrote about this, and his post includes examples showing why they are bad. You can probably read it instead of the following few paragraphs since the sentiment is the same and his writing style is better. It still didn&#39;t tell me why they exist though..&lt;/p&gt;
+&lt;p&gt;In magazines or print media I can understand why they might make sense - someone flipping through pages and skimming the content sees an interesting quote in big colorful text. That draws you in to read the article, and you have an easier time skipping past that bit of text. Even so, I usually get at least halfway through a sentence before I realise it&#39;s the same damn one as 3cm away, and someone thought it was a good idea to write it twice..&lt;/p&gt;
+&lt;p&gt;But for online articles it makes no sense to me. In an online article, I am not casually flipping. I don&#39;t need an attention-grabber 3/4 of the way down the page to grab my interest. I am trying to read the piece!&lt;/p&gt;
+&lt;p&gt;You usually can&#39;t skip over them - they are eye-catching and large enough that you always see them. So you start reading the sentence and realise that it is the same as the one 3 lines above!&lt;/p&gt;
+&lt;p&gt;I don&#39;t know if there is a good reason for them being there, or it&#39;s still people trying to imitate print. Maybe this is for people who don&#39;t like to read the text, but still like to say they scrolled to the bottom of the page. Skim a few key quotes and call it read.&lt;/p&gt;
+&lt;p&gt;Maybe they&#39;ll make more sense with &lt;code&gt;display: grid&lt;/code&gt; or other clever layouts - I&#39;d be fine with pull quotes that were off to the side of the page (maybe). But full-width giant text taking up my whole phone screen? I do not want this.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Clean git history doesn&#39;t really matter</title>
+		<link href="https://psimyn.com/posts/2017-10-13-clean-git-history/"/>
+		<updated>2017-10-13T20:30:10-00:00</updated>
+		<id>https://psimyn.com/posts/2017-10-13-clean-git-history/</id>
+		<content type="html">&lt;p&gt;There is often a lot of talk around how important it is to squash your commits, or to rebase your work into logical commits. These are not terrible ideas. Reading through the commit history of a project with tastefully crafted atomic commits makes for a fun afternoon. But I don&#39;t think it is as important as it is made out to be. That was a lot of two-letter words in one sentence.&lt;/p&gt;
+&lt;p&gt;In real-life code often you might want to do things like &amp;quot;remove this wrapper function from modules&amp;quot;. Or &amp;quot;run &lt;code&gt;lint --fix&lt;/code&gt; and commit the result&amp;quot;. But at the risk of ruining the commit history we don&#39;t do it. And the inconsistencies keep going and growing. These types of commits always exist though. From the &amp;quot;burn down the codebase and start again&amp;quot; type initial commit, &amp;quot;convert all tabs/spaces to spaces/tabs&amp;quot;.&lt;/p&gt;
+&lt;p&gt;If there is benefit in doing this (there often is), I don&#39;t think keeping git history clean is a valid counter argument. Ideally, tools should be able to ignore these commits. Maybe a &lt;code&gt;[fix-lint]&lt;/code&gt; commit message or something, to signal that it should be skipped from blame/log exploration. Or always ignore insignificant whitespace. I don&#39;t know of any tools that do this currently, but it seems more useful finding a way to do this than wallowing in the gross inconsistencies of your current codebase.&lt;/p&gt;
+&lt;p&gt;And ultimately, HEAD is the only commit most people are going to see anyway. You read current code more than a complete history of your code.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>bundle install fails updating json</title>
+		<link href="https://psimyn.com/posts/2017-10-14-bundle-install-json/"/>
+		<updated>2017-10-14T17:54:00-00:00</updated>
+		<id>https://psimyn.com/posts/2017-10-14-bundle-install-json/</id>
+		<content type="html">&lt;p&gt;This has happened to be at least a few times. It is usually when I dig up an old repo on a random machine and want to run a dev server. Or something. But I run &lt;code&gt;bundle install&lt;/code&gt;, and get this super unhelpful error. In the case of my github-pages repo:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;An error occurred while installing json (1.8.3), and Bundler cannot continue.
+Make sure that `gem install json -v &#39;1.8.3&#39;` succeeds before bundling.
+
+In Gemfile:
+  github-pages was resolved to 80, which depends on
+    jekyll-mentions was resolved to 1.1.2, which depends on
+      html-pipeline was resolved to 2.4.1, which depends on
+        activesupport was resolved to 4.2.8, which depends on
+          json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So I try running what it says: &lt;code&gt;gem install json -v &#39;1.7.7&#39;&lt;/code&gt;. Which fails with this (don&#39;t worry about reading it):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[simon@mahayana psimyn.github.io]$ gem install json -v &#39;1.8.3&#39;
+Building native extensions.  This could take a while...
+ERROR:  Error installing json:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /home/simon/.gem/ruby/2.3.0/gems/json-1.8.3/ext/json/ext/generator
+/usr/bin/ruby -r ./siteconf20171014-13349-1574b2v.rb extconf.rb
+creating Makefile
+
+current directory: /home/simon/.gem/ruby/2.3.0/gems/json-1.8.3/ext/json/ext/generator
+make &amp;quot;DESTDIR=&amp;quot; clean
+
+current directory: /home/simon/.gem/ruby/2.3.0/gems/json-1.8.3/ext/json/ext/generator
+make &amp;quot;DESTDIR=&amp;quot;
+compiling generator.c
+generator.c: In function ‘generate_json’:
+generator.c:861:25: error: ‘rb_cFixnum’ undeclared (first use in this function); did you mean ‘mFixnum’?
+     } else if (klass == rb_cFixnum) {
+                         ^~~~~~~~~~
+                         mFixnum
+generator.c:861:25: note: each undeclared identifier is reported only once for each function it appears in
+generator.c:863:25: error: ‘rb_cBignum’ undeclared (first use in this function); did you mean ‘rb_cFixnum’?
+     } else if (klass == rb_cBignum) {
+                         ^~~~~~~~~~
+                         rb_cFixnum
+make: *** [Makefile:242: generator.o] Error 1
+
+make failed, exit code 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I don&#39;t even know what to do with that. But I don&#39;t want it. So this is &amp;quot;just randomly google the error&amp;quot; time. Issue is that certain versions of ruby want certain versions of json. Checking &lt;code&gt;ruby --version&lt;/code&gt; I am running 2.4, which is widely reported to not work with a lot of things (i.e. &lt;a href=&quot;https://github.com/flori/json/issues/303&quot;&gt;some json versions&lt;/a&gt; or &lt;a href=&quot;https://github.com/github/pages-gem/issues/376&quot;&gt;the pages gem&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;One solution at this point is to install rvm or chruby, then use Ruby 2.3.something and this stuff will just work. I don&#39;t really feel like doing that. Another is to just blindly update system deps and see if that fixes anything. Kind of a blunt hammer, I will learn nothing, but it sometimes works. Kick off a pacman/apt/brew/etc update in the background just in case other things aren&#39;t working. Good reason to do that anyway in case you always forget.&lt;/p&gt;
+&lt;p&gt;Eventually find I should have just read that chain of dependencies from the first error - need a newer json version, which was changed in a newer activesupport version. So need to update the version of activesupport.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bundle update activesupport
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sorted.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>tmux</title>
+		<link href="https://psimyn.com/posts/2018-08-16-tmux/"/>
+		<updated>2018-08-16T09:07:50-00:00</updated>
+		<id>https://psimyn.com/posts/2018-08-16-tmux/</id>
+		<content type="html">&lt;p&gt;I often start a long running command and then realise I didn&#39;t start tmux.&lt;br&gt;
+probably npm install. Or a long awaited apt update.&lt;/p&gt;
+&lt;p&gt;I remembered reading something before on &amp;quot;move current command to tmux&amp;quot;.&lt;br&gt;
+Went looking for that and found &lt;a href=&quot;https://superuser.com/a/748494/720701&quot;&gt;this SO&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ctrl z                   # pause the process
+bg                       # resume it in the background
+jobs -l
+# get process number
+disown PROCESS_NAME
+tmux
+reptyr pid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cannot test right now as I don&#39;t have repytr installed. More importanntly, I don&#39;t&lt;br&gt;
+want to remember that much. That&#39;s a lot of things to type every time.&lt;/p&gt;
+&lt;p&gt;Why not start tmux automatically when shell starts!&lt;/p&gt;
+&lt;p&gt;From &lt;a href=&quot;https://stackoverflow.com/a/11069117/4423351&quot;&gt;SO&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# warning this &amp;lt;mark&amp;gt;may&amp;lt;/mark&amp;gt; now corrupt your Ubuntu logins
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;BUT, as they go on with:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, there is a very small risk this can make bash behave in a way that other programs don&#39;t expect, since running bash can possibly cause it to turn into a tmux process, so it might be better to modify how you start your terminal emulator.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This does not sound good. So instead I will start auto-start tmux when launching the terminal emulator.&lt;/p&gt;
+&lt;p&gt;From &lt;a href=&quot;https://medium.com/@sasom/auto-starting-tmux-in-iterm2-4276182d452a&quot;&gt;Medium post&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Navigate to “Preferences &amp;gt; Profiles &amp;gt; PROFILE &amp;gt;Command &amp;gt; Send text at start” and set it to:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;tmux ls &amp;amp;&amp;amp; read tmux_session &amp;amp;&amp;amp; tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This caused an error&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Failed to execute tmux
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Writing Habit</title>
+		<link href="https://psimyn.com/posts/2019-02-19-writing/"/>
+		<updated>2019-02-19T06:49:41-00:00</updated>
+		<id>https://psimyn.com/posts/2019-02-19-writing/</id>
+		<content type="html">&lt;p&gt;I love this &lt;a href=&quot;http://eleganthack.com/temporal-landmarks/&quot;&gt;excellent Eleganthack post&lt;/a&gt; about writing daily. Aiming to form a  more regular writing habit by short daily attempts, rather than annual marathons.&lt;/p&gt;
+&lt;p&gt;Daily (or most-day) habits are a good way to stick to things. You quickly identify when you stop doing something if you miss a few days. Then you can either correct it and resume, or decide it&#39;s not worth it and move on. Dropping habits that you don&#39;t miss is as important as adding new ones - you cannot add activities ad-finitum to a finite day.&lt;/p&gt;
+&lt;p&gt;The idea of 15 minutes writing then five minutes editing is a nice starting point. I&#39;m interested to see how it develops; in particular if I can start using the 15 minutes for Hemingway-mode style writing with no deletions, rather than wasting valuable seconds rewording the previous sentence. As for editing in five minutes, beyond proofreading and minor fixes there is not much that can be done in five minutes. Maybe some basic structure changes, and spellchecking my broken keyboard typos.&lt;/p&gt;
+&lt;p&gt;I am often stuck on the &amp;quot;what to write&amp;quot; front. I take a lot of notes, but spread between dozens of different files and formats. Committing them somewhere more central is a good way to try to flesh out the thoughts more than simple two-line scrawls.&lt;/p&gt;
+&lt;p&gt;The distinction between private and public writing is also interesting. I&#39;ve never tried to journal or otherwise transcribe my inner monologue. I&#39;m quite curious what that would look like. I think (without having tried) that it&#39;s important to differentiate between private and public writing. When writing something not intended for anyone else to read, you can be more direct, more honest, and take more shortcuts. I know what my stupid 12 character acronyms stand for, and like not having to expand them.&lt;/p&gt;
+&lt;p&gt;Whether the 15 minutes alternates between public/private, or changes to 10 minutes, or something else, remains to be seen.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Self-Hosting File Sync</title>
+		<link href="https://psimyn.com/posts/2019-02-23-file-sync/"/>
+		<updated>2019-02-22T23:23:41-00:00</updated>
+		<id>https://psimyn.com/posts/2019-02-23-file-sync/</id>
+		<content type="html">&lt;p&gt;I&#39;ve been investigating self-hosted Dropbox alternatives. Partly privacy, partly due to running low on space all the time. Based on time&lt;br&gt;
+investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/p&gt;
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements &lt;a class=&quot;direct-link&quot; href=&quot;#requirements&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;multi-OS&lt;/strong&gt;. At a minimum need support for Android, Linux, Windows, &amp;amp; macOS.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;revision control&lt;/strong&gt;. At least be able to undelete files. Preferably fewer steps than git; just want to save and have it autosync&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;handle conflicts&lt;/strong&gt;. Don&#39;t blindly overwrite! Dropbox&#39;s approach is fine here, just create duplicate files and I&#39;ll resolve conflicts manually.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;uni or bidirectional sync&lt;/strong&gt;. For some folders, such as ebooks, I just want to push them to a device but not have that device send anything back. This is the case for most things on phone. Other than photos, very little of what gets downloaded on phone should come back. Maybe Downloads folder could go to a common &#39;Downloads&#39; dumping ground&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sync single folder&lt;/strong&gt;. While I&#39;ll try keeping a single root &amp;quot;Sync&amp;quot; folder, I&#39;d like to be able to add random folders to sync&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ignore files in a folder&lt;/strong&gt;. I had a desire for this at some point, though cannot remember what it was for&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For no reason in particular, the current shortlist is Syncthing and Nextcloud. For score reasonably green on Wikipedia&#39;s &lt;a href=&quot;https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software#Open-source&quot;&gt;Comparison of file sync software&lt;/a&gt;. Also considering Seafile, but have not looked for into it yet.&lt;/p&gt;
+&lt;h2 id=&quot;syncthing&quot;&gt;Syncthing &lt;a class=&quot;direct-link&quot; href=&quot;#syncthing&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This seems like a Dropbox replacement.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;peer-to-peer sharing, can turn off server whenever and it will sync later&lt;/li&gt;
+&lt;li&gt;sync single folders, share individual folders with devices&lt;/li&gt;
+&lt;li&gt;block-level transfer - faster sync of diffs&lt;/li&gt;
+&lt;li&gt;may get confusing if I have folders with same name from different devices. e.g. &#39;Music&#39; is a different thing on Phone vs Media pc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;nextcloud&quot;&gt;Nextcloud &lt;a class=&quot;direct-link&quot; href=&quot;#nextcloud&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;More of an application suite that also does file sync.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;good UI and setup process (docs, letsencrypt etc). Took 10 mins to install and setup.&lt;/li&gt;
+&lt;li&gt;User management and admin-y stuff. Good to share links/files easily&lt;/li&gt;
+&lt;li&gt;some internet reports of slowness after using for a while. Hard to guage without using for a while, but would want to keep exit strategy in mind.&lt;/li&gt;
+&lt;li&gt;less obvious about volume location. Docs say it&#39;s easier to nuke/restart than move storage location which is not great&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this stage I&#39;ve installed both Nextcloud and Syncthing, and doing some trial syncs for a few different workflows. Will try adding a tonne of files to Nextcloud and see if I get any slowdown or resource usage. Would be happy enough to continue using both, use Syncthing primarily, and as a backend for Nextcloud files, then use Nextcloud for more application-y stuff.&lt;/p&gt;
+&lt;p&gt;Next thing to look into is backups.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Antisocial Business</title>
+		<link href="https://psimyn.com/posts/2019-04-28-antisocial-media/"/>
+		<updated>2019-04-28T09:45:51-00:00</updated>
+		<id>https://psimyn.com/posts/2019-04-28-antisocial-media/</id>
+		<content type="html">&lt;p&gt;We&#39;ve really managed to fuck up contact pages over the past decade. The contact page was a pretty simple concept. You would list email address, maybe a phone number, maybe have a contact form if you were particularly fancy (or a business..).&lt;/p&gt;
+&lt;p&gt;Now contact pages tend to have a link to the company facebook page, sometimes accompanied by either a form that doesn&#39;t work, or an email address that noone checks. So annoyingly, if I actually want a timely response it usually means messaging over Facebook. Real identity, walled-garden, I-don&#39;t-actually-agree-with-some-of-the-terms arguments aside, this annoys me for a technical reason.&lt;/p&gt;
+&lt;p&gt;Facebook allows chatbots. Chatbots had the potential to be great. But they are still fucking awful and noone uses them. So the only reason facebook response is faster is because people are on there all the goddamn time. There are just people manning these accounts to respond to enquiries. We&#39;ve lost the simplicity of FAQs to only-the-most-recent comments, and lost potential email/chat automation by people just being content being on FB every waking hour. This is not a good direction if I just want to know your return policy.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>I hate the news</title>
+		<link href="https://psimyn.com/posts/2019-04-28-hate-the-news/"/>
+		<updated>2019-04-28T09:45:53-00:00</updated>
+		<id>https://psimyn.com/posts/2019-04-28-hate-the-news/</id>
+		<content type="html">&lt;p&gt;I hate the news. That the perception of staying informed takes priority of reading something actually useful to me. Or interesting. Or relevant.&lt;/p&gt;
+&lt;p&gt;Incentive for news is to be first, and to get readers&lt;/p&gt;
+&lt;p&gt;Being correct is less important. Clickbait is page 1, corrections are on page 9. And this isn&#39;t like the newspaper page 9, where people would actually flip past it. In digital news, page 9 is more like page 9 of Google results - noone sees it.&lt;/p&gt;
+&lt;p&gt;Farnam Street&#39;s &lt;a href=&quot;https://fs.blog/2013/12/stop-reading-news/&quot;&gt;You should stop reading the news&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From a podcast (I think also FS)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;try reading just yesterday&#39;s newspaper. Likely not nearly as interesting&lt;/li&gt;
+&lt;li&gt;if you are going to read something, will it still be interesting to you in a year?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aaron Schwartz&#39;s &lt;a href=&quot;http://www.aaronsw.com/weblog/hatethenews&quot;&gt;I hate the news&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;None of these stories have relevance to my life. Reading them may be enjoyable, but it’s an enjoyable waste of time. They will have no impact on my actions one way or another.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Floss Trials</title>
+		<link href="https://psimyn.com/posts/2019-07-14-floss-trials/"/>
+		<updated>2019-07-14T12:01:32-00:00</updated>
+		<id>https://psimyn.com/posts/2019-07-14-floss-trials/</id>
+		<content type="html">&lt;p&gt;Choosing a dental floss is harder than I thought. Trying a new floss is a low cost but long running experiment. Only costs a few dollars, but now I have 100m of it now and already hate it not even 10m in. The floss itself is ok, flatter profile than before. But it keeps coming off the damn spool and I have to crack open the container and fix it. I didn&#39;t sign up for this, Colgate.&lt;/p&gt;
+&lt;p&gt;Now conflicted about whether to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;stick it out for however many months&lt;/li&gt;
+&lt;li&gt;spend (waste) time trying to improve the spool and reduce loose threading&lt;/li&gt;
+&lt;li&gt;throw it away and
+&lt;ul&gt;
+&lt;li&gt;buy my regular floss&lt;/li&gt;
+&lt;li&gt;try yet another one&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Too many choices. So for now will stick with it and keep complainin.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Greyscale Screen</title>
+		<link href="https://psimyn.com/posts/2019-07-16-greyscale-screen/"/>
+		<updated>2019-07-16T06:26:04-00:00</updated>
+		<id>https://psimyn.com/posts/2019-07-16-greyscale-screen/</id>
+		<content type="html">&lt;p&gt;I&#39;ve just switching work laptop to greyscale mode. Done partly to stop apps stealing attention with bright colors, partly to test for accessibility day-to-day. Most difficult thing so far has been viewing diffs; I have to pay more attention to the +/- at the start of the line. Most other stuff has been surprisingly ok. Apps generally look a bit simpler. Video calls feel like watching a movie from the 40s.&lt;/p&gt;
+&lt;p&gt;For macOS the setting is in &lt;em&gt;System Preferences &amp;gt; Accessibility &amp;gt; Display &amp;gt; Use greyscale&lt;/em&gt;&lt;br&gt;
+For Android it&#39;s available at night with &#39;Digital Wellbeing&#39; app, but I had problems with that in the past so don&#39;t trust it. Looking for alternative.&lt;br&gt;
+On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filter&#39;)&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>In-Between Time</title>
+		<link href="https://psimyn.com/posts/2019-08-06-in-between-times/"/>
+		<updated>2019-08-06T03:31:07-00:00</updated>
+		<id>https://psimyn.com/posts/2019-08-06-in-between-times/</id>
+		<content type="html">&lt;p&gt;There&#39;s a lot written about deep work, and flow states, the maker manager schedule, and the general importance of long uninterrupted blocks of time. But I often struggle to find these. I go days or weeks where little distractions keep popping up, and have a lot of shorter blocks.&lt;/p&gt;
+&lt;p&gt;Right now it&#39;s 10 minutes at a train station. That&#39;s long enough to be a slightly boring wait, but not a great environment for relaxing, meditating or thinking. Not quite long enough to leave the station and walk to coffee and get back. And I don&#39;t want to default to clearing a few articles/emails off my phone; that is a losing battle and basically a waste of time.&lt;/p&gt;
+&lt;p&gt;It &lt;em&gt;is&lt;/em&gt; just enough time to write a couple paragraphs, which is probably a better outcome than gettig wired on coffee anyway.&lt;/p&gt;
+&lt;p&gt;Going to try to make productive use of these little snippets of down time. That isn&#39;t to say I&#39;ll be always-on. Intentionally switching off is important. And proper, real, unstructured, unoptimized downtime; time to be bored or let your mind wander. But not at the train station.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>new URL()</title>
+		<link href="https://psimyn.com/posts/2019-08-08-new-url/"/>
+		<updated>2019-08-07T14:14:13-00:00</updated>
+		<id>https://psimyn.com/posts/2019-08-08-new-url/</id>
+		<content type="html">&lt;p&gt;I was looking at this code that gives you query params of a page, defaulting to the current page.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getQueryParams&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;search&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then tests were failing. In tests we were mocking &lt;code&gt;window.location&lt;/code&gt; and returning a simple object.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// so browsers don&#39;t complain about read-only properties&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;setWindowLocation&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;defineProperty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;location&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    writable&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Javascript is great sometimes. Readonly property bringing you down? Just indirectly add a property to it and say that it&#39;s writeable.&lt;/p&gt;
+&lt;p&gt;Anyways, that was causing a test to fail.&lt;/p&gt;
+&lt;p&gt;We call it with an object like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function queryThing(url = window.location) {
+  let wut = new URL(url)
+  return wut.search
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;new URL({})&lt;/code&gt; is invalid. Weeeiiiiiird.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/URL/URL#Parameters&quot;&gt;MDN URL constructor page&lt;/a&gt; shows parameters are meant to be strings. They say both arguments should be Strings (&#39;USVString maps to a String when returned in JavaScript&#39;  [1])&lt;/p&gt;
+&lt;p&gt;There is a note about the second argument:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: You can still use an existing URL object for the base, which stringifies itself to the object&#39;s href attribute.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;maybe it is something special about &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Location&quot;&gt;Location&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But does it have to be a URL object? What about a regular object? In JS that looks like this:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fakeLocation &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  href&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;https://great.com&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token function-variable function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;href&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fakeLocation&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// works!&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// shorthand way&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; fakeLocation &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  href&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;https://great.com&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;href&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;--&lt;/p&gt;
+&lt;p&gt;Time to check the spec. &lt;a href=&quot;https://url.spec.whatwg.org/#constructors&quot;&gt;URL Constructors section&lt;/a&gt; gives the steps of parsing. That references the Basic URL Parser with more steps. But everything only ever mentions a string for the first arg.&lt;/p&gt;
+&lt;p&gt;Still no idea how/why this happpens. Had a skim of the Chromium source and found where the error was coming from, and it&#39;s some kind of binding is happening somewhere. Got a semi explanation from #chromium IRC channel but I do not understand enough to pursue it yet.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Long File Names &gt; Excessive Subfolders</title>
+		<link href="https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/"/>
+		<updated>2019-08-12T21:48:09-00:00</updated>
+		<id>https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/</id>
+		<content type="html">&lt;p&gt;I love &lt;a href=&quot;https://twitter.com/dan_abramov/status/1145354949871767552&quot;&gt;this tweet&lt;/a&gt;: &amp;quot;Long names, flat folders&amp;quot;&lt;/p&gt;
+&lt;p&gt;And &lt;a href=&quot;https://twitter.com/adamwathan/status/1145109572081860610a&quot;&gt;Adam Wathan&#39;s original&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Multiple files with same name is unclear - typing index.js in a project with hundreds of them is not a good time. Needless categorisation and sorting is not very useful, and having a bunch of folders with only one or two files is just frustrating to navigate.&lt;/p&gt;
+&lt;p&gt;Browsing relevant files for an app is way easier if I can just see a list without clicking through folders all the time. Grouping can be done with filename prefixes/suffixes.&lt;/p&gt;
+&lt;p&gt;Fewer folders, longer filenames!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Jekyll to Eleventy</title>
+		<link href="https://psimyn.com/posts/jekyll-to-eleventy/"/>
+		<updated>2019-10-13T00:00:00-00:00</updated>
+		<id>https://psimyn.com/posts/jekyll-to-eleventy/</id>
+		<content type="html">&lt;p&gt;After literally years of deliberation and procrastination I decided to migrate my site from Jekyll to Eleventy.&lt;/p&gt;
+&lt;p&gt;It had enough endorsements from tech people I respect to be at least ok, and didn&#39;t seem overly complex to use. I&#39;d tried several of the more framework-oriented static site generators (Next, Nuxt, Gatsby) and they were a bit too much about build processes and graphql. I basically wanted something that would render markdown as HTML. Not having to learn Go was a selling point over Hugo.&lt;/p&gt;
+&lt;p&gt;I read through &lt;a href=&quot;https://24ways.org/2018/turn-jekyll-up-to-eleventy/&quot;&gt;the defacto guide for Jekyll to Eleventy Porting&lt;/a&gt;. Most was still valid; the only out-of-date thing was that layout directory is now configurable!&lt;/p&gt;
+&lt;p&gt;First attempt was to just clone the starter blog repo and move my pages into that. But that led to some kind of build error that I didn&#39;t feel like troubleshooting at the time. Instead I opted for incremental - &lt;code&gt;npm install --save-dev @11ty/eleventy&lt;/code&gt; and gradually add as needed. I did this in a branch and just opted things in until everything appeared to be working.&lt;/p&gt;
+&lt;p&gt;After getting basic pages and posts, I added in tags and played around with some other content types. Have also now added a Links page inspired by &lt;a href=&quot;https://adactio.com/links&quot;&gt;Adactio&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Overall very simple, I like not having too much framework-lock and like that I could easily switch if something terrible happens with this. Seems solid so far though. Everything has been ok to figure out, and being in JS has made it pretty easy to troubleshoot. Debugging framework code is easy to give up on. I didn&#39;t look too far into debugging Liquid.js errors in some failed template compilations, but a stacktrace of 3 files was nicer to look at than one of twenty.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>How to Check your IP Address</title>
+		<link href="https://psimyn.com/posts/get-public-ip/"/>
+		<updated>2019-10-21T00:00:00-00:00</updated>
+		<id>https://psimyn.com/posts/get-public-ip/</id>
+		<content type="html">&lt;p&gt;Using dig:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dig +short myip.opendns.com @resolver1.opendns.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or using curl:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl https://ipinfo.io/ip
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+</feed>

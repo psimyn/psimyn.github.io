@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Chess with Vue and Firebase</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Web Chess with Vue and Firebase</h1>
+
+<p>Some notes for learning Vue.js by building Chess. Because todo apps aren't very realistic.</p>
+<p>The <a href="http://rc.vuejs.org/guide/">Vue docs</a> are pretty awesome. I'm going with the RC docs for this - they are complete enough and anything missing is usually available in 1.0.</p>
+<h1 id="setup">setup <a class="direct-link" href="#setup" aria-hidden="true">#</a></h1>
+<p>Messing about with boilerplate and setup isn't something I feel like doing right now, so going to use the <a href="https://github.com/vuejs/vue-cli">CLI</a> to setup.</p>
+<p>From their docs:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> i --global vue-cli</span><br><span class="highlight-line">vue init webpack vue-chess</span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> vue-chess</span><br><span class="highlight-line"><span class="token function">npm</span> i</span></code></pre>
+<p>Also initialise git repo, and add gh-pages branch for hosting</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> init</span><br><span class="highlight-line"><span class="token function">git</span> commit .gitignore -m <span class="token string">"init"</span></span><br><span class="highlight-line"><span class="token function">git</span> checkout -b gh-pages</span><br><span class="highlight-line"><span class="token function">git</span> checkout master</span><br><span class="highlight-line"><span class="token function">git</span> commit <span class="token builtin class-name">.</span> -m <span class="token string">"vue-cli setup"</span></span></code></pre>
+<p>This creates a (mostly) bare gh-pages branch - it will later be where we static and compiled files. Then switch back to master, and commit the remaining stuff from Vue.</p>
+<h1 id="setup-chess">setup chess <a class="direct-link" href="#setup-chess" aria-hidden="true">#</a></h1>
+<p>At this stage just going to install <a href="https://github.com/brozeph/node-chess">chess</a>. This might be swapped out later, but seems to do everything and I don't want to worry about things like board validation just yet.</p>
+<pre><code>npm i --save chess
+npm run dev
+</code></pre>
+<h1 id="board-component">Board component <a class="direct-link" href="#board-component" aria-hidden="true">#</a></h1>
+<p>Firstly update App to point to new component</p>
+<pre><code>// src/App.vue
+&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;board&gt;&lt;/board&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Board from './components/Board'
+
+export default {
+  components: {
+    Board
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  color: #2c3e50;
+  width: 100%;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Now board component: initialise a new game, and make <code>chess</code>' array of board.squares into rows and columns. Loop over these and print the square notation.</p>
+<pre><code>// src/components/Board.vue
+&lt;template&gt;
+  &lt;div class=&quot;board&quot;&gt;
+    &lt;span v-for=&quot;row in rows&quot;&gt;
+      &lt;span v-for=&quot;square in row&quot;&gt;
+        
+      &lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import chess from 'chess'
+
+const gameClient = chess.create({PGN: true})
+
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    rows () {
+      const squares = gameClient.getStatus().board.squares
+      return squares.reduce((board, square, index) =&gt; {
+        const createNewRow = index % 8 === 0
+        if (createNewRow) {
+          board.push([])
+        }
+        const lastRow = board.length - 1
+        board[lastRow].push(square)
+        return board
+      }, [])
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>Make it look more like a board. Using Vue <code>scoped</code> styles because names are difficult</p>
+<pre><code>&lt;style scoped&gt;
+.board {
+  padding: 1em;
+  background: rgba(88, 88, 88, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(22, 22, 22, 0.2);
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 auto;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+  background: white;
+  position: relative;
+}
+
+.row:nth-child(2n) .square:nth-child(2n),
+.row:nth-child(2n+1) .square:nth-child(2n+1) {
+  background: #bbb;
+}
+
+/* responsive squares */
+.square:after {
+  content: ' ';
+  padding-bottom: 100%;
+  display: block;
+  height: 0;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Now found some SVG pieces</p>
+<p>Adding a background</p>
+<pre><code>&lt;template&gt;
+&lt;span
+  class=&quot;piece&quot;
+  v-bind:style=&quot;{'background-image': backgroundImage(square)}&quot;
+&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+...
+methods: {
+  backgroundImage (square) {
+    if (!square.piece) return ''
+    const color = square.piece.side.name
+    const img = require(`../assets/${color}-${square.piece.type.toLowerCase()}.svg`)
+    return `url(${img})`
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.piece {
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+&lt;/style&gt;
+</code></pre>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/2016-09-22-making-vue-chess/ -->
+  </body>
+</html>

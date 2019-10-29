@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psimyn&#39;s place</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-home">
+      
+<style>
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  } 
+
+  .container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  canvas {
+    max-width: 100vmin;
+    max-height: 100vmin;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vmin;
+    max-height: 100vmin;
+  }
+
+  .face {
+    animation-name: jumpin;
+    animation-duration: 7s;
+    animation-delay: 2s;
+    animation-direction: normal, reverse;
+    animation-iteration-count: infinite;
+    z-index: 2;
+  }
+
+  @keyframes jumpin {
+    0%, 20% {
+      transform: translate3d(0,0,0);
+    }
+    10%, 15% {
+      transform: translate3d(6%, -8%, 0);
+    }
+  }
+
+  .mask {
+    z-index: 4;
+  }
+
+  .static {
+    animation-name: static;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    transition: none;
+  }
+
+  .static0 {
+    animation-delay: 0.64s;
+  }
+
+  .static1 {
+    opacity: 0;
+    animation-delay: 0.16s;
+  }
+
+  .static2 {
+    opacity: 0;
+    animation-delay: 0.32s;
+  }
+
+  .static3 {
+    opacity: 0;
+    animation-delay: 0.48s;
+  }
+  @keyframes static {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 1;
+    }
+  }
+
+
+  .cone {
+    position: relative;
+    max-width: 900px;
+    padding-top: 150%;
+  }
+
+  .pinecone {
+    max-width: 810px;
+    left: 22%;
+  }
+
+  .eye {
+    left: 43.8%;
+    margin-top: 41.3%;
+    left: 61.8%;
+    margin-top: 58.7%;
+    transition: transform 0.2s ease;
+    animation: blink 6s infinite;
+  }
+
+  .eye2 {
+    left: 47.2%;
+    margin-top: 32.2%;
+    left: 46.4%;
+    margin-top: 31.9%;
+    left: 66.4%;
+    margin-top: 45.4%;
+    animation: blink 5s infinite;
+    animation-delay: 2s;
+  }
+
+  @keyframes blink {
+    0%, 40%, 47% {
+      transform: scale(1);
+    }
+    44% {
+      transform: scaleY(0.1);
+    }
+  }
+</style>
+</head>
+<body>
+Added CSS animations to artwork. Originals by Vanessa Valbuena
+<div class="container">
+  <img class="face" src="img/face.png" />
+  <img class="static static0" src="img/static0.png" />
+  <img class="static static1" src="img/static1.png" />
+  <img class="static static2" src="img/static2.png" />
+  <img class="static static3" src="img/static3.png" />
+  <img class="mask" src="img/mask.png" />
+  <img class="mask" src="img/splat.png" />
+</div>
+<div class="cone">
+  <img class="pinecone" src="img/pinecone.png" />
+  <img class="eye" src="img/eye.png" />
+  <img class="eye2" src="img/eye2.png" />
+</div>
+<script>
+
+  var images = []
+
+  function Layer(src) {
+    var img = new Image();
+    img.src = src;
+    img.onload = function() {
+      images.push(img);
+    }
+    return img;
+  }
+
+  function drawFrame() {
+    for (var i=0; i < images.length; i++) {
+      var image = images[i];
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d')
+      if ((/static(\d)\.png/).test(image.src)) {
+        if (Math.random() < 0.28) {
+          ctx.drawImage(image, 0, 0)
+        }
+      } else {
+        ctx.drawImage(image, 0, 0)
+      }
+    }
+    requestAnimationFrame(drawFrame)
+
+  }
+  var canvas = document.querySelector('canvas');
+  var mask = new Layer('img/mask.png');
+  var face = new Layer('img/face.png');
+  var splat = new Layer('img/splat.png');
+  var static = [0, 1, 2, 3];
+  for (var i=0; i < static.length; i++) {
+    static[i] = new Layer('img/static' + i + '.png')
+  }
+
+//      requestAnimationFrame(drawFrame)
+</script>
+
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /mask/ -->
+  </body>
+</html>

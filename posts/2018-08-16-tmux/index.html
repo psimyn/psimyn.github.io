@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tmux</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>tmux</h1>
+
+<p>I often start a long running command and then realise I didn't start tmux.<br>
+probably npm install. Or a long awaited apt update.</p>
+<p>I remembered reading something before on &quot;move current command to tmux&quot;.<br>
+Went looking for that and found <a href="https://superuser.com/a/748494/720701">this SO</a></p>
+<pre><code>ctrl z                   # pause the process
+bg                       # resume it in the background
+jobs -l
+# get process number
+disown PROCESS_NAME
+tmux
+reptyr pid
+</code></pre>
+<p>cannot test right now as I don't have repytr installed. More importanntly, I don't<br>
+want to remember that much. That's a lot of things to type every time.</p>
+<p>Why not start tmux automatically when shell starts!</p>
+<p>From <a href="https://stackoverflow.com/a/11069117/4423351">SO</a></p>
+<pre><code># warning this &lt;mark&gt;may&lt;/mark&gt; now corrupt your Ubuntu logins
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+</code></pre>
+<p>BUT, as they go on with:</p>
+<blockquote>
+<p>However, there is a very small risk this can make bash behave in a way that other programs don't expect, since running bash can possibly cause it to turn into a tmux process, so it might be better to modify how you start your terminal emulator.</p>
+</blockquote>
+<p>This does not sound good. So instead I will start auto-start tmux when launching the terminal emulator.</p>
+<p>From <a href="https://medium.com/@sasom/auto-starting-tmux-in-iterm2-4276182d452a">Medium post</a></p>
+<blockquote>
+<p>Navigate to “Preferences &gt; Profiles &gt; PROFILE &gt;Command &gt; Send text at start” and set it to:</p>
+</blockquote>
+<pre><code>tmux ls &amp;&amp; read tmux_session &amp;&amp; tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}
+</code></pre>
+<p>This caused an error</p>
+<pre><code>Failed to execute tmux
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+</code></pre>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/2018-08-16-tmux/ -->
+  </body>
+</html>

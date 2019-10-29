@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Notes</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-home">
+      <ol>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#scratchpad">Mostly incoherent brain dump</a></li>
+<li><a href="#offline-examples">Examples</a></li>
+<li><a href="#links">References</a></li>
+</ol>
+<h2 id="questions">Questions <a class="direct-link" href="#questions" aria-hidden="true">#</a></h2>
+<ul>
+<li>
+<p>why go offline</p>
+</li>
+<li>
+<p>what is offline support?</p>
+</li>
+<li>
+<p>why is it often bad</p>
+</li>
+<li>
+<p>how to do it</p>
+</li>
+<li>
+<p>what does offline/disconnected MEAN?</p>
+</li>
+<li>
+<p>what can cause connection problems?</p>
+</li>
+<li>
+<p>why does it matter in australia</p>
+</li>
+<li>
+<p>should offline be the same as online experience? can it be?</p>
+</li>
+<li>
+<p>should I jarringly reconnect ASAP or try for smooth transition</p>
+</li>
+<li>
+<p>is there perf impact to lots of requests being made and 404ing? should i pause</p>
+</li>
+<li>
+<p>when should you tell user they are offline? instant vs when a request fails. It depends</p>
+</li>
+<li>
+<p>how to add this to my existing stack?</p>
+</li>
+<li>
+<p>what is back/forward cache?</p>
+</li>
+<li>
+<p>do i need service worker?</p>
+</li>
+<li>
+<p>what is wrong with basic offline support?</p>
+</li>
+<li>
+<p>should I show stale data or blank page?</p>
+</li>
+<li>
+<p>how to indicate stale data?</p>
+</li>
+<li>
+<p>does stale data matter? always/sometimes?</p>
+</li>
+</ul>
+<h2 id="notes">Notes <a class="direct-link" href="#notes" aria-hidden="true">#</a></h2>
+<h3 id="1.-why">1. Why <a class="direct-link" href="#1.-why" aria-hidden="true">#</a></h3>
+<ul>
+<li>current offline UX mostly awful</li>
+<li>offline not just for offline. slow internet is almost worse</li>
+<li>but offline still common with mobile networks</li>
+<li>and lots of still-offline locations</li>
+<li>we can!</li>
+</ul>
+<h3 id="2.-how">2. How <a class="direct-link" href="#2.-how" aria-hidden="true">#</a></h3>
+<p>How do we know if someone is offline? What does offline even mean?</p>
+<p>detecting offline is easy - not connected to any network. So no wifi or cable.<br>
+But if you <em>are</em> connected to a network, how can you tell if that's the internet<br>
+or just a regular net?</p>
+<p><code>navigator.onLine</code>. weird casing.<br>
+this can tell you if you are offline (<code>onLine === false</code>) or &quot;not offline&quot; (<code>navigator.onLine === true</code>). Not offline is not necessarily online.</p>
+<p>If their router is connected (and real), maybe their ISP is down. Maybe their government censors content. If the ISP is up, mayeb the server of the site is down.<br>
+Or at capacity.</p>
+<p>So the most reliable way to test it monitor network requests. If a bunch of them<br>
+fail, you're probably offline. There's some events you can listen for, you could<br>
+use a dedicated polling thing that checks some cheap isUp endpoint, whatever.<br>
+Lots of options here.</p>
+<p>brief PSA on using .catch correctly. What does .catch mean for fetch<br>
+what does it mean for your network lib, or your API wrappers or whatever.<br>
+Learn some stuff about errors they are great.<br>
+Optimistic approach to errors means expecting them. Plan for them. Do something better than showing unhelpful error.</p>
+<p>Assume someone clicks a button, then puts their phone straight back into their pocket. And their pants are made of lead, blocking any signal.</p>
+<h3 id="3.-what">3. What <a class="direct-link" href="#3.-what" aria-hidden="true">#</a></h3>
+<p>Plan for the person that has been to site once before. Now they're waiting at an airport,<br>
+their flight has been delayed 45 minutes, and they want to read some more.</p>
+<p><strong>Step 1. offline.html</strong><br>
+Plain page to replace browser default.<br>
+Bad news for Chrome users. No longer have a dinosaur game, or the Download When Online button.<br>
+Arguably worse experience than browser default.</p>
+<p><strong>Step 2. blog.html</strong><br>
+So we want something better than static page, let's give people some content.<br>
+Fallback to &quot;sorry, can't get that. Would you like to view one of these?&quot;</p>
+<p>NB: on pre-emptive loading. Be nice to people's data. TODO: is there a way to detect<br>
+network type ala &quot;wifi only download&quot;? Assume small is ok, so you can download text<br>
+content and maybe small images. Check what your market is ok with.</p>
+<p>We can do better than this still. If we can grab text in the background, and we have<br>
+a &quot;people also enjoyed:&quot; links. Use Analytics data, and then pre-emptively fetches content<br>
+for those in idle times. So if you come to my blog and visit two pages, auto-download a couple more.</p>
+<p>Also the idea of timebox/location-based &quot;predictive&quot; offline. If a user is going<br>
+to leave the house and going to the station, sync some things that matter. (opt-in to download all)</p>
+<p>This is a common pattern for News, Social Media, anything that is post-oriented is ok.<br>
+In SW/Toolbox terms it's called staleWhileRevalidate.<br>
+But holy shit please do not use this for time-sensitive data. Especially not if<br>
+you are printing relative times on screen. Looking at you PTV app.</p>
+<p><strong>Step 3. forms</strong></p>
+<p>Adds a lot of potential, and a lot of complexity</p>
+<p>The traditional optimistic UI: like/star button<br>
+works, but does nothing. Probably not a big deal<br>
+The offline optimistic UI: updates live now, really later.<br>
+Button queues a request, then actually updates later. Sounds simple... BUT:</p>
+<ul>
+<li>should you notify the user?
+<ul>
+<li>if it succeeds, probably not.</li>
+<li>If it fails?...
+<ul>
+<li>&quot;Your like failed. Click here if you still like it&quot;</li>
+<li>toast next time they are in app.</li>
+<li>(ab)use push notifications</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Race conditions:</p>
+<ul>
+<li>Like button clicked on Phone. Phone placed in faraday cage. Or lead pants</li>
+<li>Like button clicked on PC. Change of mind, thing unliked.</li>
+</ul>
+<p>So, so far so simple. Let's try a more complex form.</p>
+<p>You know what is worse than filling out forms? Submitting them when you're offline and<br>
+getting an error page. Because then you have to fill them out twice.</p>
+<p>For any short fields, make autocomplete work. For comment fields, longer notes,<br>
+save locally. And save lots. Discarded data is very annoying.</p>
+<p>Caveat: don't cache sensitive info. In either formdata or localstorage.<br>
+Also applies to caching data that requires auth. If you need to be logged in,<br>
+you can encrypt data locally and access with a token, or keep it in sessionStorage<br>
+or something else. But be sure that the data doesn't live longer than a session</p>
+<p>Step 4. Collaborative Docs</p>
+<p>This is where data storage method gets more important. You cannot just store &quot;here's the text&quot;<br>
+type values anymore. Think about changes, about conflicts.</p>
+<p>NB: sending and handling notifications offline. What happens if someone clicks a<br>
+notification while offline? It closes. Does your site work? Can they save it or<br>
+get notified again when they can reach it. Can you pre-emptively fetch the page content.<br>
+Should you? There are limits, don't be a dick</p>
+<p>Step 5. Chat / Games etc</p>
+<p>Highly interactive, network-dependent.<br>
+This requires a different experience for online vs offline. e.g. Bot that pops up<br>
+&quot;you're offline, want me to send that for you later?&quot;<br>
+For games, you could drop into training mode. e.g. Chess - &quot;Currently offline, analyze board&quot;.<br>
+Or &quot;continue against computer&quot;. Or training mode.</p>
+<h2 id="scratchpad">Scratchpad <a class="direct-link" href="#scratchpad" aria-hidden="true">#</a></h2>
+<p>Connection continuum: Offline -- Flaky -- Slow -- Fast</p>
+<p>Slow and fast are self explanatory. Flaky is an interesting case. What do you think<br>
+would happen if every 4th request failed? That is something like what happens<br>
+when you have congestion issues. Some requests will take ages, some will fail.</p>
+<p>Quality continuum: someone else's error &lt;&lt; your error &lt;&lt; some content &lt;&lt; the actual content</p>
+<p>Be Optimistic - Assume devices will reconnect at some point.</p>
+<p>Australian internet is rather awful - e.g speedtest screenshot from home<br>
+Also: <a href="https://twitter.com/SwiftOnSecurity/status/1008561176408707078">https://twitter.com/SwiftOnSecurity/status/1008561176408707078</a></p>
+<p>show that the default offline experience means abandoning people. You are trusting<br>
+the browser to do something</p>
+<p>requests are like sheep. Body can only be consumed once, so <code>clone</code> first</p>
+<hr>
+<p>whatsapp is good for offline - message just gets sent.<br>
+duplicates not a big deal; most people only use one device, so won't accidentally send twice<br>
+facebook failed file upload from phone<br>
+Self-first sync (for chat). Confirm before auto sending. More hassle than benefit</p>
+<hr>
+<p>Does offline last? Why was Guardian crossword shutdown? TODO. Maintenance concerns??</p>
+<p>Updating cached data when your service worker updates<br>
+note on updating SW version without losing your precious offline pages. You need em.</p>
+<p>if you are offline, it should tell you as soon as possssible<br>
+if your connection is slow, should offer them the chance to come back later</p>
+<p>button for dinosaur game that uses chrome's version<br>
+alternatively just use regular js version</p>
+<hr>
+<p>Polling</p>
+<ul>
+<li>don't retry non-repeatable actions<br>
+e.g. if Post Comment starts polling</li>
+</ul>
+<p><strong>Offline sync</strong><br>
+this is the sync problem compounded. Because you are very likely to cause<br>
+conflicts somewhere. if you do cause conflicts, cause them in the way that<br>
+doesn't again cause future conflicts. Let's quickly look at something that does<br>
+a terrible job of this: git. We are editing the following 3 line file. 3 lines,<br>
+what could possibly happen.</p>
+<p>Jane and Jim are editing a shared file. line 1 has some text added by both<br>
+Now both see a conflicts view.<br>
+This is designed to be resolved offline.</p>
+<p>Choosing a sync model<br>
+this is a tricky, tricky thing<br>
+but pretty great experience. If we have comments, and I want to copy them to notepad or something, then back to the browser, I should be able to do that<br>
+Rather than storing text, store actions/deltas. See redux, quilljs etc for things here.</p>
+<p>Online vs Offline conflict resolution. Offline is actually easier, pushes the responsibility<br>
+onto them. Online requires lock or something. There are tools to<br>
+help with this (firebase or quilljs), but you want to have a conceptual understanding<br>
+of what's going on</p>
+<p>Offline-only mode</p>
+<ul>
+<li>You must be offline to continue page (offline-only page)</li>
+<li>could have focus mode, and you add not distracted mode which requires you be disconnected</li>
+</ul>
+<p>tip: I started this in dropbox note. simple and pretty reliable (NEVER want to lose)<br>
+terrible sync support though. If it detects a conflict it just duplicates your files</p>
+<p>Getting Buy In: if you need to convince people of business value.</p>
+<ul>
+<li>
+<p>tell them you can do push notifications. Marketing people love push notifcations. I think they are horrible. But that's your in.</p>
+</li>
+<li>
+<p>resumeable downloads. Probably handled by browser (since some chrome version)<br>
+but for time limited auth some things might need to be done.</p>
+</li>
+</ul>
+<h3 id="devs-vs-users">Devs vs users <a class="direct-link" href="#devs-vs-users" aria-hidden="true">#</a></h3>
+<ul>
+<li>avoid making too much distinction between users and devs. Hopefully you should be both. If not, please please<br>
+start using your site more. Helps develop empathy.</li>
+<li>having reload cache all the time can be good. But then you forget what its really like for users.<br>
+Most people don't force reload all the time. So make sure that you're sure that your caches are being invalidated<br>
+and people aren't stuck with the new stuff forever</li>
+</ul>
+<h2 id="offline-examples">Offline Examples <a class="direct-link" href="#offline-examples" aria-hidden="true">#</a></h2>
+<ul>
+<li>Trivago maze</li>
+<li>Guardian crossword</li>
+<li>Ethan Marcotte site</li>
+<li>Jeremy Keith site</li>
+<li>Google Docs offline</li>
+<li>Flipkart (disables almost everything)</li>
+<li>Offline Wikipedia</li>
+<li>Much of <a href="https://pwa.rocks/">https://pwa.rocks/</a></li>
+</ul>
+<h2 id="links">Links <a class="direct-link" href="#links" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://abookapart.com/products/going-offline">Going Offline</a></li>
+<li><a href="https://serviceworke.rs/">Service Worker Cookbook</a></li>
+<li><a href="https://hacks.mozilla.org/2018/05/progressive-web-apps-core-guides-on-mdn-web-docs/">PWA Core Guides</a></li>
+<li><a href="https://github.com/GoogleChromeLabs/sw-toolbox">SW Toolbox</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/">Offline Cookbook</a></li>
+<li><a href="https://www.youtube.com/watch?v=CPP9ew4Co0M">Service Worker Outbreak</a></li>
+<li><a href="https://www.youtube.com/watch?v=Z7sRMg0f5Hk">Network Connectivity: Optional</a></li>
+<li><a href="https://www.fastly.com/blog/stale-while-revalidate-stale-if-error-available-today">Stale while revalidate</a></li>
+<li><a href="https://github.com/pazguille/offline-first">Offline First</a></li>
+<li><a href="https://medium.com/offline-camp/notifications-and-alerts-for-an-offline-first-world-30aae486873c">Notifications for Offline</a></li>
+<li><a href="https://medium.com/@marcinbaraniecki/serviceworkers-in-practice-b04b4c650b96">Service Workers in Practice</a></li>
+<li><a href="https://design.google/library/offline-design/">Design for Offline</a></li>
+<li><a href="https://mxb.at/blog/youre-offline/">You're Offline</a></li>
+<li><a href="https://adactio.com/journal/14013">Detecting Image Requests</a></li>
+<li><a href="https://blog.mgechev.com/2018/05/09/introducing-guess-js-data-driven-user-experiences-web/">Guess.js Intro</a></li>
+</ul>
+
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /notes/offline/ -->
+  </body>
+</html>

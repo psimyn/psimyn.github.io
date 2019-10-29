@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jekyll to Eleventy</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn&#39;s place">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Jekyll to Eleventy</h1>
+
+<p>After literally years of deliberation and procrastination I decided to migrate my site from Jekyll to Eleventy.</p>
+<p>It had enough endorsements from tech people I respect to be at least ok, and didn't seem overly complex to use. I'd tried several of the more framework-oriented static site generators (Next, Nuxt, Gatsby) and they were a bit too much about build processes and graphql. I basically wanted something that would render markdown as HTML. Not having to learn Go was a selling point over Hugo.</p>
+<p>I read through <a href="https://24ways.org/2018/turn-jekyll-up-to-eleventy/">the defacto guide for Jekyll to Eleventy Porting</a>. Most was still valid; the only out-of-date thing was that layout directory is now configurable!</p>
+<p>First attempt was to just clone the starter blog repo and move my pages into that. But that led to some kind of build error that I didn't feel like troubleshooting at the time. Instead I opted for incremental - <code>npm install --save-dev @11ty/eleventy</code> and gradually add as needed. I did this in a branch and just opted things in until everything appeared to be working.</p>
+<p>After getting basic pages and posts, I added in tags and played around with some other content types. Have also now added a Links page inspired by <a href="https://adactio.com/links">Adactio</a>.</p>
+<p>Overall very simple, I like not having too much framework-lock and like that I could easily switch if something terrible happens with this. Seems solid so far though. Everything has been ok to figure out, and being in JS has made it pretty easy to troubleshoot. Debugging framework code is easy to give up on. I didn't look too far into debugging Liquid.js errors in some failed template compilations, but a stacktrace of 3 files was nicer to look at than one of twenty.</p>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/jekyll-to-eleventy/ -->
+  </body>
+</html>
