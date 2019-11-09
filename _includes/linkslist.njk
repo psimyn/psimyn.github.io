@@ -9,9 +9,6 @@
         <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
       {%- endif -%}
     {% endfor %}
-    {% if build.environment == "dev" %}
-      <span data-clipboard-text="{{ post.inputPath }}">Copy path</span>
-    {% endif %}
   </article>
 {% endfor %}
 
