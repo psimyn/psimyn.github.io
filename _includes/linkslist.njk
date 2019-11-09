@@ -1,5 +1,5 @@
 {% for post in linkslist | reverse %}
-  <article class="mb-3">
+  <article class="mb-3 mw-40rem">
     <h3><a href="{{ post.data.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.data.url }}</code>{% endif %}</a></h3>
     {{ post.templateContent | safe }}
     <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">Added {{ post.date | readableDateTime }}</time>
