@@ -162,7 +162,7 @@ pre {
 }
 .postlist-date {
   word-spacing: -0.5px;
-  float: right;
+  display: inline-block;
 }
 .postlist-link {
   display: inline-block;
