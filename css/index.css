@@ -162,6 +162,7 @@ pre {
 }
 .postlist-date {
   word-spacing: -0.5px;
+  display: inline-block;
 }
 .postlist-link {
   display: inline-block;
@@ -398,6 +399,10 @@ a[href].direct-link:focus:visited,
         max-width: 16em;
         margin-right: 2rem;
     }
+}
+
+.mw-40rem {
+  max-width: 40rem;
 }
 
 .mb-0 {
