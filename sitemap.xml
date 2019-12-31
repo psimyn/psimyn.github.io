@@ -322,6 +322,86 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/travel/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/organisation/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/fomo/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/information%20overload/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/ip/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/standards/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/style%20guides/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/profiling/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/steamvr/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/vr/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/css%20variables/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/svg/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/neural%20networks/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/design%20systems/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/domains/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/html/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/software/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
@@ -332,12 +412,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/frontend/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/culture/</loc>
+    <loc>https://psimyn.com/tags/biography/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -347,27 +422,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/html/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/shallow%20rendering/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/biography/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/bitwig/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/domains/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -377,7 +432,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/testing/</loc>
+    <loc>https://psimyn.com/tags/tooling/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/debugging/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -402,27 +462,12 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/annoyances/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/health/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/physics/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/style%20guides/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/design%20systems/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/optical%20illusions/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -432,7 +477,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/debugging/</loc>
+    <loc>https://psimyn.com/tags/racism/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/tmux/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -442,7 +492,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/content/</loc>
+    <loc>https://psimyn.com/tags/links/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -452,7 +502,52 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/wikipedia/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/startups/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/mvp/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/pdf/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/bookmarks/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/mozilla/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/notes/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/fact-checking/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/science/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/sleep/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -462,7 +557,72 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/cron/</loc>
+    <loc>https://psimyn.com/tags/bloat/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/shallow%20rendering/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/awesome%20lists/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/design%20tools/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/performance/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/testing/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/learning/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/future/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/ruby/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/society/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/editor/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/amazing/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/js13kGames/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/js13k/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -487,77 +647,27 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/ip/</loc>
+    <loc>https://psimyn.com/tags/assistive%20technology/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/annoyances/</loc>
+    <loc>https://psimyn.com/tags/empathy/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/wikipedia/</loc>
+    <loc>https://psimyn.com/tags/optical%20illusions/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/racism/</loc>
+    <loc>https://psimyn.com/tags/voice/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/pdf/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/ruby/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/bookmarks/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/notes/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/ethics/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/algorithms/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/tmux/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/tech/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/tourism/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/travel/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/standards/</loc>
+    <loc>https://psimyn.com/tags/screen%20readers/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -567,32 +677,47 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/3d/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/normal%20maps/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/graphics/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/ethics/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/culture/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/physics/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/svelte/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/css%20variables/</loc>
+    <loc>https://psimyn.com/tags/figuring%20stuff%20out/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/links/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/svg/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/profiling/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/steamvr/</loc>
+    <loc>https://psimyn.com/tags/algorithms/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -602,37 +727,57 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/startups/</loc>
+    <loc>https://psimyn.com/tags/cron/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/mvp/</loc>
+    <loc>https://psimyn.com/tags/research/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/automation/</loc>
+    <loc>https://psimyn.com/tags/ux/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/bloat/</loc>
+    <loc>https://psimyn.com/tags/ui/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/awesome%20lists/</loc>
+    <loc>https://psimyn.com/tags/search/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/vr/</loc>
+    <loc>https://psimyn.com/tags/frontend/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/figuring%20stuff%20out/</loc>
+    <loc>https://psimyn.com/tags/custom%20properties/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/grayscale/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/scripting/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/tech/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/animation/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -662,32 +807,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/styleguide/</loc>
+    <loc>https://psimyn.com/tags/tourism/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/blog/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/neural%20networks/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/backups/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/rsync/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/data/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -712,6 +837,41 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/security/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/backups/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/rsync/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/data/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/web/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/linkrot/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/content/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/linux/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
@@ -723,6 +883,11 @@
   
   <url>
     <loc>https://psimyn.com/tags/tools/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/design/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -742,6 +907,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/editors/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/environment/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
@@ -752,7 +922,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/editors/</loc>
+    <loc>https://psimyn.com/tags/media/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -797,17 +967,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/climate/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/games/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/coffee/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/climate/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -837,16 +1007,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/decision%20making/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/knowledge/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/css/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
@@ -862,7 +1022,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/design/</loc>
+    <loc>https://psimyn.com/tags/decision%20making/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/knowledge/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -878,11 +1043,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/machine%20learning/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/web/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -957,37 +1117,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/scripting/</loc>
+    <loc>https://psimyn.com/tags/automation/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/grayscale/</loc>
+    <loc>https://psimyn.com/tags/scripts/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/screen%20readers/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/voice/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/empathy/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/assistive%20technology/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/custom%20properties/</loc>
+    <loc>https://psimyn.com/tags/lua/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -997,37 +1137,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/animation/</loc>
+    <loc>https://psimyn.com/tags/webgl/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/learning/</loc>
+    <loc>https://psimyn.com/tags/howto/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/editor/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/future/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/performance/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/design%20tools/</loc>
-    <lastmod>2019-10-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/security/</loc>
+    <loc>https://psimyn.com/tags/styleguide/</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   
@@ -1297,6 +1417,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/links/the-tools-are-here/</loc>
+    <lastmod>2019-11-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/links/group-chat-the-best-way-to-totally-stress-out-your-team/</loc>
     <lastmod>2019-11-22</lastmod>
   </url>
@@ -1337,12 +1462,152 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/posts/automate-later/</loc>
+    <loc>https://psimyn.com/links/web-replay/</loc>
     <lastmod>2019-12-01</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/links/web-replay/</loc>
+    <loc>https://psimyn.com/links/recipes-for-performance-testing-single-page-applications-in-web-page-test/</loc>
     <lastmod>2019-12-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/kotlin-playground-edit-run-share-kotlin-code-online/</loc>
+    <lastmod>2019-12-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/french-artist-paul-sougy-s-stunning-mid-century-scientific-illustrations-of-plants-animals-and-the-human-body/</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/new-york-s-subway-map-like-you-ve-never-seen-it-before/</loc>
+    <lastmod>2019-12-04</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/feltron-com/</loc>
+    <lastmod>2019-12-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/i-like-to-build-things-that-way/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/snigbo-s-image-magick-pages/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/kill-sticky-headers/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/bitcoin-11-years-in/</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/nbdev-use-jupyter-notebooks-for-everything/</loc>
+    <lastmod>2019-12-09</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/static-v-dynamic-languages/</loc>
+    <lastmod>2019-12-11</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/finally-getting-somewhere/</loc>
+    <lastmod>2019-12-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/bash-best-practices/</loc>
+    <lastmod>2019-12-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/tradeoffs-the-currency-of-decision-making/</loc>
+    <lastmod>2019-12-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/welcome-to-airspace/</loc>
+    <lastmod>2019-12-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/what-happened-to-90-s-environmentalism/</loc>
+    <lastmod>2019-12-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/this-is-normal-1-what-normal-maps-are-and-how-they-work-by-carlos-lemos/</loc>
+    <lastmod>2019-12-23</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/why-is-java-script-not-compiled-to-bytecode-before-sending-over-the-network/</loc>
+    <lastmod>2019-12-25</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/the-design-of-browsing-and-berrypicking-techniques-for-the-online-search-interface/</loc>
+    <lastmod>2019-12-26</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/amy-ruins-social-media-hoy-design-opinions/</loc>
+    <lastmod>2019-12-26</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/cbt-in-the-water-supply/</loc>
+    <lastmod>2019-12-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/hammerspoon-mac-os-automation-with-lua-hacker-news/</loc>
+    <lastmod>2019-12-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/a-manifesto-for-preserving-content-on-the-web/</loc>
+    <lastmod>2019-12-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/how-to-create-the-apple-fifth-avenue-cube-in-web-gl/</loc>
+    <lastmod>2019-12-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/matthew-walker-s-why-we-sleep-is-riddled-with-scientific-and-factual-errors/</loc>
+    <lastmod>2019-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/tell-hn-500-unread-mails-2-k-unread-articles-5-k-unread-posts-i-am-drowning/</loc>
+    <lastmod>2019-12-29</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/voidcall-13kjsgame/</loc>
+    <lastmod>2019-12-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/why-java-script-tooling-sucks/</loc>
+    <lastmod>2019-12-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/everything-i-googled-in-a-week-as-a-professional-software-engineer/</loc>
+    <lastmod>2019-12-30</lastmod>
   </url>
 </urlset>
