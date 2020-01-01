@@ -4,7 +4,7 @@
 	<subtitle></subtitle>
 	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
 	<link href="https://psimyn.com/"/>
-	<updated>2019-10-21T11:00:00+11:00</updated>
+	<updated>2019-12-31T11:00:00+11:00</updated>
 	<id>https://psimyn.com/</id>
 	<author>
 		<name>Simon Knox</name>
@@ -458,14 +458,14 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
-		<title>Greyscale Screen</title>
-		<link href="https://psimyn.com/posts/2019-07-16-greyscale-screen/"/>
-		<updated>2019-07-16T16:26:04+10:00</updated>
-		<id>https://psimyn.com/posts/2019-07-16-greyscale-screen/</id>
-		<content type="html">&lt;p&gt;I&#39;ve just switching work laptop to greyscale mode. Done partly to stop apps stealing attention with bright colors, partly to test for accessibility day-to-day. Most difficult thing so far has been viewing diffs; I have to pay more attention to the +/- at the start of the line. Most other stuff has been surprisingly ok. Apps generally look a bit simpler. Video calls feel like watching a movie from the 40s.&lt;/p&gt;
-&lt;p&gt;For macOS the setting is in &lt;em&gt;System Preferences &amp;gt; Accessibility &amp;gt; Display &amp;gt; Use greyscale&lt;/em&gt;&lt;br&gt;
-For Android it&#39;s available at night with &#39;Digital Wellbeing&#39; app, but I had problems with that in the past so don&#39;t trust it. Looking for alternative.&lt;br&gt;
-On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filter&#39;)&lt;/p&gt;
+		<title>Going Grayscale</title>
+		<link href="https://psimyn.com/posts/grayscale/"/>
+		<updated>2019-07-16T10:00:00+10:00</updated>
+		<id>https://psimyn.com/posts/grayscale/</id>
+		<content type="html">&lt;p&gt;I&#39;ve just switching work laptop to grayscale mode. Done partly to stop apps stealing attention with bright colors, partly to test for accessibility day-to-day. Most difficult thing so far has been viewing diffs; I have to pay more attention to the +/- at the start of the line. Most other stuff has been surprisingly ok. Apps generally look a bit simpler. Video calls feel like watching a movie from the 40s.&lt;/p&gt;
+&lt;p&gt;For macOS the setting is in &lt;strong&gt;System Preferences &amp;gt; Accessibility &amp;gt; Display &amp;gt; Use grayscale&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For Android it&#39;s available at night with &#39;Digital Wellbeing&#39; app, but I had problems with that in the past so don&#39;t trust it. Looking for alternative.&lt;/p&gt;
+&lt;p&gt;On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filter&#39;)&lt;/p&gt;
 </content>
 	</entry>
 	
@@ -552,6 +552,84 @@ On Windows it can be toggled with Ctrl + Win + C (Or search for &#39;Color Filte
 &lt;p&gt;Or using curl:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl https://ipinfo.io/ip
 &lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>AMP&#39;s Branding Problem</title>
+		<link href="https://psimyn.com/posts/amps-branding-problem/"/>
+		<updated>2019-10-29T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/amps-branding-problem/</id>
+		<content type="html">&lt;p&gt;Last month I went to AMP Roadshow in Melbourne. Was a day of presentations and a bit of playing around with AMP stuff. AMP appears to be quite a different project to what it was three years ago.&lt;/p&gt;
+&lt;p&gt;AMP is no longer an ancronym for Accelerated Mobile Pages - now it&#39;s the project name. This AMP is meant as more of a lightweight [citation needed] framework for making webapps, rather than just a way to get better Google rank and a ⚡ next to your page title.&lt;/p&gt;
+&lt;p&gt;Accelerated Mobile Pages faced some deserved backlash at first. Fixed top bars, hard-to-share links, and double loading to get to actual content were all big negatives. The limited interactive elements meant you got a very stripped down version of the page, and clicking on anything meant you usually loaded the full, now-even-more-bloated-because-we-assumed-AMP-would-take-care-of-it page.&lt;/p&gt;
+&lt;p&gt;The &#39;keeping people on Google rather than their own servers&#39; aspect is an ongoing downside. But as a simple app framework it shows promise. Like what I had wanted from Polymer Elements but with a friendlier API. The better solution is obviously &amp;quot;just make faster pages&amp;quot;. But the industry has had a demonstrably hard time doing that and page bloat continues to grow out of control.&lt;/p&gt;
+&lt;p&gt;The AMP library contains a lot of components now and seems like a decent way to make a PWA (further research on this pending). It is probably too late to rename, but for many the name still carries a lot of baggage from the bad early days. Will be curious to see if it overcomes the rep, or that is just gradually forgotten.&lt;/p&gt;
+&lt;p&gt;Or if this is all just a ruse and it&#39;s still a Google marketing play. Time will tell.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Automate Later</title>
+		<link href="https://psimyn.com/posts/automate-later/"/>
+		<updated>2019-12-01T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/automate-later/</id>
+		<content type="html">&lt;p&gt;I wanted to set up backups for a few computers. Basically mirror a hard drive where I keep some photos and music so I don&#39;t lose em in case of hard drive failure or extreme flooding.&lt;/p&gt;
+&lt;p&gt;I bought some external drives &lt;em&gt;months&lt;/em&gt; ago to do this, had them sitting in a case ready to go, but then got caught up with how mirroring should work, And how to automate them to handle deletions and things properly, but not wipe all the data if a drive has failed. And preferably some kind of archive mode so I can restore things that get accidentally changed or deleted.&lt;/p&gt;
+&lt;p&gt;But this was already way too complicated and I was stuck in the &amp;quot;doing research on the thing instead of the thing&amp;quot; stage. Stage 1 was instead a manual copy onto the disk. That meant the data is saved to the external and I&#39;ve saved the multiple hours of copying time when it&#39;s eventually automated later.&lt;/p&gt;
+&lt;p&gt;Good steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manual bad way, do the thing as simply as possible&lt;/li&gt;
+&lt;li&gt;Manual better way. Preferably repeatable, some kind of script or command&lt;/li&gt;
+&lt;li&gt;Automatic with trigger or confirmation. Start running it but still check&lt;/li&gt;
+&lt;li&gt;Automatic. In the background, hopefully not something you need to think about anymore&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For backups, starting with a basic &lt;code&gt;cp&lt;/code&gt; is fine. Adding a cron job for rsync with a bunch of conditional rules can come later.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>undisturbed</title>
+		<link href="https://psimyn.com/posts/undisturbed/"/>
+		<updated>2019-12-18T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/undisturbed/</id>
+		<content type="html">&lt;p&gt;I&#39;ve had my phone on do-not-disturb for most of the last 5 years. It took a few months before I stopped getting &lt;a href=&quot;https://en.wikipedia.org/wiki/Phantom_vibration_syndrome&quot;&gt;phantom vibrations&lt;/a&gt;, since then I haven&#39;t experienced that at all. Now it doesn&#39;t ring (ringer volume at 0, ringtone is no sound) and doesn&#39;t vibrate.&lt;/p&gt;
+&lt;p&gt;If I&#39;m expecting a delivery or something and actually need it to alert me then I will turn on vibrate. But most of the time it sits there silently; if I&#39;m not looking at it I miss calls. Recently for some reason they don&#39;t even pop up so I miss them even if I &lt;em&gt;am&lt;/em&gt; looking at it.&lt;/p&gt;
+&lt;p&gt;Phones are stupidly disruptive. Email is a todo list that anyone can add to; phones are a fire alarm that anyone can pull without consequences.&lt;/p&gt;
+&lt;p&gt;For an easier transition, using &lt;a href=&quot;https://support.google.com/assistant/answer/9157337&quot;&gt;Wind Down&lt;/a&gt; on Android auto enables do-not-disturb at night (or whenever you choose). This is helpful if you want notifications back on later and forget to toggle.&lt;/p&gt;
+&lt;p&gt;I&#39;ve also tried to cut down on computer notifications. For work that is mainly Slack, and for Slack the big 3 things were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;disable popup notifications&lt;/li&gt;
+&lt;li&gt;disable red dots&lt;/li&gt;
+&lt;li&gt;use DND (or close it) when not using&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And switching screen to &lt;a href=&quot;https://psimyn.com/posts/grayscale&quot;&gt;grayscale&lt;/a&gt; toward the end of the day helps cut out the attention-grabbing hyper-saturated colors of the current web.&lt;/p&gt;
+&lt;p&gt;I am still not particularly good at staying focused. But minimizing these cuts down on background noise and cuts out a lot of disturbances.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Preventing Info FOMO</title>
+		<link href="https://psimyn.com/posts/info-fomo/"/>
+		<updated>2019-12-31T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/info-fomo/</id>
+		<content type="html">&lt;p&gt;This year was the first time I was above inbox zero since I started doing it early in the decade. I got through most of my action-required emails (don&#39;t get many of those), so it was mainly newsletters with either longer articles or links. The link newsletters are risky, since it looks easy to read by can quickly turn into 10+ tabs that will take much longer to read.&lt;/p&gt;
+&lt;p&gt;But they could (and do!) contain valuable learnings, so I always added them to my read later list. For emails this just mean leaving them unread, in the Updates tab, where they don&#39;t take up my attention but are constant back of mind growing list of things to do.&lt;/p&gt;
+&lt;p&gt;Couple of good reads this month helped me get over this. Driving force was the &lt;a href=&quot;https://www.smashingmagazine.com/2016/12/digital-clean-up-checklist/&quot;&gt;Ultimate Digital Cleanup checklist&lt;/a&gt; which suggests deleting update/notification emails, and unsubscribing from newsletters you no longer want. I had already done this for some, but tried with stricter criteria for what to keep.&lt;/p&gt;
+&lt;p&gt;Other one was &lt;a href=&quot;https://news.ycombinator.com/item?id=21902130&quot;&gt;this HN post&lt;/a&gt; with someone in a way worse spot. This both made me feel better about my own to-read list, and having many people say &amp;quot;just delete everything it doesn&#39;t actually matter&amp;quot; was reassuring.&lt;/p&gt;
+&lt;p&gt;Funnily, I saved this to Pocket so it could be added to &lt;a href=&quot;https://psimyn.com/links&quot;&gt;/links&lt;/a&gt;. Then Pocket tells me I have a 900+ item backlog!!! It is a great idea though I love this feature&lt;/p&gt;
+&lt;style&gt;
+.phone-bottom {
+  border: solid #111;
+  border-width: 1px 1rem 3rem 1rem;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 2px 3px #222,
+    8px 8px 16px -4px #222b;
+  margin-bottom: 2rem;
+}
+&lt;/style&gt;
+&lt;img class=&quot;phone phone-bottom&quot; src=&quot;https://psimyn.com/img/compound-info-overload.png&quot; alt=&quot;Pocket&#39;s Listen feature promotion telling me I have 948 things to read&quot;&gt;
+&lt;p&gt;Finally, listened to &lt;a href=&quot;https://overcast.fm/+OP0KDV5EE&quot;&gt;this great podcast&lt;/a&gt;, which  looks at 500 years of information overload. Once books could be mass produced (i.e. not take a scribe 1 year to write) then there were too many books to read in a lifetime.&lt;/p&gt;
 </content>
 	</entry>
 </feed>

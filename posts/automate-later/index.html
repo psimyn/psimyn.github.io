@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automate Later</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Automate Later</h1>
+
+<p>I wanted to set up backups for a few computers. Basically mirror a hard drive where I keep some photos and music so I don't lose em in case of hard drive failure or extreme flooding.</p>
+<p>I bought some external drives <em>months</em> ago to do this, had them sitting in a case ready to go, but then got caught up with how mirroring should work, And how to automate them to handle deletions and things properly, but not wipe all the data if a drive has failed. And preferably some kind of archive mode so I can restore things that get accidentally changed or deleted.</p>
+<p>But this was already way too complicated and I was stuck in the &quot;doing research on the thing instead of the thing&quot; stage. Stage 1 was instead a manual copy onto the disk. That meant the data is saved to the external and I've saved the multiple hours of copying time when it's eventually automated later.</p>
+<p>Good steps:</p>
+<ol>
+<li>Manual bad way, do the thing as simply as possible</li>
+<li>Manual better way. Preferably repeatable, some kind of script or command</li>
+<li>Automatic with trigger or confirmation. Start running it but still check</li>
+<li>Automatic. In the background, hopefully not something you need to think about anymore</li>
+</ol>
+<p>For backups, starting with a basic <code>cp</code> is fine. Adding a cron job for rsync with a bunch of conditional rules can come later.</p>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/automate-later/ -->
+  </body>
+</html>
