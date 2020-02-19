@@ -2,7 +2,6 @@
 title: The Easy Lazy Thing
 date: 2019-07-13T22:44:24+1000
 author: simon
-draft: true
 layout: post
 ---
 
