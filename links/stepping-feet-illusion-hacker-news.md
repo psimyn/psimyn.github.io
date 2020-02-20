@@ -1,6 +1,6 @@
 ---
 title: 'Stepping Feet Illusion : Hacker News'
-url: 'https://news.ycombinator.com/item?id=22272057
+url: 'https://news.ycombinator.com/item?id=22272057'
 date: '2020-02-17T03:41:28.000Z'
 tags:
   - optical illusions
