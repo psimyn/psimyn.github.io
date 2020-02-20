@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framer Project History</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Framer Project History</h1>
+
+<p><a href="https://gitlab.com/duud/framer">Framer</a> is one of my favorite projects. It was the first 'real' JS project I made, I think the first version was around 2012. It has consistently had some of my worst code and infrastructure. The deploy process is still either a shell script or a manually-installed WordPress plugin. It has years of tech debt stacked on it, has been through two major rewrites (which I generally avoid). The code has gone like this:</p>
+<ol>
+<li>Static HTML blob &amp; some jQuery helpers in an inline script. Basically a form and a canvas element</li>
+<li>Separate JS/CSS files, served from a Drupal site, iframed on another site</li>
+<li>Ported to WordPress template + JS</li>
+<li>Rewritten using Svelte, still using canvas</li>
+<li>Rewritten using Svelte V3, now using SVG</li>
+</ol>
+<p>The first three stages were all pretty much the same codebase, but with added if statements and special cases. This ended up being a few hundred lines of shit code, bunch of input event listeners, and obviously no tests. None of this particularly mattered since it was <em>my</em> code - I knew how it worked and didn't need to explain it to others. And more importantly, it did what it needed to do; we'd gone through what should be in the form, what the renderer should look like, tried a few different layouts. Code should do what is needed, cleanliness &amp; structure is far less important (especially when working solo). It more or less stayed this way for several years, just quietly doing its job.</p>
+<p>At some point I added version control so I could more safely make changes and keep track of things. Deployment was (and still is) hugely manual - run build, scp to server, do some cache invalidation. Again, not something that mattered. I was deploying very infrequently so it's hard to justify the time on deployment automation; both in terms of wasted effort and potential risk (scripts have bugs too!).</p>
+<p>The first rewrite was mainly to check out Svelte - advertised as &quot;the magical disappearing UI framework&quot;. This was driven by interest more than any business or performance need. The previous version was hardly lightening fast, but it was far from the slowest thing on the page. Svelte ended up being quite nice to use. My two regrets were not using a store from the start (state scattered throughout the app), and continuing to use canvas rather than SVG. Canvas limited how interactive the renderer could be (point and click would be annoying effort), and my canvas code wastruly terrible. I'm not a huge advocate of needless dryness, but there was some baaaad repetition in there. There was a function that took 6 arguments. All sorts of terrible shit.</p>
+<p>There was also a bunch of terrible WordPress glue code so it could load Woocommerce products, and add to cart. I wanted to write as little PHP/WP code as possible, so hacked together a working method using a few existing plugins and some hacks of my own. I added some e2e tests using Cypress, and setup a wordpress dev instance in Docker. Still too much effort to get this working in CI, but just running them on my local machine was enough validation that I hadn't destroyed everything when I made changes.</p>
+<p>Svelte 3 came out sometime last year. I'd long held the opinion that I wouldn't rewrite framer, partly due to laziness, partly due to needless risk. But eventually I decided to give it a try. The <a href="https://github.com/sveltejs/svelte/issues/2462">GH issue for a migration guide</a> gave the impression that there wouldn't be an offical guide or <a href="http://tool.It">tool.It</a> did offer a <a href="https://github.com/tivac/svelte-translator">Svelte Translator</a>, but that seemed like more complication that it was worth. I had a skim through the <a href="https://rajasegar.github.io/svelte2vs3/">2vs3 cheatsheet</a>, and kept the <a href="https://svelte.dev/examples">Svelte examples page</a> open, and just manually rewrote the form code. This time I started with a store to keep state simpler and centralised.</p>
+<p>By the time I got up to writing the renderer, I thought I'd try using some derived values to draw an SVG. First pass at getting something that looked similar went from around 700lines of horrible canvas code to about an 80 line Svelte component. I started writing the components from scratch in a separate project, then when it was reasonably complete I move it to the existing wordpress plugin src directory, and just updated the outer component. Minimal amount of the glue code has changed, and functionally it's the same as before.</p>
+<p>Eventually I should make it a proper WordPress plugin that uses real products, rather than just a custom fields product with custom pricing. But part of why I love this project is that it's mostly been optimized for enjoyment - I find easy solutions for things I don't want to work on, and can keep my focus on the interesting parts. The fact that a bunch of it is terrible glue code doesn't matter as long as it works.</p>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/framer-history/ -->
+  </body>
+</html>

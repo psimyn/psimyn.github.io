@@ -4,7 +4,7 @@
 	<subtitle></subtitle>
 	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
 	<link href="https://psimyn.com/"/>
-	<updated>2019-12-31T11:00:00+11:00</updated>
+	<updated>2020-02-09T11:00:00+11:00</updated>
 	<id>https://psimyn.com/</id>
 	<author>
 		<name>Simon Knox</name>
@@ -437,6 +437,18 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
+		<title>The Easy Lazy Thing</title>
+		<link href="https://psimyn.com/posts/2019-07-13-easy-lazy-thing/"/>
+		<updated>2019-07-13T22:44:24+10:00</updated>
+		<id>https://psimyn.com/posts/2019-07-13-easy-lazy-thing/</id>
+		<content type="html">&lt;p&gt;It&#39;s very easy to put things off, so that&#39;s what I usually do. The most common way is getting stuck on some tiny detail, then obsessing over that and choosing not to proceed. Tech things are great for this - you can get stuck on tech stack, hardware choices, platforms to use, needless future planning. Millions of tiny details. Most don&#39;t matter.&lt;/p&gt;
+&lt;p&gt;A big one for me was always to put off writing. I won&#39;t write a todo list without a quick runthrough of 5 or 6 different options for this. Plain text is simple and portable, but maybe I want formatting or embedded content. List-specific apps are often too short, and some tasks need a bit more details and description. I need something that works reliably offline, but that also syncs between phone and a few computers. At this point people often suggest paper, but I tend not to complete those or just leave them in another room. I&#39;ve fot todos on my whiteboard (which is right next to the damn desk) from weeks ago.&lt;/p&gt;
+&lt;p&gt;What helps with all this is having a good easy default thing. It doesn&#39;t have to be the best thing. Or even a particularly great thing. If it&#39;s not actively terrible then it&#39;s better than indecisive stagnation.&lt;/p&gt;
+&lt;p&gt;I started actually writing semi regularly when I had a single synced file as my default notepad. I occasionally start stuff there and move it, but a lot of the random notes just stay there which is just fine for now. Doing the thing is better than researching 10 alternative ways of doing the thing, and developing a framework to compare them.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Floss Trials</title>
 		<link href="https://psimyn.com/posts/2019-07-14-floss-trials/"/>
 		<updated>2019-07-14T22:01:32+10:00</updated>
@@ -630,6 +642,57 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 &lt;/style&gt;
 &lt;img class=&quot;phone phone-bottom&quot; src=&quot;https://psimyn.com/img/compound-info-overload.png&quot; alt=&quot;Pocket&#39;s Listen feature promotion telling me I have 948 things to read&quot;&gt;
 &lt;p&gt;Finally, listened to &lt;a href=&quot;https://overcast.fm/+OP0KDV5EE&quot;&gt;this great podcast&lt;/a&gt;, which  looks at 500 years of information overload. Once books could be mass produced (i.e. not take a scribe 1 year to write) then there were too many books to read in a lifetime.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Framer Project History</title>
+		<link href="https://psimyn.com/posts/framer-history/"/>
+		<updated>2020-02-09T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/framer-history/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https://gitlab.com/duud/framer&quot;&gt;Framer&lt;/a&gt; is one of my favorite projects. It was the first &#39;real&#39; JS project I made, I think the first version was around 2012. It has consistently had some of my worst code and infrastructure. The deploy process is still either a shell script or a manually-installed WordPress plugin. It has years of tech debt stacked on it, has been through two major rewrites (which I generally avoid). The code has gone like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Static HTML blob &amp;amp; some jQuery helpers in an inline script. Basically a form and a canvas element&lt;/li&gt;
+&lt;li&gt;Separate JS/CSS files, served from a Drupal site, iframed on another site&lt;/li&gt;
+&lt;li&gt;Ported to WordPress template + JS&lt;/li&gt;
+&lt;li&gt;Rewritten using Svelte, still using canvas&lt;/li&gt;
+&lt;li&gt;Rewritten using Svelte V3, now using SVG&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first three stages were all pretty much the same codebase, but with added if statements and special cases. This ended up being a few hundred lines of shit code, bunch of input event listeners, and obviously no tests. None of this particularly mattered since it was &lt;em&gt;my&lt;/em&gt; code - I knew how it worked and didn&#39;t need to explain it to others. And more importantly, it did what it needed to do; we&#39;d gone through what should be in the form, what the renderer should look like, tried a few different layouts. Code should do what is needed, cleanliness &amp;amp; structure is far less important (especially when working solo). It more or less stayed this way for several years, just quietly doing its job.&lt;/p&gt;
+&lt;p&gt;At some point I added version control so I could more safely make changes and keep track of things. Deployment was (and still is) hugely manual - run build, scp to server, do some cache invalidation. Again, not something that mattered. I was deploying very infrequently so it&#39;s hard to justify the time on deployment automation; both in terms of wasted effort and potential risk (scripts have bugs too!).&lt;/p&gt;
+&lt;p&gt;The first rewrite was mainly to check out Svelte - advertised as &amp;quot;the magical disappearing UI framework&amp;quot;. This was driven by interest more than any business or performance need. The previous version was hardly lightening fast, but it was far from the slowest thing on the page. Svelte ended up being quite nice to use. My two regrets were not using a store from the start (state scattered throughout the app), and continuing to use canvas rather than SVG. Canvas limited how interactive the renderer could be (point and click would be annoying effort), and my canvas code wastruly terrible. I&#39;m not a huge advocate of needless dryness, but there was some baaaad repetition in there. There was a function that took 6 arguments. All sorts of terrible shit.&lt;/p&gt;
+&lt;p&gt;There was also a bunch of terrible WordPress glue code so it could load Woocommerce products, and add to cart. I wanted to write as little PHP/WP code as possible, so hacked together a working method using a few existing plugins and some hacks of my own. I added some e2e tests using Cypress, and setup a wordpress dev instance in Docker. Still too much effort to get this working in CI, but just running them on my local machine was enough validation that I hadn&#39;t destroyed everything when I made changes.&lt;/p&gt;
+&lt;p&gt;Svelte 3 came out sometime last year. I&#39;d long held the opinion that I wouldn&#39;t rewrite framer, partly due to laziness, partly due to needless risk. But eventually I decided to give it a try. The &lt;a href=&quot;https://github.com/sveltejs/svelte/issues/2462&quot;&gt;GH issue for a migration guide&lt;/a&gt; gave the impression that there wouldn&#39;t be an offical guide or &lt;a href=&quot;http://tool.it/&quot;&gt;tool.It&lt;/a&gt; did offer a &lt;a href=&quot;https://github.com/tivac/svelte-translator&quot;&gt;Svelte Translator&lt;/a&gt;, but that seemed like more complication that it was worth. I had a skim through the &lt;a href=&quot;https://rajasegar.github.io/svelte2vs3/&quot;&gt;2vs3 cheatsheet&lt;/a&gt;, and kept the &lt;a href=&quot;https://svelte.dev/examples&quot;&gt;Svelte examples page&lt;/a&gt; open, and just manually rewrote the form code. This time I started with a store to keep state simpler and centralised.&lt;/p&gt;
+&lt;p&gt;By the time I got up to writing the renderer, I thought I&#39;d try using some derived values to draw an SVG. First pass at getting something that looked similar went from around 700lines of horrible canvas code to about an 80 line Svelte component. I started writing the components from scratch in a separate project, then when it was reasonably complete I move it to the existing wordpress plugin src directory, and just updated the outer component. Minimal amount of the glue code has changed, and functionally it&#39;s the same as before.&lt;/p&gt;
+&lt;p&gt;Eventually I should make it a proper WordPress plugin that uses real products, rather than just a custom fields product with custom pricing. But part of why I love this project is that it&#39;s mostly been optimized for enjoyment - I find easy solutions for things I don&#39;t want to work on, and can keep my focus on the interesting parts. The fact that a bunch of it is terrible glue code doesn&#39;t matter as long as it works.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>My favorite code is my worst code</title>
+		<link href="https://psimyn.com/posts/worst-code-best-code/"/>
+		<updated>2020-02-09T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/worst-code-best-code/</id>
+		<content type="html">&lt;p&gt;Most code is pretty terrible. Mine is particularly bad, but generally it&#39;s rare to see a project and think &amp;quot;wow that&#39;s good code&amp;quot;. This is fine. Code isn&#39;t literature. Clarity is still important, but code is meant to solve a problem (or cause a problem).&lt;/p&gt;
+&lt;p&gt;I often see people point to some brilliant, clean, well-structured project as their favorite code. Some perfectly formed sculpture of numbers and text, chiseled to perfection over years of planning and refactoring. I&#39;m at the other end, and tend to love my hacky ugly snippets.&lt;/p&gt;
+&lt;p&gt;They do what they are supposed to, and are a good chance to try new things.&lt;/p&gt;
+&lt;p&gt;Test projects are a great place to try new things,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JS/jquery&lt;/li&gt;
+&lt;li&gt;HTML tag types&lt;/li&gt;
+&lt;li&gt;Drupal setup/admin/modules&lt;/li&gt;
+&lt;li&gt;iframe embedding&lt;/li&gt;
+&lt;li&gt;Svelte&lt;/li&gt;
+&lt;li&gt;Svelte again&lt;/li&gt;
+&lt;li&gt;JS modules&lt;/li&gt;
+&lt;li&gt;rollup&lt;/li&gt;
+&lt;li&gt;shell scripts&lt;/li&gt;
+&lt;li&gt;wordpress plugins&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;media queries&lt;/li&gt;
+&lt;li&gt;drawing images to canvas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the time you get caught up in making your code clean and DRY, well-structured and performant, unit-testable and unit-tested, it may as well be a work project. It may as well be a work project. Work projects are not the place for learning too many new things.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
