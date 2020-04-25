@@ -1,8 +1,8 @@
 ---
-layout: post
 title: "Dual-booting Linux and OSX"
-date: 2016-06-12T12:24:35 +1000
-categories: linux
+date: 2016-06-12
+tags:
+  - linux
 ---
 
 After far too long putting up

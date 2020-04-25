@@ -10,21 +10,5 @@ I often see people point to some brilliant, clean, well-structured project as th
 
 They do what they are supposed to, and are a good chance to try new things.
 
-Test projects are a great place to try new things,
-
-- JS/jquery
-- HTML tag types
-- Drupal setup/admin/modules
-- iframe embedding
-- Svelte
-- Svelte again
-- JS modules
-- rollup
-- shell scripts
-- wordpress plugins
-- CSS
-- media queries
-- drawing images to canvas
-
-By the time you get caught up in making your code clean and DRY, well-structured and performant, unit-testable and unit-tested, it may as well be a work project. It may as well be a work project. Work projects are not the place for learning too many new things.
+By the time you get caught up in making your code clean and DRY, well-structured and performant, unit-testable and unit-tested, it may as well be a work project. Work projects are not the place for learning too many new things.
 
