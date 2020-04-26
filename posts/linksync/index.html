@@ -37,11 +37,13 @@
       <h1>linksync</h1>
 
 <p>I switch between browsers quite a lot, mostly between firefox and chromium-based ones depending on what I'm doing or my current mood. Because of this I haven't been able to rely on bookmarks from browser, and prefer somewhere centrol to keep links. <a href="https://getpocket.com/">Pocket</a> has extensions for most browers, and gives a quite decent overlay UI for saving links and adding tags. The only thing I couldn't add was notes. I like to add short descriptions or notes and sometimes cross-link things to help remember and find things later.</p>
-<p><a href="">linksync</a> is a simple script that grabs items from the Pocket API that I've tagged with 'blog', grabs some data from each, and adds a new item in my websites <code>links</code> folder (as a draft). It will then pop up on my computer later. I'll maybe add a description or some additional tags, then save and publish the site. Eventually would like to automate that as well, but haven't decided how I want it to work yet. Probably just publish master will be simplest.</p>
+<p><a href="https://gitlab.com/psimyn/linksync">linksync</a> is a simple script that grabs items from the Pocket API that I've tagged with 'links', grabs some data from each, and adds a new item in my websites <code>links</code> folder (as a draft). It will then pop up on my computer later. I'll maybe add a description or some additional tags, then save and publish the site. Eventually would like to automate that as well, but haven't decided how I want it to work yet. Probably just publish master will be simplest.</p>
+<p>Quick recap of making a Pocket app:</p>
 <ol>
 <li><a href="https://getpocket.com/developer/apps/new">Create a Pocket Application</a> and give it the Retreive permission.</li>
 <li>Manually went through the steps in the <a href="https://getpocket.com/developer/docs/authentication">Pocket Authentication API Docs</a></li>
 <li>Add queries from the <a href="https://getpocket.com/developer/docs/v3/retrieve">Pocket Retreive API</a></li>
+<li>Store <code>last_updated</code> value to only fetch recently added items</li>
 </ol>
 
 

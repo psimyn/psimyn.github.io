@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better mobile screenshots</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Better mobile screenshots</h1>
+
+<p>A useful tip when adding screenshots to posts or talks is to put them &quot;inside&quot; a device. This gives the screenshot some context.</p>
+<p>Even though this screenshot already contains Android top &amp; bottom bars, with the added outline it's immediately obvious it's from a phone.</p>
+<img class="alignleft wp-image-372" src="economist.png" alt="The Economist on mobile is mostly sticky bullshit" width="400" height="711" />
+<img class="phone-border wp-image-372 alignnone" src="economist.png" alt="The Economist on mobile is mostly sticky bullshit" width="400" height="711" />
+<p>To add the outline to images I use a simple CSS border:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.phone-border</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">border</span><span class="token punctuation">:</span> #111 solid<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">border-width</span><span class="token punctuation">:</span> 2rem 1rem 3rem 1rem<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>To take this further you can also make them responsive! So we see phone screenshots on phones, and a fake laptop screen outline on big/wide screens. This assumes you are using responsive images so you get desktop aspect ratio on bigger screens.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 800px and <span class="token property">min-aspect-ratio</span><span class="token punctuation">:</span> 16/9<span class="token punctuation">)</span></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token selector">.phone-border</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">border-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token property">border-width</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<style>
+.phone-border {
+  border: #111 solid;
+  border-radius: 1rem;
+  border-width: 2rem 1rem 3rem 1rem;
+  box-shadow: 0 3px 4px #3338;
+}
+</style>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/better-mobile-screenshots/ -->
+  </body>
+</html>

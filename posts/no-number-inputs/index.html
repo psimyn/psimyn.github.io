@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems with HTML number inputs</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Problems with HTML number inputs</h1>
+
+<p>Using <code>type=&quot;number&quot;</code> on input fields is far less useful than I originally thought. I was previously using it for the form on <a href="/projects#framer">Framer</a>. Since they are number fields, having the number keyboard pop up on phones was useful. It also prevents people typing in non-numbers, so there's some free form validation.</p>
+<p>But there were some issues:</p>
+<ul>
+<li>Scrollwheel/trackpad will cause your number to go up or down without you noticing</li>
+<li>Default value of the step attribute is not &quot;any&quot;. Decimal numbers will be rounded unless you specify it</li>
+<li>Things consisting of numbers are not necessarily numbers - you don't want to accidentally increment your credit card number because of scrolling up a little</li>
+</ul>
+<p>Typing numbers is not like using an abacus. People don't enter numbers by adding one at a time. If they do (i.e. quantity fields), you are better off with explicit Add/Remove buttons, rather than the tiny tiny arrows that browser input fields give you.</p>
+<p>There is a great writeup from Filament Group, <a href="https://www.filamentgroup.com/lab/type-number.html">I wanted to type a number</a>, which runs through these problems and gives a solid solution.</p>
+<p>Also see <a href="https://bradfrost.com/blog/post/you-probably-dont-need-input-typenumber/">You Probably Don't Need input type=&quot;number&quot;</a>.</p>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/no-number-inputs/ -->
+  </body>
+</html>

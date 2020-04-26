@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual-booting Linux and OSX</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="psimyn">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#07b9b7">
+    <meta name="theme-color" content="#07b9b7">
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a class="site-title" href="/">
+        <img src="/favicons/psimyn-grayscale.svg" title="home">
+        <img src="/favicons/psimyn-grayscale.svg" role="presentation">
+      </a>
+
+      <nav class="site-nav">
+        <div class="trigger">
+          <a class="page-link" href="/projects">Projects</a>
+          <a class="page-link" href="/talks">Talks</a>
+          <a class="page-link" href="/links">Links</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="tmpl-post">
+      <h1>Dual-booting Linux and OSX</h1>
+
+<p>After far too long putting up</p>
+<p>with OSX's crap, I finally cracked a few days ago. The actual install/setup bit was pretty straightforward, there was some screwing around getting HFS+ partition shared between the two (I wanted to share most stuff in home directory). For easiest, jump to <a href="#the-good-way">the good way</a></p>
+<h2 id="the-long-way">The Long Way <a class="direct-link" href="#the-long-way" aria-hidden="true">#</a></h2>
+<h3 id="1.-clean-up-osx">1. Clean up OSX <a class="direct-link" href="#1.-clean-up-osx" aria-hidden="true">#</a></h3>
+<p>Critical thing here is disable &quot;secure empty trash&quot; in Finder. It was going to take about a week to delete otherwise (I had 1.8M files in there)</p>
+<h3 id="2.-create-%22partitions%22">2. Create &quot;partitions&quot; <a class="direct-link" href="#2.-create-%22partitions%22" aria-hidden="true">#</a></h3>
+<p>Using Disk Utility, wasn't able to resize partition for some weird reason. Clicking &quot;+&quot; button allowed adding empty space, but it used nearly all available space. Was hoping for smaller linux partition, but this will do for now. Just click and</p>
+<h3 id="3.-install-refind">3. Install rEFInd <a class="direct-link" href="#3.-install-refind" aria-hidden="true">#</a></h3>
+<p>This is comically easy. <a href="http://www.rodsbooks.com/refind/installing.html">Download</a> and run <code>install-refind</code>. Reboot to verify it works if you want, otherwise power through to install</p>
+<h3 id="4.-install-linux%2C-choose-partitions-and-add-what-is-needed">4. Install linux, choose partitions and add what is needed <a class="direct-link" href="#4.-install-linux%2C-choose-partitions-and-add-what-is-needed" aria-hidden="true">#</a></h3>
+<p>From rEFInd menu, can select USB boot (I had to power-off and boot with USB inserted). Install as normal, when partitioning you probably want to specify you own. Check these options carefully and step 5 should be avoidable.</p>
+<h3 id="5.-re-install-refind">5. Re-install rEFInd <a class="direct-link" href="#5.-re-install-refind" aria-hidden="true">#</a></h3>
+<p>GRUB will nuke replace rEFInd so for now you can only boot into Linux. Fix that with some help from <a href="http://askubuntu.com/questions/698606/refind-menu-not-showing-on-a-dual-mac-ubuntu-machine">this guy</a>. This is very likely avoidable</p>
+<h3 id="6.-re-order-refind-boot-options-(default-to-linux)">6. Re-order rEFInd boot options (default to Linux) <a class="direct-link" href="#6.-re-order-refind-boot-options-(default-to-linux)" aria-hidden="true">#</a></h3>
+<ul>
+<li>efimanager something something</li>
+</ul>
+<h3 id="7.-no-wifi">7. No wifi <a class="direct-link" href="#7.-no-wifi" aria-hidden="true">#</a></h3>
+<p>Classic Linux. This just needed an <code>apt-get install dkms</code> - but that needs a network connection. Options are either to download the package directly and copy it on some kind of floppy disk, or tether to a phone over bluetooth (which works out of the box..)</p>
+<h3 id="8.-mount-hfs%2B">8. Mount HFS+ <a class="direct-link" href="#8.-mount-hfs%2B" aria-hidden="true">#</a></h3>
+<p>Now we have internet, and want to start sharing those tasty directories. Installed <code>hfsplus</code> package, then mount fails for some reason. Can't remember the exact error, but I usually assume fsck will fix it. Rebooted to OSX Recovery mode, and tried the black box &quot;repair&quot;. Booted back into Linux and tried mounting again, and everything is ok</p>
+<h3 id="9.-mount-hfs%2B-in-rw-mode">9. Mount HFS+ in RW mode <a class="direct-link" href="#9.-mount-hfs%2B-in-rw-mode" aria-hidden="true">#</a></h3>
+<p>Read-only home directory is not so useful for me. Apparently to mount HFS+ as writable, you need to disable journaling as described on <a href="https://ineed.coffee/64/how-to-have-both-mac-os-x-and-linux-installed-and-share-the-same-home-directory-files/">ineed.coffee</a>. Boot back into OSX and try disabling with various diskutil commands, but they just through unhelpful errors. Turns out it was Core Storage. This whole time</p>
+<h3 id="10.-kill-core-storage">10. Kill Core Storage <a class="direct-link" href="#10.-kill-core-storage" aria-hidden="true">#</a></h3>
+<p>Great overview of how to fix this from <a href="http://awesometoast.com/yosemite-core-storage-and-partition-woes/">awesometoast</a>.</p>
+<p>Two <code>diskutil cs</code> commands later and you can now disable journaling. But first you need to reinstall rEFInd from osx again (just re-run <code>install-refind</code> script).</p>
+<h3 id="11.-disable-hfs%2B-journal">11. Disable HFS+ Journal <a class="direct-link" href="#11.-disable-hfs%2B-journal" aria-hidden="true">#</a></h3>
+<p>Reboot, boot into OSX Recovery Mode, open Disk Utility.<br>
+Unmount &quot;Macintosh HD&quot;, then Option click on &quot;File&quot; and Click &quot;disable journaling&quot;<br>
+From <a href="http://castyour.net/disable-hfs-journaling-leopard-use-disks-readwrite-linux">castyour.net</a></p>
+<h3 id="12.-mount!">12. Mount! <a class="direct-link" href="#12.-mount!" aria-hidden="true">#</a></h3>
+<p>Back in linux, you should now be able to mount properly. May need to set UID to 501 (or whatever Apple user is) and possibly <code>chown</code> the HFS+ mount directory,<br>
+Now symlink any needed stuff from /mnt/ <a href="https://help.ubuntu.com/community/hfsplus">Ubuntu docs</a></p>
+<h3 id="13.-fix-suspend%2Fresume">13. Fix Suspend/Resume <a class="direct-link" href="#13.-fix-suspend%2Fresume" aria-hidden="true">#</a></h3>
+<p>Classic linux volume 2 - resuming from sleep always seems to break or misbehave for some reason. In this case suspend was fine straightaway, but when resuming the screen would turn on briedly, then go black. Hooray.</p>
+<p>After resuming, the screen is either 100% or 0% - and 0 was the value it chose if the brightness was below about 95%. Solution for a while was just mash the &quot;increase brightness&quot; button until it turns back on. For proper fix, install (mba6x)[<a href="https://github.com/patjak/mba6x_bl">https://github.com/patjak/mba6x_bl</a>] and everything is great.</p>
+<h3 id="14.-fix-other-keymap-annoyances">14. Fix other keymap annoyances <a class="direct-link" href="#14.-fix-other-keymap-annoyances" aria-hidden="true">#</a></h3>
+<ul>
+<li>Make fn keys fn-by-default, use fn for media keys etc: <code># echo 2 &gt; /sys/module/hid_apple/parameters/fnmode</code></li>
+</ul>
+<p>What to do about ctrl/alt/super? The physical ordering of Ctrl/Alt/Super is different to normal layout so there is a lot of jumping.</p>
+<hr>
+<h2 id="the-good-way">The Good Way <a class="direct-link" href="#the-good-way" aria-hidden="true">#</a></h2>
+<ol>
+<li>Disable CoreStorage on OSX partition (and disable journaling if RW is wanted)</li>
+<li>Install rEFInd</li>
+<li>Install distro of your choosing</li>
+<li>Fix resume and key mappings</li>
+</ol>
+
+
+<p><a href="/posts">← Posts</a></p>
+
+    </main>
+
+    <footer class="site-footer">
+      <h3>Contact</h3>
+      <a href="mailto:psimyn@gmail.com" title="domain name at gmail.com">
+        <span>Email</span>
+      </a>
+      <a href="https://twitter.com/psimyn">
+        <span>Twitter</span>
+      </a>
+      <h3>Other places I spend time</h3>
+      <a href="https://gitlab.com/psimyn">
+        <span>GitLab</span>
+      </a>
+      <a href="https://github.com/psimyn">
+        <span>GitHub</span>
+      </a>
+      <a href="https://glitch.com/@psimyn">
+        <span>Glitch</span>
+      </a>
+      <a href="https://codepen.io/psimyn">
+        <span>Codepen</span>
+      </a>
+    </footer>
+
+    <!-- Current page: /posts/2016-06-10-macbook-linux-dual-boot/ -->
+  </body>
+</html>

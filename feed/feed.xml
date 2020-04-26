@@ -4,12 +4,79 @@
 	<subtitle></subtitle>
 	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
 	<link href="https://psimyn.com/"/>
-	<updated>2020-02-09T11:00:00+11:00</updated>
+	<updated>2020-02-17T11:00:00+11:00</updated>
 	<id>https://psimyn.com/</id>
 	<author>
 		<name>Simon Knox</name>
 		<email>psimyn@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Start</title>
+		<link href="https://psimyn.com/posts/2016-05-28-welcome/"/>
+		<updated>2016-05-28T10:00:00+10:00</updated>
+		<id>https://psimyn.com/posts/2016-05-28-welcome/</id>
+		<content type="html">&lt;p&gt;this is a placeholder to see if posts work. Maybe it will stay here for posterity,&lt;br&gt;
+otherwise it will be replaced with some actual content eventually.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dual-booting Linux and OSX</title>
+		<link href="https://psimyn.com/posts/2016-06-10-macbook-linux-dual-boot/"/>
+		<updated>2016-06-12T10:00:00+10:00</updated>
+		<id>https://psimyn.com/posts/2016-06-10-macbook-linux-dual-boot/</id>
+		<content type="html">&lt;p&gt;After far too long putting up&lt;/p&gt;
+&lt;p&gt;with OSX&#39;s crap, I finally cracked a few days ago. The actual install/setup bit was pretty straightforward, there was some screwing around getting HFS+ partition shared between the two (I wanted to share most stuff in home directory). For easiest, jump to &lt;a href=&quot;#the-good-way&quot;&gt;the good way&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-long-way&quot;&gt;The Long Way &lt;a class=&quot;direct-link&quot; href=&quot;#the-long-way&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;1.-clean-up-osx&quot;&gt;1. Clean up OSX &lt;a class=&quot;direct-link&quot; href=&quot;#1.-clean-up-osx&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Critical thing here is disable &amp;quot;secure empty trash&amp;quot; in Finder. It was going to take about a week to delete otherwise (I had 1.8M files in there)&lt;/p&gt;
+&lt;h3 id=&quot;2.-create-%22partitions%22&quot;&gt;2. Create &amp;quot;partitions&amp;quot; &lt;a class=&quot;direct-link&quot; href=&quot;#2.-create-%22partitions%22&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Using Disk Utility, wasn&#39;t able to resize partition for some weird reason. Clicking &amp;quot;+&amp;quot; button allowed adding empty space, but it used nearly all available space. Was hoping for smaller linux partition, but this will do for now. Just click and&lt;/p&gt;
+&lt;h3 id=&quot;3.-install-refind&quot;&gt;3. Install rEFInd &lt;a class=&quot;direct-link&quot; href=&quot;#3.-install-refind&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is comically easy. &lt;a href=&quot;http://www.rodsbooks.com/refind/installing.html&quot;&gt;Download&lt;/a&gt; and run &lt;code&gt;install-refind&lt;/code&gt;. Reboot to verify it works if you want, otherwise power through to install&lt;/p&gt;
+&lt;h3 id=&quot;4.-install-linux%2C-choose-partitions-and-add-what-is-needed&quot;&gt;4. Install linux, choose partitions and add what is needed &lt;a class=&quot;direct-link&quot; href=&quot;#4.-install-linux%2C-choose-partitions-and-add-what-is-needed&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;From rEFInd menu, can select USB boot (I had to power-off and boot with USB inserted). Install as normal, when partitioning you probably want to specify you own. Check these options carefully and step 5 should be avoidable.&lt;/p&gt;
+&lt;h3 id=&quot;5.-re-install-refind&quot;&gt;5. Re-install rEFInd &lt;a class=&quot;direct-link&quot; href=&quot;#5.-re-install-refind&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;GRUB will nuke replace rEFInd so for now you can only boot into Linux. Fix that with some help from &lt;a href=&quot;http://askubuntu.com/questions/698606/refind-menu-not-showing-on-a-dual-mac-ubuntu-machine&quot;&gt;this guy&lt;/a&gt;. This is very likely avoidable&lt;/p&gt;
+&lt;h3 id=&quot;6.-re-order-refind-boot-options-(default-to-linux)&quot;&gt;6. Re-order rEFInd boot options (default to Linux) &lt;a class=&quot;direct-link&quot; href=&quot;#6.-re-order-refind-boot-options-(default-to-linux)&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;efimanager something something&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;7.-no-wifi&quot;&gt;7. No wifi &lt;a class=&quot;direct-link&quot; href=&quot;#7.-no-wifi&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Classic Linux. This just needed an &lt;code&gt;apt-get install dkms&lt;/code&gt; - but that needs a network connection. Options are either to download the package directly and copy it on some kind of floppy disk, or tether to a phone over bluetooth (which works out of the box..)&lt;/p&gt;
+&lt;h3 id=&quot;8.-mount-hfs%2B&quot;&gt;8. Mount HFS+ &lt;a class=&quot;direct-link&quot; href=&quot;#8.-mount-hfs%2B&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Now we have internet, and want to start sharing those tasty directories. Installed &lt;code&gt;hfsplus&lt;/code&gt; package, then mount fails for some reason. Can&#39;t remember the exact error, but I usually assume fsck will fix it. Rebooted to OSX Recovery mode, and tried the black box &amp;quot;repair&amp;quot;. Booted back into Linux and tried mounting again, and everything is ok&lt;/p&gt;
+&lt;h3 id=&quot;9.-mount-hfs%2B-in-rw-mode&quot;&gt;9. Mount HFS+ in RW mode &lt;a class=&quot;direct-link&quot; href=&quot;#9.-mount-hfs%2B-in-rw-mode&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Read-only home directory is not so useful for me. Apparently to mount HFS+ as writable, you need to disable journaling as described on &lt;a href=&quot;https://ineed.coffee/64/how-to-have-both-mac-os-x-and-linux-installed-and-share-the-same-home-directory-files/&quot;&gt;ineed.coffee&lt;/a&gt;. Boot back into OSX and try disabling with various diskutil commands, but they just through unhelpful errors. Turns out it was Core Storage. This whole time&lt;/p&gt;
+&lt;h3 id=&quot;10.-kill-core-storage&quot;&gt;10. Kill Core Storage &lt;a class=&quot;direct-link&quot; href=&quot;#10.-kill-core-storage&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Great overview of how to fix this from &lt;a href=&quot;http://awesometoast.com/yosemite-core-storage-and-partition-woes/&quot;&gt;awesometoast&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Two &lt;code&gt;diskutil cs&lt;/code&gt; commands later and you can now disable journaling. But first you need to reinstall rEFInd from osx again (just re-run &lt;code&gt;install-refind&lt;/code&gt; script).&lt;/p&gt;
+&lt;h3 id=&quot;11.-disable-hfs%2B-journal&quot;&gt;11. Disable HFS+ Journal &lt;a class=&quot;direct-link&quot; href=&quot;#11.-disable-hfs%2B-journal&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Reboot, boot into OSX Recovery Mode, open Disk Utility.&lt;br&gt;
+Unmount &amp;quot;Macintosh HD&amp;quot;, then Option click on &amp;quot;File&amp;quot; and Click &amp;quot;disable journaling&amp;quot;&lt;br&gt;
+From &lt;a href=&quot;http://castyour.net/disable-hfs-journaling-leopard-use-disks-readwrite-linux&quot;&gt;castyour.net&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;12.-mount!&quot;&gt;12. Mount! &lt;a class=&quot;direct-link&quot; href=&quot;#12.-mount!&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Back in linux, you should now be able to mount properly. May need to set UID to 501 (or whatever Apple user is) and possibly &lt;code&gt;chown&lt;/code&gt; the HFS+ mount directory,&lt;br&gt;
+Now symlink any needed stuff from /mnt/ &lt;a href=&quot;https://help.ubuntu.com/community/hfsplus&quot;&gt;Ubuntu docs&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;13.-fix-suspend%2Fresume&quot;&gt;13. Fix Suspend/Resume &lt;a class=&quot;direct-link&quot; href=&quot;#13.-fix-suspend%2Fresume&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Classic linux volume 2 - resuming from sleep always seems to break or misbehave for some reason. In this case suspend was fine straightaway, but when resuming the screen would turn on briedly, then go black. Hooray.&lt;/p&gt;
+&lt;p&gt;After resuming, the screen is either 100% or 0% - and 0 was the value it chose if the brightness was below about 95%. Solution for a while was just mash the &amp;quot;increase brightness&amp;quot; button until it turns back on. For proper fix, install (mba6x)[&lt;a href=&quot;https://github.com/patjak/mba6x_bl&quot;&gt;https://github.com/patjak/mba6x_bl&lt;/a&gt;] and everything is great.&lt;/p&gt;
+&lt;h3 id=&quot;14.-fix-other-keymap-annoyances&quot;&gt;14. Fix other keymap annoyances &lt;a class=&quot;direct-link&quot; href=&quot;#14.-fix-other-keymap-annoyances&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Make fn keys fn-by-default, use fn for media keys etc: &lt;code&gt;# echo 2 &amp;gt; /sys/module/hid_apple/parameters/fnmode&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What to do about ctrl/alt/super? The physical ordering of Ctrl/Alt/Super is different to normal layout so there is a lot of jumping.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;the-good-way&quot;&gt;The Good Way &lt;a class=&quot;direct-link&quot; href=&quot;#the-good-way&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Disable CoreStorage on OSX partition (and disable journaling if RW is wanted)&lt;/li&gt;
+&lt;li&gt;Install rEFInd&lt;/li&gt;
+&lt;li&gt;Install distro of your choosing&lt;/li&gt;
+&lt;li&gt;Fix resume and key mappings&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Web Chess with Vue and Firebase</title>
@@ -405,6 +472,54 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
+		<title>VSCode idea: Find in similar files</title>
+		<link href="https://psimyn.com/posts/vscode-find-similar-files/"/>
+		<updated>2019-03-17T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/vscode-find-similar-files/</id>
+		<content type="html">&lt;p&gt;I want a shortcut for VSCode that lets me &amp;quot;Find in files&amp;quot;, but with the filter pre-filled to current file type. So searching from a scss file will default to searching scss files. Same for rb or js files. This might use a different shortcut to the default find in files, or use the same one but configure pre-filled file types.&lt;/p&gt;
+&lt;p&gt;Not sure how it would handle the case where you&#39;d previously set filename filters - should it clear the filter, or only replace empty filter? Not clearing would match the default behaviour a bit better.&lt;/p&gt;
+&lt;p&gt;Optionally add multiple file types in some order, and order the results like that. So prefer files that match the current suffix (e.g. &lt;code&gt;_spec.rb&lt;/code&gt;), then show similar file types (&lt;code&gt;.rb&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;I haven&#39;t yet found an extension that does this. I&#39;m confident it exists, but I cannot think of how to phrase a search query to find it.&lt;/p&gt;
+&lt;p&gt;In the meantime, some useful shortcuts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alt + F12 to go to definition&lt;/li&gt;
+&lt;li&gt;Shift + F12 to find usages&lt;/li&gt;
+&lt;li&gt;Alt + Click for multiple cursors (totally unrelated but cool)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Problems with HTML number inputs</title>
+		<link href="https://psimyn.com/posts/no-number-inputs/"/>
+		<updated>2019-04-01T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/no-number-inputs/</id>
+		<content type="html">&lt;p&gt;Using &lt;code&gt;type=&amp;quot;number&amp;quot;&lt;/code&gt; on input fields is far less useful than I originally thought. I was previously using it for the form on &lt;a href=&quot;https://psimyn.com/projects#framer&quot;&gt;Framer&lt;/a&gt;. Since they are number fields, having the number keyboard pop up on phones was useful. It also prevents people typing in non-numbers, so there&#39;s some free form validation.&lt;/p&gt;
+&lt;p&gt;But there were some issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scrollwheel/trackpad will cause your number to go up or down without you noticing&lt;/li&gt;
+&lt;li&gt;Default value of the step attribute is not &amp;quot;any&amp;quot;. Decimal numbers will be rounded unless you specify it&lt;/li&gt;
+&lt;li&gt;Things consisting of numbers are not necessarily numbers - you don&#39;t want to accidentally increment your credit card number because of scrolling up a little&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Typing numbers is not like using an abacus. People don&#39;t enter numbers by adding one at a time. If they do (i.e. quantity fields), you are better off with explicit Add/Remove buttons, rather than the tiny tiny arrows that browser input fields give you.&lt;/p&gt;
+&lt;p&gt;There is a great writeup from Filament Group, &lt;a href=&quot;https://www.filamentgroup.com/lab/type-number.html&quot;&gt;I wanted to type a number&lt;/a&gt;, which runs through these problems and gives a solid solution.&lt;/p&gt;
+&lt;p&gt;Also see &lt;a href=&quot;https://bradfrost.com/blog/post/you-probably-dont-need-input-typenumber/&quot;&gt;You Probably Don&#39;t Need input type=&amp;quot;number&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Mock network requests with Puppeteer</title>
+		<link href="https://psimyn.com/posts/mock-network-puppeteer/"/>
+		<updated>2019-04-19T10:00:00+10:00</updated>
+		<id>https://psimyn.com/posts/mock-network-puppeteer/</id>
+		<content type="html">&lt;p&gt;This week&#39;s thing: open an instance of Chrome that gives mock data for particular URLs.&lt;/p&gt;
+&lt;p&gt;Useful to mock backend responses when you don&#39;t want to have to donate RAM to minikube when developing locally&lt;/p&gt;
+&lt;p&gt;This snippet signs into local GitLab instance, and gives a fake response to the &lt;code&gt;additional_endpoints.json&lt;/code&gt; URL&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; puppeteer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;puppeteer&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; browser &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; puppeteer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;launch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; headless&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;page&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; browser&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setRequestInterception&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;request&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;interceptedRequest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;interceptedRequest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;additional_metrics.json&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;        interceptedRequest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;respond&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;          metrics&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;        interceptedRequest&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;goto&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;http://localhost:3001/users/sign_in&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;input[name=&quot;user[login]&quot;]&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;root&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;input[name=&quot;user[password]&quot;]&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;5iveL!fe&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;.qa-sign-in-button&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;waitForSelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;.header-user-dropdown-toggle&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token comment&quot;&gt;// await browser.close();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Antisocial Business</title>
 		<link href="https://psimyn.com/posts/2019-04-28-antisocial-media/"/>
 		<updated>2019-04-28T19:45:51+10:00</updated>
@@ -437,6 +552,21 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
+		<title>How I Read</title>
+		<link href="https://psimyn.com/posts/how-i-read/"/>
+		<updated>2019-06-15T16:27:28+10:00</updated>
+		<id>https://psimyn.com/posts/how-i-read/</id>
+		<content type="html">&lt;p&gt;I got much more into reading in the last few years. Having barely read a book since finishing high school this was a hard habit to rekindle, but very glad I did.&lt;/p&gt;
+&lt;p&gt;In the morning I read something heavy while having a coffee. This book lives on the kitchen table, and I keep a notepad and a pen/pencil there. I usually read these cover to cover, but spend a bit of time with the table of contents before starting and decide on things to skip to or over. Getting better at marginalia, but I still have a deep-seated reluctance to write too much in the books. The notes are a vague summary of important points, also list of good pages/chapters and sometimes quotes. I try to read for 30 mins at least very soon after waking up.&lt;/p&gt;
+&lt;p&gt;After this and a bit of work I walk the dog, and usually listen to either biographies, pop-science, or sometimes science-fiction. I tried Audible for a few books, but tended to zone out too often. So I now get ebooks (epub or pdf) and use Google Voice on some Android app to read them. That sweet, tinny, robotic voice at high speed is just unnatural enough to keep my attention. And it comes with the hilarious occasional mispronuniciation, or reading punctuation out load. Dot dot dot.&lt;/p&gt;
+&lt;p&gt;One annoyance is page headers/footers, or badly OCRd books from Gutenberg. Having the same content read out every page gets a bit annoying, but not enough for me to edit the book and find/replace the content. If I find an easy way to do that (especially from phone) I would love to start though.&lt;/p&gt;
+&lt;p&gt;These books I usually highlight parts I like, but don&#39;t often take notes because writing on a phone is annoying enough when &lt;em&gt;not&lt;/em&gt; also walking the dog. Audible&#39;s easy &#39;add highlight&#39; button was quite good in this regard, but I like being able to review the notes as text rather than audio. And now too happy with this setup to try Amazon&#39;s Audible/Kindle combo so I guess will stick with it for now.&lt;/p&gt;
+&lt;p&gt;After that it&#39;s mostly just screens and browsers for the day. I would still like a good PDF reader (both application and physical device) but haven&#39;t found anything I particularly enjoy reading on yet. Kindle is a bit small, most tablets are a bit awkwardly sized. Laptop works ok but less so for reading on floor or couch.&lt;/p&gt;
+&lt;p&gt;I keep a fiction book by the bed that I read before going to sleep. Something easier to read that doesn&#39;t need notes. Base goal here is at least 1 page. Ideal is 20 or more, but  I usually go to bed tired and fall asleep fast.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>The Easy Lazy Thing</title>
 		<link href="https://psimyn.com/posts/2019-07-13-easy-lazy-thing/"/>
 		<updated>2019-07-13T22:44:24+10:00</updated>
@@ -445,27 +575,6 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 &lt;p&gt;A big one for me was always to put off writing. I won&#39;t write a todo list without a quick runthrough of 5 or 6 different options for this. Plain text is simple and portable, but maybe I want formatting or embedded content. List-specific apps are often too short, and some tasks need a bit more details and description. I need something that works reliably offline, but that also syncs between phone and a few computers. At this point people often suggest paper, but I tend not to complete those or just leave them in another room. I&#39;ve fot todos on my whiteboard (which is right next to the damn desk) from weeks ago.&lt;/p&gt;
 &lt;p&gt;What helps with all this is having a good easy default thing. It doesn&#39;t have to be the best thing. Or even a particularly great thing. If it&#39;s not actively terrible then it&#39;s better than indecisive stagnation.&lt;/p&gt;
 &lt;p&gt;I started actually writing semi regularly when I had a single synced file as my default notepad. I occasionally start stuff there and move it, but a lot of the random notes just stay there which is just fine for now. Doing the thing is better than researching 10 alternative ways of doing the thing, and developing a framework to compare them.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>Floss Trials</title>
-		<link href="https://psimyn.com/posts/2019-07-14-floss-trials/"/>
-		<updated>2019-07-14T22:01:32+10:00</updated>
-		<id>https://psimyn.com/posts/2019-07-14-floss-trials/</id>
-		<content type="html">&lt;p&gt;Choosing a dental floss is harder than I thought. Trying a new floss is a low cost but long running experiment. Only costs a few dollars, but now I have 100m of it now and already hate it not even 10m in. The floss itself is ok, flatter profile than before. But it keeps coming off the damn spool and I have to crack open the container and fix it. I didn&#39;t sign up for this, Colgate.&lt;/p&gt;
-&lt;p&gt;Now conflicted about whether to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;stick it out for however many months&lt;/li&gt;
-&lt;li&gt;spend (waste) time trying to improve the spool and reduce loose threading&lt;/li&gt;
-&lt;li&gt;throw it away and
-&lt;ul&gt;
-&lt;li&gt;buy my regular floss&lt;/li&gt;
-&lt;li&gt;try yet another one&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Too many choices. So for now will stick with it and keep complainin.&lt;/p&gt;
 </content>
 	</entry>
 	
@@ -554,16 +663,59 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
-		<title>How to Check your IP Address</title>
-		<link href="https://psimyn.com/posts/get-public-ip/"/>
+		<title>How to check your IP address</title>
+		<link href="https://psimyn.com/posts/ip/"/>
 		<updated>2019-10-21T11:00:00+11:00</updated>
-		<id>https://psimyn.com/posts/get-public-ip/</id>
+		<id>https://psimyn.com/posts/ip/</id>
 		<content type="html">&lt;p&gt;Using dig:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dig +short myip.opendns.com @resolver1.opendns.com
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Or using curl:&lt;/p&gt;
+&lt;p&gt;Using curl:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl https://ipinfo.io/ip
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using JavaScript:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;script style=&quot;display: block&quot; contenteditable=&quot;&quot;&gt;function checkIP() {
+  return fetch(&#39;https://ipinfo.io/ip&#39;)
+    .then(res =&gt; res.text());
+}&lt;/script&gt;
+&lt;/code&gt;
+&lt;div class=&quot;flex&quot;&gt;
+  &lt;button id=&quot;get-ip&quot;&gt;Click to fetch&lt;/button&gt;
+  &lt;div id=&quot;ip&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/pre&gt;
+&lt;script&gt;
+  var btn = document.querySelector(&#39;#get-ip&#39;);
+  btn.addEventListener(&#39;click&#39;, function() {
+    var ip = document.querySelector(&#39;#ip&#39;);
+    ip.innerHTML = &#39;Loading&#39;;
+    checkIP().then(address =&gt; {
+      ip.innerHTML = address;
+    });
+    btn.parentNode.appendChild(ip);
+  })
+&lt;/script&gt;
+&lt;style&gt;
+#get-ip {
+  line-height: 2;
+  font-size: 1.2em;
+}
+
+#ip {
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+pre {
+  max-width: 680px;
+}
+&lt;/style&gt;
 </content>
 	</entry>
 	
@@ -578,6 +730,23 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 &lt;p&gt;The &#39;keeping people on Google rather than their own servers&#39; aspect is an ongoing downside. But as a simple app framework it shows promise. Like what I had wanted from Polymer Elements but with a friendlier API. The better solution is obviously &amp;quot;just make faster pages&amp;quot;. But the industry has had a demonstrably hard time doing that and page bloat continues to grow out of control.&lt;/p&gt;
 &lt;p&gt;The AMP library contains a lot of components now and seems like a decent way to make a PWA (further research on this pending). It is probably too late to rename, but for many the name still carries a lot of baggage from the bad early days. Will be curious to see if it overcomes the rep, or that is just gradually forgotten.&lt;/p&gt;
 &lt;p&gt;Or if this is all just a ruse and it&#39;s still a Google marketing play. Time will tell.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>linksync</title>
+		<link href="https://psimyn.com/posts/linksync/"/>
+		<updated>2019-10-29T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/linksync/</id>
+		<content type="html">&lt;p&gt;I switch between browsers quite a lot, mostly between firefox and chromium-based ones depending on what I&#39;m doing or my current mood. Because of this I haven&#39;t been able to rely on bookmarks from browser, and prefer somewhere centrol to keep links. &lt;a href=&quot;https://getpocket.com/&quot;&gt;Pocket&lt;/a&gt; has extensions for most browers, and gives a quite decent overlay UI for saving links and adding tags. The only thing I couldn&#39;t add was notes. I like to add short descriptions or notes and sometimes cross-link things to help remember and find things later.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gitlab.com/psimyn/linksync&quot;&gt;linksync&lt;/a&gt; is a simple script that grabs items from the Pocket API that I&#39;ve tagged with &#39;links&#39;, grabs some data from each, and adds a new item in my websites &lt;code&gt;links&lt;/code&gt; folder (as a draft). It will then pop up on my computer later. I&#39;ll maybe add a description or some additional tags, then save and publish the site. Eventually would like to automate that as well, but haven&#39;t decided how I want it to work yet. Probably just publish master will be simplest.&lt;/p&gt;
+&lt;p&gt;Quick recap of making a Pocket app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://getpocket.com/developer/apps/new&quot;&gt;Create a Pocket Application&lt;/a&gt; and give it the Retreive permission.&lt;/li&gt;
+&lt;li&gt;Manually went through the steps in the &lt;a href=&quot;https://getpocket.com/developer/docs/authentication&quot;&gt;Pocket Authentication API Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add queries from the &lt;a href=&quot;https://getpocket.com/developer/docs/v3/retrieve&quot;&gt;Pocket Retreive API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Store &lt;code&gt;last_updated&lt;/code&gt; value to only fetch recently added items&lt;/li&gt;
+&lt;/ol&gt;
 </content>
 	</entry>
 	
@@ -646,6 +815,46 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
+		<title>Better mobile screenshots</title>
+		<link href="https://psimyn.com/posts/better-mobile-screenshots/"/>
+		<updated>2020-01-02T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/better-mobile-screenshots/</id>
+		<content type="html">&lt;p&gt;A useful tip when adding screenshots to posts or talks is to put them &amp;quot;inside&amp;quot; a device. This gives the screenshot some context.&lt;/p&gt;
+&lt;p&gt;Even though this screenshot already contains Android top &amp;amp; bottom bars, with the added outline it&#39;s immediately obvious it&#39;s from a phone.&lt;/p&gt;
+&lt;img class=&quot;alignleft wp-image-372&quot; src=&quot;https://psimyn.com/posts/better-mobile-screenshots/economist.png&quot; alt=&quot;The Economist on mobile is mostly sticky bullshit&quot; width=&quot;400&quot; height=&quot;711&quot;&gt;
+&lt;img class=&quot;phone-border wp-image-372 alignnone&quot; src=&quot;https://psimyn.com/posts/better-mobile-screenshots/economist.png&quot; alt=&quot;The Economist on mobile is mostly sticky bullshit&quot; width=&quot;400&quot; height=&quot;711&quot;&gt;
+&lt;p&gt;To add the outline to images I use a simple CSS border:&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.phone-border&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #111 solid&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;border-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2rem 1rem 3rem 1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To take this further you can also make them responsive! So we see phone screenshots on phones, and a fake laptop screen outline on big/wide screens. This assumes you are using responsive images so you get desktop aspect ratio on bigger screens.&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 800px and &lt;span class=&quot;token property&quot;&gt;min-aspect-ratio&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 16/9&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token selector&quot;&gt;.phone-border&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token property&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ccc&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token property&quot;&gt;border-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;
+.phone-border {
+  border: #111 solid;
+  border-radius: 1rem;
+  border-width: 2rem 1rem 3rem 1rem;
+  box-shadow: 0 3px 4px #3338;
+}
+&lt;/style&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>The right way to disable CSS animations</title>
+		<link href="https://psimyn.com/posts/disable-css-animations/"/>
+		<updated>2020-01-20T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/disable-css-animations/</id>
+		<content type="html">&lt;p&gt;Sometimes I want a way to disable all CSS animations on a page. This is useful for end-to-end testing, automatic screenshots, or reducing motion sickness risk. This &lt;a href=&quot;https://css-tricks.com/stop-animations-during-window-resizing/&quot;&gt;recent CSS Tricks post&lt;/a&gt; suggests disabling animations &amp;amp; transitions while resizing, to reduce needless browser work. This is an excellent idea! Here is the usual way of disabling animations:&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.resize-animation-stopper *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The problem with setting &lt;code&gt;none&lt;/code&gt; is that &lt;code&gt;transitionend&lt;/code&gt; and &lt;code&gt;animationend&lt;/code&gt; events will no longer be fired. Maybe not a big deal, but it could also prevent stuff from working as you expect.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/psimyn/pen/xxbXmrE&quot;&gt;This contrived example&lt;/a&gt; animates the border color on hover, and once that&#39;s finished sets the background color. But when animations are disabled, the background color never gets set!&lt;/p&gt;
+&lt;p&gt;Andy Bell&#39;s &lt;a href=&quot;https://hankchizljaw.com/wrote/a-modern-css-reset/&quot;&gt;modern CSS reset&lt;/a&gt; adds a media query for &lt;code&gt;prefers-reduced-motion&lt;/code&gt; to disable animations for people who don&#39;t want them. This originally used the &lt;code&gt;none&lt;/code&gt; to disable, but was later &lt;a href=&quot;https://github.com/hankchizljaw/modern-css-reset/pull/6&quot;&gt;changed&lt;/a&gt; to instead use a very short duration (setting times lower than 0.01s can cause flickering)&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.resize-animation-stopper *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;animation-duration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0.01ms &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;animation-iteration-count&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1 &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;transition-duration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0.01ms &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;scroll-behavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This means animations will end (almost) instantly, and not repeat. The &lt;code&gt;scroll-behaviour: auto&lt;/code&gt; ensures that smooth scrolling is disabled.&lt;/p&gt;
+&lt;p&gt;Not quite as tidy as just writing &lt;code&gt;none&lt;/code&gt;, but guarantees your page works for everyone regardless of motion preferences.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Framer Project History</title>
 		<link href="https://psimyn.com/posts/framer-history/"/>
 		<updated>2020-02-09T11:00:00+11:00</updated>
@@ -669,6 +878,23 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	</entry>
 	
 	<entry>
+		<title>Reducing use of Array.reduce</title>
+		<link href="https://psimyn.com/posts/reducing-reduce-use/"/>
+		<updated>2020-02-09T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/reducing-reduce-use/</id>
+		<content type="html">&lt;p&gt;I recently went on a short anti-&lt;code&gt;reduce&lt;/code&gt; rant at work. Was in defence of &lt;code&gt;forEach&lt;/code&gt; and local mutations, but I came to the conclusion that it&#39;s mostly just because I don&#39;t like &lt;code&gt;reduce&lt;/code&gt;. Mostly when combined with fat arrow functions (which I also don&#39;t particularly like).&lt;/p&gt;
+&lt;p&gt;Writing &lt;code&gt;reduce()&lt;/code&gt; makes you look smart. Reading reduce makes you feel stupid.&lt;/p&gt;
+&lt;p&gt;The recent &lt;a href=&quot;https://www.youtube.com/watch?v=qaGjS7-qWzg&quot;&gt;HTTP 203: Is reduce() bad?&lt;/a&gt; covers many of my issues, the tldr:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the method signature is unpleasant&lt;/li&gt;
+&lt;li&gt;most of the time you could use filter + map&lt;/li&gt;
+&lt;li&gt;use reduce if you want a single value (e.g. sum)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;reduce&lt;/code&gt; has some use-cases, but they are rarer than its usage suggests. Most of the time I favor &lt;code&gt;filter&lt;/code&gt; or &lt;code&gt;forEach&lt;/code&gt;.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>My favorite code is my worst code</title>
 		<link href="https://psimyn.com/posts/worst-code-best-code/"/>
 		<updated>2020-02-09T11:00:00+11:00</updated>
@@ -676,23 +902,18 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 		<content type="html">&lt;p&gt;Most code is pretty terrible. Mine is particularly bad, but generally it&#39;s rare to see a project and think &amp;quot;wow that&#39;s good code&amp;quot;. This is fine. Code isn&#39;t literature. Clarity is still important, but code is meant to solve a problem (or cause a problem).&lt;/p&gt;
 &lt;p&gt;I often see people point to some brilliant, clean, well-structured project as their favorite code. Some perfectly formed sculpture of numbers and text, chiseled to perfection over years of planning and refactoring. I&#39;m at the other end, and tend to love my hacky ugly snippets.&lt;/p&gt;
 &lt;p&gt;They do what they are supposed to, and are a good chance to try new things.&lt;/p&gt;
-&lt;p&gt;Test projects are a great place to try new things,&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;JS/jquery&lt;/li&gt;
-&lt;li&gt;HTML tag types&lt;/li&gt;
-&lt;li&gt;Drupal setup/admin/modules&lt;/li&gt;
-&lt;li&gt;iframe embedding&lt;/li&gt;
-&lt;li&gt;Svelte&lt;/li&gt;
-&lt;li&gt;Svelte again&lt;/li&gt;
-&lt;li&gt;JS modules&lt;/li&gt;
-&lt;li&gt;rollup&lt;/li&gt;
-&lt;li&gt;shell scripts&lt;/li&gt;
-&lt;li&gt;wordpress plugins&lt;/li&gt;
-&lt;li&gt;CSS&lt;/li&gt;
-&lt;li&gt;media queries&lt;/li&gt;
-&lt;li&gt;drawing images to canvas&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;By the time you get caught up in making your code clean and DRY, well-structured and performant, unit-testable and unit-tested, it may as well be a work project. It may as well be a work project. Work projects are not the place for learning too many new things.&lt;/p&gt;
+&lt;p&gt;By the time you get caught up in making your code clean and DRY, well-structured and performant, unit-testable and unit-tested, it may as well be a work project. Work projects are not the place for learning too many new things.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Quitting is easier than cutting back</title>
+		<link href="https://psimyn.com/posts/quitting-cutting-back/"/>
+		<updated>2020-02-17T11:00:00+11:00</updated>
+		<id>https://psimyn.com/posts/quitting-cutting-back/</id>
+		<content type="html">&lt;p&gt;Something that has come up repeatedly in the past year is that quitting things entirely is often easier than reducing.&lt;/p&gt;
+&lt;p&gt;Some recent occurences were a &lt;a href=&quot;https://tim.blog/2019/10/10/tim-on-happiness-dating-depressive-episodes/&quot;&gt;Tim Ferris Q&amp;amp;A&lt;/a&gt; where he talks about the &#39;one decision to remove 1000 decisions&#39;, and in &lt;a href=&quot;https://hbr.org/2010/07/how-will-you-measure-your-life&quot;&gt;Clay Christenssen speech to HBS graduates&lt;/a&gt; where he doesn&#39;t play ball on Sundays. &amp;quot;Just this once&amp;quot; means the question can come up literally every time the possibility exists. And you can waste a lot of time thinking up ways to justify it that still fit into whatever rules you have.&lt;/p&gt;
+&lt;p&gt;Last week I tried to reduce coffee drinking to one per day. One both Monday and Wednesday I ended up having three! This is partly out of habit, partly out of a cheat-day mentality, Easier is to stop entirely; I usually do this when I travel.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
