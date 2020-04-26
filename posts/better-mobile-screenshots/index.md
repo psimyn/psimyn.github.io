@@ -37,3 +37,12 @@ To take this further you can also make them responsive! So we see phone screensh
 }
 ```
 
+<style>
+.phone-border {
+  border: #111 solid;
+  border-radius: 1rem;
+  border-width: 2rem 1rem 3rem 1rem;
+  box-shadow: 0 3px 4px #3338;
+}
+</style>
+

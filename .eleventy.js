@@ -36,6 +36,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("projects");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("posts/**/*.png");
   eleventyConfig.addPassthroughCopy("mask/img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("CNAME");
