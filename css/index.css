@@ -236,7 +236,10 @@ a[href].direct-link:focus:visited,
     padding: 1em;
 }
 .site-title {
-    background: linear-gradient(to top, #0c9a9a 0%, #2aafe2 44%, #380036 90%);
+  --logo-color: #0c9a9a;
+  --logo-color-blue: #2aafe2;
+  --logo-color-dark: #380036;
+    fill: linear-gradient(to top, #0c9a9a 0%, #2aafe2 44%, #380036 90%);
     box-shadow: 0.5px 1px 1px 1px #043f3f, 2px 2px 6px -2px #1113, 4px 2px 12px -1px #1112;
     padding: 2em;
     transform: translate(5%, 5%) scale(1.2);
@@ -269,10 +272,15 @@ a[href].direct-link:focus:visited,
 
 .site-title img + img,
 .site-title:hover img + img {
-  margin-top: -1.75px;
-  margin-left: -1px;
-  filter: brightness(0.25);
-  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    var(--logo-color) 85%,
+    var(--logo-color-dark) 85%
+  );
+  mix-blend-mode: soft-light;
+  top: 1em;
+  left: 0.125em;
+  padding: 1.75em 1.75em 2em ;
 }
 
 .site-nav {
