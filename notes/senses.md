@@ -27,6 +27,8 @@
 - how much does frequency sensitivity curve affect hearing?
 - can tinnitus be treated? Physically? Mentally?
 - what are sonic cannons? Are they unsafe?
+- how can you hear something above you with only 2 ears?
+- how can you do this with headphones?
 
 ## smell
 
