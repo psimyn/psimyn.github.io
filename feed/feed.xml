@@ -4,7 +4,7 @@
 	<subtitle></subtitle>
 	<link href="https://psimyn.com/feed/feed.xml" rel="self"/>
 	<link href="https://psimyn.com/"/>
-	<updated>2020-02-17T11:00:00+11:00</updated>
+	<updated>2020-02-16T13:00:00+11:00</updated>
 	<id>https://psimyn.com/</id>
 	<author>
 		<name>Simon Knox</name>
@@ -14,7 +14,7 @@
 	<entry>
 		<title>Start</title>
 		<link href="https://psimyn.com/posts/2016-05-28-welcome/"/>
-		<updated>2016-05-28T10:00:00+10:00</updated>
+		<updated>2016-05-27T14:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/2016-05-28-welcome/</id>
 		<content type="html">&lt;p&gt;this is a placeholder to see if posts work. Maybe it will stay here for posterity,&lt;br&gt;
 otherwise it will be replaced with some actual content eventually.&lt;/p&gt;
@@ -24,7 +24,7 @@ otherwise it will be replaced with some actual content eventually.&lt;/p&gt;
 	<entry>
 		<title>Dual-booting Linux and OSX</title>
 		<link href="https://psimyn.com/posts/2016-06-10-macbook-linux-dual-boot/"/>
-		<updated>2016-06-12T10:00:00+10:00</updated>
+		<updated>2016-06-11T14:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/2016-06-10-macbook-linux-dual-boot/</id>
 		<content type="html">&lt;p&gt;After far too long putting up&lt;/p&gt;
 &lt;p&gt;with OSX&#39;s crap, I finally cracked a few days ago. The actual install/setup bit was pretty straightforward, there was some screwing around getting HFS+ partition shared between the two (I wanted to share most stuff in home directory). For easiest, jump to &lt;a href=&quot;#the-good-way&quot;&gt;the good way&lt;/a&gt;&lt;/p&gt;
@@ -81,7 +81,7 @@ Now symlink any needed stuff from /mnt/ &lt;a href=&quot;https://help.ubuntu.com
 	<entry>
 		<title>Web Chess with Vue and Firebase</title>
 		<link href="https://psimyn.com/posts/2016-09-22-making-vue-chess/"/>
-		<updated>2016-09-22T10:00:00+10:00</updated>
+		<updated>2016-09-21T14:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/2016-09-22-making-vue-chess/</id>
 		<content type="html">&lt;p&gt;Some notes for learning Vue.js by building Chess. Because todo apps aren&#39;t very realistic.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&quot;http://rc.vuejs.org/guide/&quot;&gt;Vue docs&lt;/a&gt; are pretty awesome. I&#39;m going with the RC docs for this - they are complete enough and anything missing is usually available in 1.0.&lt;/p&gt;
@@ -257,7 +257,7 @@ methods: {
 	<entry>
 		<title>Svelte First Impressions</title>
 		<link href="https://psimyn.com/posts/2016-12-14-svelte/"/>
-		<updated>2016-12-15T07:49:41+11:00</updated>
+		<updated>2016-12-14T09:49:41+11:00</updated>
 		<id>https://psimyn.com/posts/2016-12-14-svelte/</id>
 		<content type="html">&lt;p&gt;The Magical Disappearing UI Framework - a JS framework with no runtime. You can write code in familiar looking components/templates, which gets compiled to vanilla JS to serve to the browser. Created by Rich Harris, of rollup fame. He seems to solo a crazy number of projects, usually small and fast.&lt;/p&gt;
 &lt;ul&gt;
@@ -275,7 +275,7 @@ methods: {
 	<entry>
 		<title>Learning to swim again</title>
 		<link href="https://psimyn.com/posts/2017-10-10-swimming/"/>
-		<updated>2017-10-10T11:00:00+11:00</updated>
+		<updated>2017-10-09T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-10-swimming/</id>
 		<content type="html">&lt;p&gt;Following many years of computer use and not going outside, I decided to try some exercise again. There is a swimming pool a few minutes from my house, so that seemed like a good way to go. Hadn&#39;t really swam properly for 10+ years, and first few times I went I found myself completely exhausted after just a few laps. Was trying to do freestyle, and had forgotten how to breathe properly, how to kick and all sorts of basics. Eventually I remembered to google some advice after getting home (instead of getting distracted by code). Three super useful things took me from &amp;quot;can barely breathe after 3 laps&amp;quot; to swimming patiently and properly enough that I now usually swim until I get bored or run out of time.&lt;/p&gt;
 &lt;h3 id=&quot;1.-mouth-inhale%2C-nose-exhale&quot;&gt;1. Mouth inhale, nose exhale &lt;a class=&quot;direct-link&quot; href=&quot;#1.-mouth-inhale%2C-nose-exhale&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -296,7 +296,7 @@ methods: {
 	<entry>
 		<title>Online Pull Quotes</title>
 		<link href="https://psimyn.com/posts/2017-10-12-pull-quotes/"/>
-		<updated>2017-10-13T08:01:07+11:00</updated>
+		<updated>2017-10-12T10:01:07+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-12-pull-quotes/</id>
 		<content type="html">&lt;p&gt;I hate pull quotes. I especially hate them for online articles. And &lt;em&gt;especially&lt;/em&gt; when they are on phones. But given the single-column-default of most online content currently, they are bad on any screen size.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://adactio.com/journal/11102&quot;&gt;Jeremy Keith&lt;/a&gt; already wrote about this, and his post includes examples showing why they are bad. You can probably read it instead of the following few paragraphs since the sentiment is the same and his writing style is better. It still didn&#39;t tell me why they exist though..&lt;/p&gt;
@@ -311,7 +311,7 @@ methods: {
 	<entry>
 		<title>Clean git history doesn&#39;t really matter</title>
 		<link href="https://psimyn.com/posts/2017-10-13-clean-git-history/"/>
-		<updated>2017-10-14T07:30:10+11:00</updated>
+		<updated>2017-10-13T09:30:10+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-13-clean-git-history/</id>
 		<content type="html">&lt;p&gt;There is often a lot of talk around how important it is to squash your commits, or to rebase your work into logical commits. These are not terrible ideas. Reading through the commit history of a project with tastefully crafted atomic commits makes for a fun afternoon. But I don&#39;t think it is as important as it is made out to be. That was a lot of two-letter words in one sentence.&lt;/p&gt;
 &lt;p&gt;In real-life code often you might want to do things like &amp;quot;remove this wrapper function from modules&amp;quot;. Or &amp;quot;run &lt;code&gt;lint --fix&lt;/code&gt; and commit the result&amp;quot;. But at the risk of ruining the commit history we don&#39;t do it. And the inconsistencies keep going and growing. These types of commits always exist though. From the &amp;quot;burn down the codebase and start again&amp;quot; type initial commit, &amp;quot;convert all tabs/spaces to spaces/tabs&amp;quot;.&lt;/p&gt;
@@ -323,7 +323,7 @@ methods: {
 	<entry>
 		<title>bundle install fails updating json</title>
 		<link href="https://psimyn.com/posts/2017-10-14-bundle-install-json/"/>
-		<updated>2017-10-15T04:54:00+11:00</updated>
+		<updated>2017-10-14T06:54:00+11:00</updated>
 		<id>https://psimyn.com/posts/2017-10-14-bundle-install-json/</id>
 		<content type="html">&lt;p&gt;This has happened to be at least a few times. It is usually when I dig up an old repo on a random machine and want to run a dev server. Or something. But I run &lt;code&gt;bundle install&lt;/code&gt;, and get this super unhelpful error. In the case of my github-pages repo:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;An error occurred while installing json (1.8.3), and Bundler cannot continue.
@@ -378,7 +378,7 @@ make failed, exit code 2
 	<entry>
 		<title>tmux</title>
 		<link href="https://psimyn.com/posts/2018-08-16-tmux/"/>
-		<updated>2018-08-16T19:07:50+10:00</updated>
+		<updated>2018-08-15T23:07:50+10:00</updated>
 		<id>https://psimyn.com/posts/2018-08-16-tmux/</id>
 		<content type="html">&lt;p&gt;I often start a long running command and then realise I didn&#39;t start tmux.&lt;br&gt;
 probably npm install. Or a long awaited apt update.&lt;/p&gt;
@@ -422,7 +422,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 	<entry>
 		<title>Writing Habit</title>
 		<link href="https://psimyn.com/posts/2019-02-19-writing/"/>
-		<updated>2019-02-19T17:49:41+11:00</updated>
+		<updated>2019-02-18T19:49:41+11:00</updated>
 		<id>https://psimyn.com/posts/2019-02-19-writing/</id>
 		<content type="html">&lt;p&gt;I love this &lt;a href=&quot;http://eleganthack.com/temporal-landmarks/&quot;&gt;excellent Eleganthack post&lt;/a&gt; about writing daily. Aiming to form a  more regular writing habit by short daily attempts, rather than annual marathons.&lt;/p&gt;
 &lt;p&gt;Daily (or most-day) habits are a good way to stick to things. You quickly identify when you stop doing something if you miss a few days. Then you can either correct it and resume, or decide it&#39;s not worth it and move on. Dropping habits that you don&#39;t miss is as important as adding new ones - you cannot add activities ad-finitum to a finite day.&lt;/p&gt;
@@ -436,7 +436,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 	<entry>
 		<title>Self-Hosting File Sync</title>
 		<link href="https://psimyn.com/posts/2019-02-23-file-sync/"/>
-		<updated>2019-02-23T10:23:41+11:00</updated>
+		<updated>2019-02-22T12:23:41+11:00</updated>
 		<id>https://psimyn.com/posts/2019-02-23-file-sync/</id>
 		<content type="html">&lt;p&gt;I&#39;ve been investigating self-hosted Dropbox alternatives. Partly privacy, partly due to running low on space all the time. Based on time&lt;br&gt;
 investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/p&gt;
@@ -474,7 +474,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>VSCode idea: Find in similar files</title>
 		<link href="https://psimyn.com/posts/vscode-find-similar-files/"/>
-		<updated>2019-03-17T11:00:00+11:00</updated>
+		<updated>2019-03-16T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/vscode-find-similar-files/</id>
 		<content type="html">&lt;p&gt;I want a shortcut for VSCode that lets me &amp;quot;Find in files&amp;quot;, but with the filter pre-filled to current file type. So searching from a scss file will default to searching scss files. Same for rb or js files. This might use a different shortcut to the default find in files, or use the same one but configure pre-filled file types.&lt;/p&gt;
 &lt;p&gt;Not sure how it would handle the case where you&#39;d previously set filename filters - should it clear the filter, or only replace empty filter? Not clearing would match the default behaviour a bit better.&lt;/p&gt;
@@ -492,7 +492,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Problems with HTML number inputs</title>
 		<link href="https://psimyn.com/posts/no-number-inputs/"/>
-		<updated>2019-04-01T11:00:00+11:00</updated>
+		<updated>2019-03-31T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/no-number-inputs/</id>
 		<content type="html">&lt;p&gt;Using &lt;code&gt;type=&amp;quot;number&amp;quot;&lt;/code&gt; on input fields is far less useful than I originally thought. I was previously using it for the form on &lt;a href=&quot;https://psimyn.com/projects#framer&quot;&gt;Framer&lt;/a&gt;. Since they are number fields, having the number keyboard pop up on phones was useful. It also prevents people typing in non-numbers, so there&#39;s some free form validation.&lt;/p&gt;
 &lt;p&gt;But there were some issues:&lt;/p&gt;
@@ -510,7 +510,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Mock network requests with Puppeteer</title>
 		<link href="https://psimyn.com/posts/mock-network-puppeteer/"/>
-		<updated>2019-04-19T10:00:00+10:00</updated>
+		<updated>2019-04-18T14:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/mock-network-puppeteer/</id>
 		<content type="html">&lt;p&gt;This week&#39;s thing: open an instance of Chrome that gives mock data for particular URLs.&lt;/p&gt;
 &lt;p&gt;Useful to mock backend responses when you don&#39;t want to have to donate RAM to minikube when developing locally&lt;/p&gt;
@@ -522,7 +522,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Antisocial Business</title>
 		<link href="https://psimyn.com/posts/2019-04-28-antisocial-media/"/>
-		<updated>2019-04-28T19:45:51+10:00</updated>
+		<updated>2019-04-27T23:45:51+10:00</updated>
 		<id>https://psimyn.com/posts/2019-04-28-antisocial-media/</id>
 		<content type="html">&lt;p&gt;We&#39;ve really managed to fuck up contact pages over the past decade. The contact page was a pretty simple concept. You would list email address, maybe a phone number, maybe have a contact form if you were particularly fancy (or a business..).&lt;/p&gt;
 &lt;p&gt;Now contact pages tend to have a link to the company facebook page, sometimes accompanied by either a form that doesn&#39;t work, or an email address that noone checks. So annoyingly, if I actually want a timely response it usually means messaging over Facebook. Real identity, walled-garden, I-don&#39;t-actually-agree-with-some-of-the-terms arguments aside, this annoys me for a technical reason.&lt;/p&gt;
@@ -533,7 +533,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>I hate the news</title>
 		<link href="https://psimyn.com/posts/2019-04-28-hate-the-news/"/>
-		<updated>2019-04-28T19:45:53+10:00</updated>
+		<updated>2019-04-27T23:45:53+10:00</updated>
 		<id>https://psimyn.com/posts/2019-04-28-hate-the-news/</id>
 		<content type="html">&lt;p&gt;I hate the news. That the perception of staying informed takes priority of reading something actually useful to me. Or interesting. Or relevant.&lt;/p&gt;
 &lt;p&gt;Incentive for news is to be first, and to get readers&lt;/p&gt;
@@ -554,7 +554,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>How I Read</title>
 		<link href="https://psimyn.com/posts/how-i-read/"/>
-		<updated>2019-06-15T16:27:28+10:00</updated>
+		<updated>2019-06-14T20:27:28+10:00</updated>
 		<id>https://psimyn.com/posts/how-i-read/</id>
 		<content type="html">&lt;p&gt;I got much more into reading in the last few years. Having barely read a book since finishing high school this was a hard habit to rekindle, but very glad I did.&lt;/p&gt;
 &lt;p&gt;In the morning I read something heavy while having a coffee. This book lives on the kitchen table, and I keep a notepad and a pen/pencil there. I usually read these cover to cover, but spend a bit of time with the table of contents before starting and decide on things to skip to or over. Getting better at marginalia, but I still have a deep-seated reluctance to write too much in the books. The notes are a vague summary of important points, also list of good pages/chapters and sometimes quotes. I try to read for 30 mins at least very soon after waking up.&lt;/p&gt;
@@ -569,7 +569,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>The Easy Lazy Thing</title>
 		<link href="https://psimyn.com/posts/2019-07-13-easy-lazy-thing/"/>
-		<updated>2019-07-13T22:44:24+10:00</updated>
+		<updated>2019-07-13T02:44:24+10:00</updated>
 		<id>https://psimyn.com/posts/2019-07-13-easy-lazy-thing/</id>
 		<content type="html">&lt;p&gt;It&#39;s very easy to put things off, so that&#39;s what I usually do. The most common way is getting stuck on some tiny detail, then obsessing over that and choosing not to proceed. Tech things are great for this - you can get stuck on tech stack, hardware choices, platforms to use, needless future planning. Millions of tiny details. Most don&#39;t matter.&lt;/p&gt;
 &lt;p&gt;A big one for me was always to put off writing. I won&#39;t write a todo list without a quick runthrough of 5 or 6 different options for this. Plain text is simple and portable, but maybe I want formatting or embedded content. List-specific apps are often too short, and some tasks need a bit more details and description. I need something that works reliably offline, but that also syncs between phone and a few computers. At this point people often suggest paper, but I tend not to complete those or just leave them in another room. I&#39;ve fot todos on my whiteboard (which is right next to the damn desk) from weeks ago.&lt;/p&gt;
@@ -581,7 +581,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Going Grayscale</title>
 		<link href="https://psimyn.com/posts/grayscale/"/>
-		<updated>2019-07-16T10:00:00+10:00</updated>
+		<updated>2019-07-15T14:00:00+10:00</updated>
 		<id>https://psimyn.com/posts/grayscale/</id>
 		<content type="html">&lt;p&gt;I&#39;ve just switching work laptop to grayscale mode. Done partly to stop apps stealing attention with bright colors, partly to test for accessibility day-to-day. Most difficult thing so far has been viewing diffs; I have to pay more attention to the +/- at the start of the line. Most other stuff has been surprisingly ok. Apps generally look a bit simpler. Video calls feel like watching a movie from the 40s.&lt;/p&gt;
 &lt;p&gt;For macOS the setting is in &lt;strong&gt;System Preferences &amp;gt; Accessibility &amp;gt; Display &amp;gt; Use grayscale&lt;/strong&gt;&lt;/p&gt;
@@ -593,7 +593,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>In-Between Time</title>
 		<link href="https://psimyn.com/posts/2019-08-06-in-between-times/"/>
-		<updated>2019-08-06T13:31:07+10:00</updated>
+		<updated>2019-08-05T17:31:07+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-06-in-between-times/</id>
 		<content type="html">&lt;p&gt;There&#39;s a lot written about deep work, and flow states, the maker manager schedule, and the general importance of long uninterrupted blocks of time. But I often struggle to find these. I go days or weeks where little distractions keep popping up, and have a lot of shorter blocks.&lt;/p&gt;
 &lt;p&gt;Right now it&#39;s 10 minutes at a train station. That&#39;s long enough to be a slightly boring wait, but not a great environment for relaxing, meditating or thinking. Not quite long enough to leave the station and walk to coffee and get back. And I don&#39;t want to default to clearing a few articles/emails off my phone; that is a losing battle and basically a waste of time.&lt;/p&gt;
@@ -605,7 +605,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>new URL()</title>
 		<link href="https://psimyn.com/posts/2019-08-08-new-url/"/>
-		<updated>2019-08-08T00:14:13+10:00</updated>
+		<updated>2019-08-07T04:14:13+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-08-new-url/</id>
 		<content type="html">&lt;p&gt;I was looking at this code that gives you query params of a page, defaulting to the current page.&lt;/p&gt;
 &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getQueryParams&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;url &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;search&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -638,7 +638,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Long File Names &gt; Excessive Subfolders</title>
 		<link href="https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/"/>
-		<updated>2019-08-13T07:48:09+10:00</updated>
+		<updated>2019-08-12T11:48:09+10:00</updated>
 		<id>https://psimyn.com/posts/2019-08-13-long-file-names-no-subfolders/</id>
 		<content type="html">&lt;p&gt;I love &lt;a href=&quot;https://twitter.com/dan_abramov/status/1145354949871767552&quot;&gt;this tweet&lt;/a&gt;: &amp;quot;Long names, flat folders&amp;quot;&lt;/p&gt;
 &lt;p&gt;And &lt;a href=&quot;https://twitter.com/adamwathan/status/1145109572081860610a&quot;&gt;Adam Wathan&#39;s original&lt;/a&gt;&lt;/p&gt;
@@ -651,7 +651,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>Jekyll to Eleventy</title>
 		<link href="https://psimyn.com/posts/jekyll-to-eleventy/"/>
-		<updated>2019-10-13T11:00:00+11:00</updated>
+		<updated>2019-10-12T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/jekyll-to-eleventy/</id>
 		<content type="html">&lt;p&gt;After literally years of deliberation and procrastination I decided to migrate my site from Jekyll to Eleventy.&lt;/p&gt;
 &lt;p&gt;It had enough endorsements from tech people I respect to be at least ok, and didn&#39;t seem overly complex to use. I&#39;d tried several of the more framework-oriented static site generators (Next, Nuxt, Gatsby) and they were a bit too much about build processes and graphql. I basically wanted something that would render markdown as HTML. Not having to learn Go was a selling point over Hugo.&lt;/p&gt;
@@ -665,7 +665,7 @@ investment, it would have been cheaper to just pay Dropbox but here we are.&lt;/
 	<entry>
 		<title>How to check your IP address</title>
 		<link href="https://psimyn.com/posts/ip/"/>
-		<updated>2019-10-21T11:00:00+11:00</updated>
+		<updated>2019-10-20T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/ip/</id>
 		<content type="html">&lt;p&gt;Using dig:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dig +short myip.opendns.com @resolver1.opendns.com
@@ -722,7 +722,7 @@ pre {
 	<entry>
 		<title>AMP&#39;s Branding Problem</title>
 		<link href="https://psimyn.com/posts/amps-branding-problem/"/>
-		<updated>2019-10-29T11:00:00+11:00</updated>
+		<updated>2019-10-28T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/amps-branding-problem/</id>
 		<content type="html">&lt;p&gt;Last month I went to AMP Roadshow in Melbourne. Was a day of presentations and a bit of playing around with AMP stuff. AMP appears to be quite a different project to what it was three years ago.&lt;/p&gt;
 &lt;p&gt;AMP is no longer an ancronym for Accelerated Mobile Pages - now it&#39;s the project name. This AMP is meant as more of a lightweight [citation needed] framework for making webapps, rather than just a way to get better Google rank and a ⚡ next to your page title.&lt;/p&gt;
@@ -736,7 +736,7 @@ pre {
 	<entry>
 		<title>linksync</title>
 		<link href="https://psimyn.com/posts/linksync/"/>
-		<updated>2019-10-29T11:00:00+11:00</updated>
+		<updated>2019-10-28T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/linksync/</id>
 		<content type="html">&lt;p&gt;I switch between browsers quite a lot, mostly between firefox and chromium-based ones depending on what I&#39;m doing or my current mood. Because of this I haven&#39;t been able to rely on bookmarks from browser, and prefer somewhere centrol to keep links. &lt;a href=&quot;https://getpocket.com/&quot;&gt;Pocket&lt;/a&gt; has extensions for most browers, and gives a quite decent overlay UI for saving links and adding tags. The only thing I couldn&#39;t add was notes. I like to add short descriptions or notes and sometimes cross-link things to help remember and find things later.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://gitlab.com/psimyn/linksync&quot;&gt;linksync&lt;/a&gt; is a simple script that grabs items from the Pocket API that I&#39;ve tagged with &#39;links&#39;, grabs some data from each, and adds a new item in my websites &lt;code&gt;links&lt;/code&gt; folder (as a draft). It will then pop up on my computer later. I&#39;ll maybe add a description or some additional tags, then save and publish the site. Eventually would like to automate that as well, but haven&#39;t decided how I want it to work yet. Probably just publish master will be simplest.&lt;/p&gt;
@@ -753,7 +753,7 @@ pre {
 	<entry>
 		<title>Automate Later</title>
 		<link href="https://psimyn.com/posts/automate-later/"/>
-		<updated>2019-12-01T11:00:00+11:00</updated>
+		<updated>2019-11-30T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/automate-later/</id>
 		<content type="html">&lt;p&gt;I wanted to set up backups for a few computers. Basically mirror a hard drive where I keep some photos and music so I don&#39;t lose em in case of hard drive failure or extreme flooding.&lt;/p&gt;
 &lt;p&gt;I bought some external drives &lt;em&gt;months&lt;/em&gt; ago to do this, had them sitting in a case ready to go, but then got caught up with how mirroring should work, And how to automate them to handle deletions and things properly, but not wipe all the data if a drive has failed. And preferably some kind of archive mode so I can restore things that get accidentally changed or deleted.&lt;/p&gt;
@@ -772,7 +772,7 @@ pre {
 	<entry>
 		<title>undisturbed</title>
 		<link href="https://psimyn.com/posts/undisturbed/"/>
-		<updated>2019-12-18T11:00:00+11:00</updated>
+		<updated>2019-12-17T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/undisturbed/</id>
 		<content type="html">&lt;p&gt;I&#39;ve had my phone on do-not-disturb for most of the last 5 years. It took a few months before I stopped getting &lt;a href=&quot;https://en.wikipedia.org/wiki/Phantom_vibration_syndrome&quot;&gt;phantom vibrations&lt;/a&gt;, since then I haven&#39;t experienced that at all. Now it doesn&#39;t ring (ringer volume at 0, ringtone is no sound) and doesn&#39;t vibrate.&lt;/p&gt;
 &lt;p&gt;If I&#39;m expecting a delivery or something and actually need it to alert me then I will turn on vibrate. But most of the time it sits there silently; if I&#39;m not looking at it I miss calls. Recently for some reason they don&#39;t even pop up so I miss them even if I &lt;em&gt;am&lt;/em&gt; looking at it.&lt;/p&gt;
@@ -792,7 +792,7 @@ pre {
 	<entry>
 		<title>Preventing Info FOMO</title>
 		<link href="https://psimyn.com/posts/info-fomo/"/>
-		<updated>2019-12-31T11:00:00+11:00</updated>
+		<updated>2019-12-30T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/info-fomo/</id>
 		<content type="html">&lt;p&gt;This year was the first time I was above inbox zero since I started doing it early in the decade. I got through most of my action-required emails (don&#39;t get many of those), so it was mainly newsletters with either longer articles or links. The link newsletters are risky, since it looks easy to read by can quickly turn into 10+ tabs that will take much longer to read.&lt;/p&gt;
 &lt;p&gt;But they could (and do!) contain valuable learnings, so I always added them to my read later list. For emails this just mean leaving them unread, in the Updates tab, where they don&#39;t take up my attention but are constant back of mind growing list of things to do.&lt;/p&gt;
@@ -817,7 +817,7 @@ pre {
 	<entry>
 		<title>Better mobile screenshots</title>
 		<link href="https://psimyn.com/posts/better-mobile-screenshots/"/>
-		<updated>2020-01-02T11:00:00+11:00</updated>
+		<updated>2020-01-01T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/better-mobile-screenshots/</id>
 		<content type="html">&lt;p&gt;A useful tip when adding screenshots to posts or talks is to put them &amp;quot;inside&amp;quot; a device. This gives the screenshot some context.&lt;/p&gt;
 &lt;p&gt;Even though this screenshot already contains Android top &amp;amp; bottom bars, with the added outline it&#39;s immediately obvious it&#39;s from a phone.&lt;/p&gt;
@@ -841,7 +841,7 @@ pre {
 	<entry>
 		<title>The right way to disable CSS animations</title>
 		<link href="https://psimyn.com/posts/disable-css-animations/"/>
-		<updated>2020-01-20T11:00:00+11:00</updated>
+		<updated>2020-01-19T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/disable-css-animations/</id>
 		<content type="html">&lt;p&gt;Sometimes I want a way to disable all CSS animations on a page. This is useful for end-to-end testing, automatic screenshots, or reducing motion sickness risk. This &lt;a href=&quot;https://css-tricks.com/stop-animations-during-window-resizing/&quot;&gt;recent CSS Tricks post&lt;/a&gt; suggests disabling animations &amp;amp; transitions while resizing, to reduce needless browser work. This is an excellent idea! Here is the usual way of disabling animations:&lt;/p&gt;
 &lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.resize-animation-stopper *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -857,7 +857,7 @@ pre {
 	<entry>
 		<title>Framer Project History</title>
 		<link href="https://psimyn.com/posts/framer-history/"/>
-		<updated>2020-02-09T11:00:00+11:00</updated>
+		<updated>2020-02-08T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/framer-history/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https://gitlab.com/duud/framer&quot;&gt;Framer&lt;/a&gt; is one of my favorite projects. It was the first &#39;real&#39; JS project I made, I think the first version was around 2012. It has consistently had some of my worst code and infrastructure. The deploy process is still either a shell script or a manually-installed WordPress plugin. It has years of tech debt stacked on it, has been through two major rewrites (which I generally avoid). The code has gone like this:&lt;/p&gt;
 &lt;ol&gt;
@@ -880,7 +880,7 @@ pre {
 	<entry>
 		<title>Reducing use of Array.reduce</title>
 		<link href="https://psimyn.com/posts/reducing-reduce-use/"/>
-		<updated>2020-02-09T11:00:00+11:00</updated>
+		<updated>2020-02-08T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/reducing-reduce-use/</id>
 		<content type="html">&lt;p&gt;I recently went on a short anti-&lt;code&gt;reduce&lt;/code&gt; rant at work. Was in defence of &lt;code&gt;forEach&lt;/code&gt; and local mutations, but I came to the conclusion that it&#39;s mostly just because I don&#39;t like &lt;code&gt;reduce&lt;/code&gt;. Mostly when combined with fat arrow functions (which I also don&#39;t particularly like).&lt;/p&gt;
 &lt;p&gt;Writing &lt;code&gt;reduce()&lt;/code&gt; makes you look smart. Reading reduce makes you feel stupid.&lt;/p&gt;
@@ -897,7 +897,7 @@ pre {
 	<entry>
 		<title>My favorite code is my worst code</title>
 		<link href="https://psimyn.com/posts/worst-code-best-code/"/>
-		<updated>2020-02-09T11:00:00+11:00</updated>
+		<updated>2020-02-08T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/worst-code-best-code/</id>
 		<content type="html">&lt;p&gt;Most code is pretty terrible. Mine is particularly bad, but generally it&#39;s rare to see a project and think &amp;quot;wow that&#39;s good code&amp;quot;. This is fine. Code isn&#39;t literature. Clarity is still important, but code is meant to solve a problem (or cause a problem).&lt;/p&gt;
 &lt;p&gt;I often see people point to some brilliant, clean, well-structured project as their favorite code. Some perfectly formed sculpture of numbers and text, chiseled to perfection over years of planning and refactoring. I&#39;m at the other end, and tend to love my hacky ugly snippets.&lt;/p&gt;
@@ -909,7 +909,7 @@ pre {
 	<entry>
 		<title>Quitting is easier than cutting back</title>
 		<link href="https://psimyn.com/posts/quitting-cutting-back/"/>
-		<updated>2020-02-17T11:00:00+11:00</updated>
+		<updated>2020-02-16T13:00:00+11:00</updated>
 		<id>https://psimyn.com/posts/quitting-cutting-back/</id>
 		<content type="html">&lt;p&gt;Something that has come up repeatedly in the past year is that quitting things entirely is often easier than reducing.&lt;/p&gt;
 &lt;p&gt;Some recent occurences were a &lt;a href=&quot;https://tim.blog/2019/10/10/tim-on-happiness-dating-depressive-episodes/&quot;&gt;Tim Ferris Q&amp;amp;A&lt;/a&gt; where he talks about the &#39;one decision to remove 1000 decisions&#39;, and in &lt;a href=&quot;https://hbr.org/2010/07/how-will-you-measure-your-life&quot;&gt;Clay Christenssen speech to HBS graduates&lt;/a&gt; where he doesn&#39;t play ball on Sundays. &amp;quot;Just this once&amp;quot; means the question can come up literally every time the possibility exists. And you can waste a lot of time thinking up ways to justify it that still fit into whatever rules you have.&lt;/p&gt;

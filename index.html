@@ -240,7 +240,7 @@
   </div>
 
   <span class="play-toggle">
-    <input type="checkbox" checked id="party">
+    <input type="checkbox" id="party">
   </span>
 </div>
   
@@ -282,8 +282,6 @@ function rotateHue(evt) {
 }
 hueSlider.addEventListener('input', rotateHue)
 
-startParty()
-
 prefersReducedMotion.addEventListener('change', () => {
   if (prefersReducedMotion.matches) {
     shutItDown()
@@ -295,7 +293,7 @@ function startParty() {
   hue = (hue + 1) % 360
   setColor(hue)
 
-  partyInterval = setTimeout(startParty, 300)
+  partyInterval = setTimeout(startParty, 180)
 }
 
 function shutItDown() {
