@@ -9,6 +9,12 @@
   --navy: #17050F;
   --blue: #082840;
   --white: #fff;
+
+  --logo-color: #0c9a9a;
+  --logo-color-blue: #2aafe2;
+  --logo-color-dark: #380036;
+
+  --background-color: #f8fefe;
 }
 * {
   box-sizing: border-box;
@@ -20,7 +26,7 @@ body {
   margin: 0;
   font-family: sans;
   color: var(--darkgray);
-  background-color: var(--white);
+  background-color: var(--background-color, --white);
   min-height: 100vh;
 }
 p:last-child {
@@ -34,7 +40,7 @@ img {
 p,
 .tmpl-post li {
   font-family: "Libre Baskerville", serif;
-  line-height: 1.45;
+  line-height: 2.25;
 }
 a[href] {
   color: var(--blue);
@@ -236,10 +242,6 @@ a[href].direct-link:focus:visited,
     padding: 1em;
 }
 .site-title {
-  --logo-color: #0c9a9a;
-  --logo-color-blue: #2aafe2;
-  --logo-color-dark: #380036;
-    fill: linear-gradient(to top, #0c9a9a 0%, #2aafe2 44%, #380036 90%);
     box-shadow: 0.5px 1px 1px 1px #043f3f, 2px 2px 6px -2px #1113, 4px 2px 12px -1px #1112;
     padding: 2em;
     transform: translate(5%, 5%) scale(1.2);
@@ -250,34 +252,31 @@ a[href].direct-link:focus:visited,
 .site-title:hover:not(:active),
 .site-title:focus:not(:active) {
     text-decoration: none;
-}
-
-.site-title:active {
-    transform: translate(12.5%, 12.5%) scale(1.4);
+    background: var(--logo-color-dark);
 }
 
 .site-title img {
+  filter: blur(.5px);
   height: 3rem;
   max-width: 3rem;
   left: 0.5rem;
   top: 1.25rem;
   position: absolute;
-  filter: brightness(0.95);
   user-select: none;
-}
-
-.site-title:hover img {
-  filter: brightness(1);
 }
 
 .site-title img + img,
 .site-title:hover img + img {
   background: linear-gradient(
     to bottom,
-    var(--logo-color) 85%,
+    var(--logo-color) 15%,
+    var(--logo-color-blue) 55%,
+    var(--logo-color-blue) 65%,
     var(--logo-color-dark) 85%
   );
+  background: var(--logo-color);
   mix-blend-mode: soft-light;
+  filter: blur(.75px);
   top: 1em;
   left: 0.125em;
   padding: 1.75em 1.75em 2em ;
@@ -290,6 +289,12 @@ a[href].direct-link:focus:visited,
 
 .page-link {
   margin: 0 0.5em;
+  padding: 1em;
+}
+
+.page-link:hover,
+.page-link:hover:visited {
+  color: var(--logo-color-dark);
 }
 
 .content {
