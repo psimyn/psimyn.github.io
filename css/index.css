@@ -14,6 +14,7 @@
   --logo-color-blue: #2aafe2;
   --logo-color-dark: #380036;
 
+  --text-color: var(--darkgray);
   --background-color: #f8fefe;
 }
 * {
@@ -25,13 +26,15 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans;
-  color: var(--darkgray);
-  background-color: var(--background-color, --white);
+  color: var(--text-color);
+  background-color: var(--background-color);
   min-height: 100vh;
 }
+
 p:last-child {
   margin-bottom: 0;
 }
+
 p,
 .tmpl-post li,
 img {
@@ -61,6 +64,13 @@ table {
 table td,
 table th {
   padding-right: 1em;
+}
+
+blockquote {
+  background: var(--blockquote-bg, #f2f4f6);
+  margin: 1em 0;
+  padding: 2em 1em 2em 3em;
+  box-shadow: 10px 0 10px -4px inset var(--blockquote-shadow, #344556);
 }
 
 pre,
@@ -242,7 +252,7 @@ a[href].direct-link:focus:visited,
     padding: 1em;
 }
 .site-title {
-    box-shadow: 0.5px 1px 1px 1px #043f3f, 2px 2px 6px -2px #1113, 4px 2px 12px -1px #1112;
+    box-shadow: 0.5px 1px 1px 1px #043f3f, 2px 2px 6px -2px #1113, 2px 2px 6px -2px #fff, 4px 2px 12px -1px #1112;
     padding: 2em;
     transform: translate(5%, 5%) scale(1.2);
     margin-right: 1rem;
@@ -294,7 +304,7 @@ a[href].direct-link:focus:visited,
 
 .page-link:hover,
 .page-link:hover:visited {
-  color: var(--logo-color-dark);
+  color: var(--text-color);
 }
 
 .content {
@@ -477,14 +487,12 @@ a[href].direct-link:focus:visited,
 
 
 @media (prefers-color-scheme: dark) {
-  body {
-    color: #eee;
-    background-color: #180026;
-  }
-
-  .site-nav .page-link,
-  .site-nav .page-link:visited {
-    color: #eee;
+  :root {
+    --text-color: #eee;
+    --background-color: #180026;
+    
+    --blockquote-bg: #344556;
+    --blockquote-shadow: #222334;
   }
 
   a[href] {
