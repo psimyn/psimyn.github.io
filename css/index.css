@@ -43,7 +43,7 @@ img {
 p,
 .tmpl-post li {
   font-family: "Libre Baskerville", serif;
-  line-height: 2.25;
+  line-height: 1.75;
 }
 a[href] {
   color: var(--blue);
