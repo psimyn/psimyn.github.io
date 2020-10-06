@@ -26,10 +26,10 @@
 
       <nav class="site-nav">
         <div class="trigger">
-          <a class="page-link" href="/">Projects</a>
-          <a class="page-link" href="/talks">Talks</a>
-          <a class="page-link" href="/links">Links</a>
-          <a class="page-link" href="/about">About</a>
+          <a class="page-link {% if title == 'Projects' %}active{% endif %}" href="/">Projects</a>
+          <a class="page-link {% if title == 'Talks' %}active{% endif %}" href="/talks">Talks</a>
+          <a class="page-link {% if title == 'Links' %}active{% endif %}" href="/links">Links</a>
+          <a class="page-link {% if title == 'About' %}active{% endif %}" href="/about">About</a>
         </div>
       </nav>
     </header>

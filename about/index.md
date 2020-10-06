@@ -1,6 +1,6 @@
 ---
+title: About
 layout: layouts/home.njk
-active: home
 ---
 
 {% include ./_me.html %}
