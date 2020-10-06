@@ -313,7 +313,7 @@ a[href].direct-link:focus:visited,
     var(--logo-color-dark) 8px 
   );
   transform: skew(2deg, -1deg);
-  box-shadow: 0 -4px 3px 1px var(--navy) inset, 0 1px 1px 1px var(--navy);
+  box-shadow: 0 -4px 3px 1px var(--navy) inset, 0 0 1px 1px var(--bg-color);
   border-radius: 1px 1px 1px 3px;
   padding: 0 1em 0 0;
 }
@@ -512,6 +512,7 @@ a[href].direct-link:focus:visited,
   background: var(--navy);
   border-top: 8px solid #eee;
   padding: 1rem;
+  padding-bottom: 2rem;
   position: relative;
 }
 
@@ -520,6 +521,7 @@ a[href].direct-link:focus:visited,
   .site-header,
   .site-footer  {
     padding: 2rem;
+    padding-bottom: 4rem;
   }
 }
 
