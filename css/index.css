@@ -10,12 +10,14 @@
   --blue: #082840;
   --white: #fff;
 
+  --bg-dark: #180026;
+
   --logo-color: #0c9a9a;
   --logo-color-blue: #2aafe2;
-  --logo-color-dark: #380036;
+  --logo-color-dark: #381136;
 
   --text-color: var(--darkgray);
-  --background-color: #f8fefe;
+  --bg-color: #f8fefe;
 }
 * {
   box-sizing: border-box;
@@ -27,9 +29,15 @@ body {
   margin: 0;
   font-family: sans;
   color: var(--text-color);
-  background-color: var(--background-color);
-  border-right: solid 1em var(--navy);
+  background-color: var(--bg-color);
+  border-right: solid 0.25em var(--navy);
   min-height: 100vh;
+}
+
+@media (min-size: 40em) {
+  body {
+    border-right: solid 1em var(--navy);
+  }
 }
 
 p:last-child {
@@ -297,23 +305,31 @@ a[href].direct-link:focus:visited,
 }
 
 .site-nav {
-    line-height: 56px;
-    margin-left: 2rem;
-    background: linear-gradient(to bottom,
-      var(--logo-color) 1%,
-      var(--logo-color-dark) 10%
-    );
-    transform: skew(2deg, -1deg);
+  overflow: hidden;
+  line-height: 56px;
+  margin-left: 2rem;
+  background: linear-gradient(to bottom,
+    var(--logo-color) 4px,
+    var(--logo-color-dark) 8px 
+  );
+  transform: skew(2deg, -1deg);
+  box-shadow: 0 -4px 3px 1px var(--navy) inset;
+  border-radius: 1px 1px 1px 3px;
+  padding: 0 1em 0 0;
 }
 
 .page-link[href] {
   font-weight: bold;
   transform: skew(-2deg, 1deg);
-  margin: 0 0.5em;
-  padding: 1em;
+  transform: skew(-2deg, 1deg) scale(1) translateY(0);
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  padding: 0 1em;
+  margin-right: -1em;
   color: var(--white);
   text-decoration: none;
   text-shadow: 0.1px black;
+  display: inline-block;
 }
 
 .page-link:hover,
@@ -322,8 +338,13 @@ a[href].direct-link:focus:visited,
   color: var(--white);
 }
 
+.page-link:focus,
 .page-link:hover {
+  position: relative;
   text-decoration: underline;
+  background: var(--bg-dark);
+  transform: skew(0deg, 1deg) scale(1.1) translate(-4px, -1px);
+  box-shadow: 0 0 2px -1px var(--bg-dark);
 }
 
 .content {
@@ -504,8 +525,8 @@ a[href].direct-link:focus:visited,
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color: #eee;
-    --background-color: #180026;
+    --text-color: #ecdfef;
+    --bg-color: var(--bg-dark);
     
     --blockquote-bg: #344556;
     --blockquote-shadow: #222334;
