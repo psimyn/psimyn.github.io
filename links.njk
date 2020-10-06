@@ -2,8 +2,15 @@
 layout: layouts/base.njk
 title: Links
 ---
+<style>
+ header h1, header p { margin: 0; }
+ header p:last-child { margin-bottom: 2em; margin-top: -0.25em; }
+</style>
 
-<h1>Links</h1>
+<header>
+  <h1>Links</h1>
+  <p>interesting things written by other people</p>
+</header>
 
 {% set linkslist = collections.links %}
 {% include "linkslist.njk" %}

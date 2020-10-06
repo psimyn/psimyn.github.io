@@ -306,7 +306,7 @@ a[href].direct-link:focus:visited,
     transform: skew(2deg, -1deg);
 }
 
-.page-link {
+.page-link[href] {
   font-weight: bold;
   transform: skew(-2deg, 1deg);
   margin: 0 0.5em;
