@@ -28,6 +28,7 @@ body {
   font-family: sans;
   color: var(--text-color);
   background-color: var(--background-color);
+  border-right: solid 1em var(--navy);
   min-height: 100vh;
 }
 
@@ -423,10 +424,7 @@ a[href].direct-link:focus:visited,
     transition: box-shadow 0.1s linear;
 }
 .project:hover .project-image {
-    box-shadow: 0 2px 6px -1px rgba(22, 22, 22, 0.4),
-     6px 16px 36px 4px #2443,
-     0 6px 24px -4px #2442,
-     0 8px 32px -1px #2221;
+  box-shadow: 0 0 4px -2px var(--navy);
 }
 
 @media (min-width: 40em) {
@@ -489,7 +487,7 @@ a[href].direct-link:focus:visited,
 .site-footer {
   min-height: 4rem;
   width: 100%;
-  background: #333030;
+  background: var(--navy);
   border-top: 8px solid #eee;
   padding: 1rem;
   position: relative;
