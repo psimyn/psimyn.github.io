@@ -313,7 +313,7 @@ a[href].direct-link:focus:visited,
     var(--logo-color-dark) 8px 
   );
   transform: skew(2deg, -1deg);
-  box-shadow: 0 -4px 3px 1px var(--navy) inset;
+  box-shadow: 0 -4px 3px 1px var(--navy) inset, 0 0 1px 1px var(--bg-color);
   border-radius: 1px 1px 1px 3px;
   padding: 0 1em 0 0;
 }
@@ -321,13 +321,14 @@ a[href].direct-link:focus:visited,
 .page-link[href] {
   font-weight: bold;
   transform: skew(-2deg, 1deg);
-  transform: skew(-2deg, 1deg) scale(1) translateY(0);
+  transform: skew(-2deg, 1deg) scale(1) translateY(0) translateZ(0);
   will-change: transform;
   transition: transform 0.1s ease-out;
   padding: 0 1em;
   margin-right: -1em;
   color: var(--white);
   text-decoration: none;
+  backface-visibility: hidden;
   text-shadow: 0.1px black;
   display: inline-block;
 }
@@ -338,10 +339,10 @@ a[href].direct-link:focus:visited,
   color: var(--white);
 }
 
+.site-nav:not(:hover):not(:focus-within) .page-link.active,
 .page-link:focus,
 .page-link:hover {
   position: relative;
-  text-decoration: underline;
   background: var(--bg-dark);
   transform: skew(0deg, 1deg) scale(1.1) translate(-4px, -1px);
   box-shadow: 0 0 2px -1px var(--bg-dark);
@@ -511,6 +512,7 @@ a[href].direct-link:focus:visited,
   background: var(--navy);
   border-top: 8px solid #eee;
   padding: 1rem;
+  padding-bottom: 2rem;
   position: relative;
 }
 
@@ -519,6 +521,7 @@ a[href].direct-link:focus:visited,
   .site-header,
   .site-footer  {
     padding: 2rem;
+    padding-bottom: 4rem;
   }
 }
 
