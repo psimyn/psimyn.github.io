@@ -20,6 +20,7 @@
   --bg-color: #f8fefe;
 
   --nav-bg: #f2f4f6;
+  --nav-bg-active: var(--bg-dark);
   --nav-color: var(--text-color);
 }
 * {
@@ -339,8 +340,9 @@ a[href].direct-link:focus:visited,
 .page-link[href]:hover {
   position: relative;
   color: var(--white);
-  background: var(--navy);
-  transform: skew(0deg, 1deg) scale(1.15) translate(-4px, -2px);
+  background: var(--nav-bg-active);
+  box-shadow: 0 0 2px 1px var(--nav-bg-active);
+  transform: skew(0deg, 1deg) scale(1.15) translate(-4px, -1px);
 }
 
 .content {
