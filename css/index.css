@@ -340,7 +340,7 @@ a[href].direct-link:focus:visited,
 .page-link:hover {
   position: relative;
   background: var(--bg-dark);
-  transform: skew(0deg, 1deg) scale(1.1) translate(-4px, -1px);
+  transform: skew(0deg, 1deg) scale(1.15) translate(-4px, -1px);
   box-shadow: 0 0 2px -1px var(--bg-dark);
 }
 
