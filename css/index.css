@@ -18,6 +18,9 @@
 
   --text-color: var(--darkgray);
   --bg-color: #f8fefe;
+
+  --nav-bg: #f2f4f6;
+  --nav-color: var(--text-color);
 }
 * {
   box-sizing: border-box;
@@ -304,47 +307,40 @@ a[href].direct-link:focus:visited,
 }
 
 .site-nav {
-  overflow: hidden;
   line-height: 56px;
   margin-left: 2rem;
   background: linear-gradient(to bottom,
     var(--logo-color) 4px,
-    var(--logo-color-dark) 8px 
+    var(--nav-bg) 8px
   );
   transform: skew(2deg, -1deg);
   box-shadow: 0 -4px 3px 1px var(--navy) inset, 0 0 1px 1px var(--bg-color);
   border-radius: 1px 1px 1px 3px;
   padding: 0;
   backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .page-link[href] {
   font-weight: bold;
-  transform: skew(-2deg, 1deg);
   transform: skew(-2deg, 1deg) scale(1) translateY(0) translateZ(0);
   will-change: transform;
   transition: transform 0.1s ease-out;
   padding: 0 1em;
-  color: var(--white);
+  color: var(--nav-color);
   text-decoration: none;
   backface-visibility: hidden;
   text-shadow: 0.1px black;
   display: inline-block;
 }
 
-.page-link:hover,
-.page-link[href]:visited,
-.page-link:hover:visited {
-  color: var(--white);
-}
-
 .site-nav:not(:hover):not(:focus-within) .page-link.active,
-.page-link:focus,
-.page-link:hover {
+.page-link[href]:focus,
+.page-link[href]:hover {
   position: relative;
-  background: var(--bg-dark);
+  color: var(--white);
+  background: var(--navy);
   transform: skew(0deg, 1deg) scale(1.15) translate(-4px, -2px);
-  box-shadow: 0 0 2px -1px var(--bg-dark);
 }
 
 .content {
@@ -532,6 +528,9 @@ a[href].direct-link:focus:visited,
     
     --blockquote-bg: #344556;
     --blockquote-shadow: #222334;
+
+    --nav-bg: var(--logo-color-dark);
+    --nav-color: var(--white);
   }
 
   a[href] {
