@@ -314,7 +314,8 @@ a[href].direct-link:focus:visited,
   transform: skew(2deg, -1deg);
   box-shadow: 0 -4px 3px 1px var(--navy) inset, 0 0 1px 1px var(--bg-color);
   border-radius: 1px 1px 1px 3px;
-  padding: 0 1em 0 0;
+  padding: 0;
+  backface-visibility: hidden;
 }
 
 .page-link[href] {
