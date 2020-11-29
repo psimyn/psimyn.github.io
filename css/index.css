@@ -500,11 +500,33 @@ a[href].direct-link:focus:visited,
 .project:hover .project-image {
   box-shadow: 0 0 4px -2px var(--navy);
 }
+.project:hover a[href],
+.project:hover a:visited {
+  color: var(--logo-color-blue) !important;
+}
 
 @media (min-width: 40em) {
+  .projects {
+    max-width: 60em;
+    margin: 0 auto 0 4rem;
+  }
     .project {
         display: flex;
+        margin: 0 auto;
+        max-width: 40em;
     }
+
+    .project:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+      margin-left: -2rem;
+    }
+
+    .project:nth-child(even) .project-image {
+      margin-right: 0;
+      margin-left: 2rem;
+    }
+
 
     .project-image {
         max-width: 16em;
