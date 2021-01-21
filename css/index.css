@@ -554,6 +554,10 @@ a[href].direct-link:focus:visited,
   margin-bottom: 4rem;
 }
 
+.mb-8 {
+  margin-bottom: 8rem;
+}
+
 .mr-2 {
     margin-right: 2rem;
 }
