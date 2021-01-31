@@ -39,19 +39,19 @@
 
 <p>Some notes for learning Vue.js by building Chess. Because todo apps aren't very realistic.</p>
 <p>The <a href="http://rc.vuejs.org/guide/">Vue docs</a> are pretty awesome. I'm going with the RC docs for this - they are complete enough and anything missing is usually available in 1.0.</p>
-<h1 id="setup">setup <a class="direct-link" href="#setup" aria-hidden="true">#</a></h1>
+<h1 id="setup">setup <a class="direct-link" href="#setup">#</a></h1>
 <p>Messing about with boilerplate and setup isn't something I feel like doing right now, so going to use the <a href="https://github.com/vuejs/vue-cli">CLI</a> to setup.</p>
 <p>From their docs:</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> i --global vue-cli</span><br><span class="highlight-line">vue init webpack vue-chess</span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> vue-chess</span><br><span class="highlight-line"><span class="token function">npm</span> i</span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i --global vue-cli<br>vue init webpack vue-chess<br><span class="token builtin class-name">cd</span> vue-chess<br><span class="token function">npm</span> i</code></pre>
 <p>Also initialise git repo, and add gh-pages branch for hosting</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> init</span><br><span class="highlight-line"><span class="token function">git</span> commit .gitignore -m <span class="token string">"init"</span></span><br><span class="highlight-line"><span class="token function">git</span> checkout -b gh-pages</span><br><span class="highlight-line"><span class="token function">git</span> checkout master</span><br><span class="highlight-line"><span class="token function">git</span> commit <span class="token builtin class-name">.</span> -m <span class="token string">"vue-cli setup"</span></span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> init<br><span class="token function">git</span> commit .gitignore -m <span class="token string">"init"</span><br><span class="token function">git</span> checkout -b gh-pages<br><span class="token function">git</span> checkout master<br><span class="token function">git</span> commit <span class="token builtin class-name">.</span> -m <span class="token string">"vue-cli setup"</span></code></pre>
 <p>This creates a (mostly) bare gh-pages branch - it will later be where we static and compiled files. Then switch back to master, and commit the remaining stuff from Vue.</p>
-<h1 id="setup-chess">setup chess <a class="direct-link" href="#setup-chess" aria-hidden="true">#</a></h1>
+<h1 id="setup-chess">setup chess <a class="direct-link" href="#setup-chess">#</a></h1>
 <p>At this stage just going to install <a href="https://github.com/brozeph/node-chess">chess</a>. This might be swapped out later, but seems to do everything and I don't want to worry about things like board validation just yet.</p>
 <pre><code>npm i --save chess
 npm run dev
 </code></pre>
-<h1 id="board-component">Board component <a class="direct-link" href="#board-component" aria-hidden="true">#</a></h1>
+<h1 id="board-component">Board component <a class="direct-link" href="#board-component">#</a></h1>
 <p>Firstly update App to point to new component</p>
 <pre><code>// src/App.vue
 &lt;template&gt;
