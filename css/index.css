@@ -275,12 +275,12 @@ a[href].direct-link:focus:visited,
     padding: 1em;
 }
 .site-title {
-  box-shadow: 1px 1px 1px 1px #043f3f, 2px 2px 6px -2px #1113, 2px 2px 6px -2px #fff, 4px 2px 12px -1px #1112;
+  box-shadow: 1px 1px 1px 1px #043f3f;
   padding: 2em;
-  transform: translate(5%, 5%) scale(1);
+  transform: translate(5%, 10%) scale(1);
   margin-right: 1rem;
   transition: transform 0.15s ease-in-out;
-  transform: skew(-3deg, 1deg);
+  transform: skew(-1deg, 1deg);
   backface-visibility: hidden;
   text-decoration: none;
   background: var(--logo-color-dark);
