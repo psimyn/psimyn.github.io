@@ -285,6 +285,8 @@ a[href].direct-link:focus:visited,
   text-decoration: none;
   background: var(--logo-color-dark);
   background: radial-gradient(circle at 50%, var(--bg-1) 30%, var(--bg-2));
+
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
 .site-title img {
