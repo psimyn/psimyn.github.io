@@ -508,6 +508,7 @@ a[href].direct-link:focus:visited,
         display: flex;
         margin: 0 auto;
         max-width: 40rem;
+        align-items: flex-start;
     }
 
     .project:nth-child(even) {
@@ -611,7 +612,7 @@ a[href].direct-link:focus:visited,
 }
 
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --text-color: #e2d0e2;
     --bg-color: var(--bg-dark);
