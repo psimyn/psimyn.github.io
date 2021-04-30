@@ -41,14 +41,7 @@ body {
   font-family: var(--system-sans);
   color: var(--text-color);
   background-color: var(--bg-color);
-  border-right: solid 0.25em var(--navy);
   min-height: 100vh;
-}
-
-@media (min-size: 40em) {
-  body {
-    border-right: solid 1em var(--navy);
-  }
 }
 
 p:last-child {
@@ -585,7 +578,7 @@ a[href].direct-link:focus:visited,
   width: 100%;
   background: var(--bg-2);
   background: radial-gradient(circle at 80%, var(--bg-1) 30vmax, var(--bg-2));
-  box-shadow: -60px -50px 100vmax -30px hsla(0, 0%, 27%, .8) inset;
+  box-shadow: -50vw 0 80vw hsla(0, 0%, 7%, .6) inset;
   border-top: 8px solid #eeeae4;
   padding: 1rem;
   padding-bottom: 2rem;
