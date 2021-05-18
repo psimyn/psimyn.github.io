@@ -36,6 +36,7 @@
 
 html,
 body {
+  color-scheme: auto;
   padding: 0;
   margin: 0;
   font-family: var(--system-sans);
