@@ -1372,21 +1372,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/life/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/be%20nice/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/psychology/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/covid/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1422,6 +1407,21 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/life/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/be%20nice/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/psychology/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/writing/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1433,6 +1433,21 @@
   
   <url>
     <loc>https://psimyn.com/tags/blog/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/games/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/conspiracy%20theory/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/propaganda/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1457,66 +1472,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/server/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/hosting/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/wtf/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/oculus/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/vr/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/graphics/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/games/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/conspiracy%20theory/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/propaganda/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/web/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/linkrot/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/content/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/productivity/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1537,7 +1492,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/tools/</loc>
+    <loc>https://psimyn.com/tags/server/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/hosting/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/wtf/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1548,6 +1513,56 @@
   
   <url>
     <loc>https://psimyn.com/tags/economics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/web/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/linkrot/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/content/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/oculus/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/vr/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/graphics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/image%20processing/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/image%20recognition/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/machine%20learning/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/tools/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1572,22 +1587,17 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/bitcoin/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/cryptocurrency/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/design/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/image%20processing/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/image%20recognition/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/machine%20learning/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1603,26 +1613,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/programming/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/bitcoin/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/cryptocurrency/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/linux/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/command%20line/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1652,12 +1642,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/privacy/</loc>
+    <loc>https://psimyn.com/tags/linux/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/apple/</loc>
+    <loc>https://psimyn.com/tags/command%20line/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1672,6 +1662,21 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/privacy/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/apple/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/resources/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/webapps/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1682,32 +1687,27 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/economy/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/bubble/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/inflation/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/resources/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/books/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/reading/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/encoding/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/emoji/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/utf8/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1737,6 +1737,21 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/economy/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/bubble/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/inflation/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/nft/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1762,6 +1777,16 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/energy/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/environment/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/science/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1773,16 +1798,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/statistics/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/energy/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/environment/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1807,12 +1822,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/rts/</loc>
+    <loc>https://psimyn.com/tags/editors/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/editors/</loc>
+    <loc>https://psimyn.com/tags/rts/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1832,17 +1847,27 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/media/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/chiptunes/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/pixelart/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/ergonomics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/posture/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/media/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1862,27 +1887,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/ergonomics/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/posture/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/ci/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/macos/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/settings/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1902,6 +1907,31 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/coffee/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/politics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/decision%20making/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/knowledge/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/infosec/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/cookies/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -1917,27 +1947,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/climate/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/coffee/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/transport/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/traffic/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/politics/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1953,16 +1968,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/greensock/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/decision%20making/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/knowledge/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -1987,6 +1992,21 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/climate/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/macos/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/settings/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/servers/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2002,17 +2022,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/accessibility/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/adblock/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/audio/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/accessibility/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2032,16 +2052,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/javascript/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/functions/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/deomcracy/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2057,27 +2067,17 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/javascript/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/functions/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/webgl/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/caffeine/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/cognition/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/brains/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/sleep/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2097,6 +2097,21 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/essays/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/trees/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/brains/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/electron/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2108,6 +2123,21 @@
   
   <url>
     <loc>https://psimyn.com/tags/bloat/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/caffeine/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/cognition/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/sleep/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2147,6 +2177,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/technology/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/computer%20vision/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2158,6 +2193,16 @@
   
   <url>
     <loc>https://psimyn.com/tags/eye%20tracking/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/jobs/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/interviewing/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2178,21 +2223,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/c/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/technology/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/jobs/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/interviewing/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2222,27 +2252,17 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/forms/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/font/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/typography/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/forms/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/fallacies/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/facts/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2282,12 +2302,22 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/gamedev/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/time/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/gamedev/</loc>
+    <loc>https://psimyn.com/tags/fallacies/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/facts/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2342,6 +2372,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/language/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/news/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2362,17 +2397,22 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/language/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/chess/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/openings/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/podcasts/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/nature/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2392,17 +2432,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/podcasts/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/nature/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/physics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/logos/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/piano/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2417,6 +2457,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/howto/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/future/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2427,12 +2472,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/logos/</loc>
+    <loc>https://psimyn.com/tags/grayscale/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/infosec/</loc>
+    <loc>https://psimyn.com/tags/custom%20properties/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2457,27 +2502,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/piano/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/howto/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/grayscale/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/self-help/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/custom%20properties/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2517,16 +2542,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/safety/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/touchscreens/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/screen%20readers/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2543,6 +2558,16 @@
   
   <url>
     <loc>https://psimyn.com/tags/assistive%20technology/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/safety/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/touchscreens/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2577,11 +2602,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/tether/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/persuasion/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2592,12 +2612,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/building/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/cement/</loc>
+    <loc>https://psimyn.com/tags/tether/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2612,22 +2627,27 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/building/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/cement/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/comics/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/speeches/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/career/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/quotes/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/comics/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2647,6 +2667,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/quotes/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/fashion/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2657,22 +2682,22 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/dark%20patterns/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/editor/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/kotlin/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/repl/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/dark%20patterns/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/editor/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2707,16 +2732,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/design%20tools/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/awesome%20lists/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/notetaking/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2727,12 +2742,22 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/design%20systems/</loc>
+    <loc>https://psimyn.com/tags/design%20tools/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/awesome%20lists/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/interview/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/design%20systems/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2743,6 +2768,11 @@
   
   <url>
     <loc>https://psimyn.com/tags/decisions/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/snap/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2832,6 +2862,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/boilerplate/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/ide/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2843,11 +2878,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/jupyter/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/boilerplate/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2882,16 +2912,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/monopoly/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/optical%20illusions/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/lists/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2912,6 +2932,16 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/monopoly/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/optical%20illusions/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/racism/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2922,22 +2952,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/trees/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/photo%20editing/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/copyright/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/painting/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/photo%20editing/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -2967,16 +2992,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/stretches/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/hands/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/kernel/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -2987,12 +3002,27 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/networking/</loc>
+    <loc>https://psimyn.com/tags/stretches/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/hands/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/apps/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/networking/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/reddit/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3007,11 +3037,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/fonts/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/engineering/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3022,17 +3047,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/reddit/</loc>
+    <loc>https://psimyn.com/tags/fonts/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/newsletter/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/community/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3043,6 +3063,11 @@
   
   <url>
     <loc>https://psimyn.com/tags/bitwig/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/community/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3062,17 +3087,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/rtl/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/ruby/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/garbage%20collection/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/rtl/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3092,7 +3117,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/recycling/</loc>
+    <loc>https://psimyn.com/tags/opinion/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3102,17 +3127,22 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/opinion/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/mind/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/recycling/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/web%20components/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/movies/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3132,22 +3162,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/movies/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/pentest/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/predections/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/neural%20networks/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/pentest/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3162,17 +3187,22 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/css%20variables/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/walled%20gardens/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/app%20stores/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/commandline/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/css%20variables/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3192,12 +3222,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/commandline/</loc>
+    <loc>https://psimyn.com/tags/standards/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/standards/</loc>
+    <loc>https://psimyn.com/tags/math/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3217,11 +3247,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/math/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/farming/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3233,16 +3258,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/shaders/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/china/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/huawei/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3272,6 +3287,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/china/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/carbon%20capture/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3282,17 +3302,22 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/huawei/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/ui/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/tips/</loc>
+    <loc>https://psimyn.com/tags/wordpress/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/wordpress/</loc>
+    <loc>https://psimyn.com/tags/tips/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3307,7 +3332,17 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/cancer/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/gutenberg/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/podcast/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3318,21 +3353,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/svelte/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/cancer/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/podcast/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/algorithms/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3348,6 +3368,11 @@
   
   <url>
     <loc>https://psimyn.com/tags/innovation/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/algorithms/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3372,6 +3397,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/cooking/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/tests/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3387,12 +3417,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/cooking/</loc>
+    <loc>https://psimyn.com/tags/cat/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/cat/</loc>
+    <loc>https://psimyn.com/tags/computer%20brain/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3408,11 +3438,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/puppeteer/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/computer%20brain/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3477,11 +3502,6 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/style%20guides/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://psimyn.com/tags/organizations/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3497,6 +3517,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/style%20guides/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/rationalism/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
@@ -3508,11 +3533,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/rome/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/renewables/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3542,17 +3562,12 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/renewables/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/anki/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/remote%20work/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/worklife/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3568,6 +3583,16 @@
   
   <url>
     <loc>https://psimyn.com/tags/funding/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/remote%20work/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/worklife/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3597,7 +3622,7 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/snap/</loc>
+    <loc>https://psimyn.com/tags/updates/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3612,22 +3637,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/updates/</loc>
+    <loc>https://psimyn.com/tags/swimming/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
     <loc>https://psimyn.com/tags/annoyances/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/planning/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/ip/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3647,12 +3662,17 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/webdev/</loc>
+    <loc>https://psimyn.com/tags/planning/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/willpower/</loc>
+    <loc>https://psimyn.com/tags/ip/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/tags/webdev/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3662,12 +3682,17 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/tags/willpower/</loc>
+    <lastmod>2021-01-03</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/tags/reduce/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
   <url>
-    <loc>https://psimyn.com/tags/swimming/</loc>
+    <loc>https://psimyn.com/tags/responsive/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -3683,11 +3708,6 @@
   
   <url>
     <loc>https://psimyn.com/tags/me/</loc>
-    <lastmod>2021-01-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://psimyn.com/tags/responsive/</loc>
     <lastmod>2021-01-03</lastmod>
   </url>
   
@@ -4502,6 +4522,11 @@
   </url>
   
   <url>
+    <loc>https://psimyn.com/links/eleven-ways-of-smelling-a-tree/</loc>
+    <lastmod>2021-06-10</lastmod>
+  </url>
+  
+  <url>
     <loc>https://psimyn.com/links/photopea-advanced-photo-editor/</loc>
     <lastmod>2021-06-11</lastmod>
   </url>
@@ -4512,7 +4537,12 @@
   </url>
   
   <url>
-    <loc>https://psimyn.com/links/eleven-ways-of-smelling-a-tree/</loc>
-    <lastmod>2021-06-13</lastmod>
+    <loc>https://psimyn.com/links/how-to-verify-a-bitly-link-s-destination/</loc>
+    <lastmod>2021-06-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://psimyn.com/links/bear-plus-snowflake-equals-polar-bear/</loc>
+    <lastmod>2021-06-17</lastmod>
   </url>
 </urlset>
